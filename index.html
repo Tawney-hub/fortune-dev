@@ -1,0 +1,3217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fortune Makunya . - Portfolio</title>
+  <meta content="Fortune Makunya .'s portfolio showcasing expertise in Full-Stack Development (Python, Django, Flutter, React), AI/ML systems, and real-world project solutions." name="description">
+  <meta content="Full-Stack, Developer, AI, Machine Learning, Data Science, Python, Django, Flutter, React, Web Development, Mobile Development, AI Systems" name="keywords">
+
+  <!-- Favicons - Placeholder for now -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts - Orbitron for headings, Poppins for body/nav -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Font Awesome for social icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom Modernized CSS (FORTUNE'S THEME) -->
+  <style>
+    /* Custom Color Palette & Fonts */
+    :root {
+      --background-color: #FFFFFF; /* Pure white background */
+      --default-color: #333333; /* Dark grey for general text */
+      --heading-color: #1A1A1A; /* Even darker grey for prominent headings */
+      --accent-color: #FF0000; /* Vibrant Red, primary accent color */
+      --secondary-accent-color: #00FF00; /* Vibrant Green, secondary accent for futuristic glow */
+      --surface-color: #F8F8F8; /* Very light grey for card backgrounds */
+      --contrast-color: #FFFFFF; /* White for text on dark/accent backgrounds */
+
+      /* For rgba conversions from hsl, to make overlay transparent */
+      --heading-color-rgb: 26, 26, 26;
+      --background-color-rgb: 255, 255, 255;
+      --default-font: 'Poppins', sans-serif;
+      --heading-font: 'Orbitron', sans-serif;
+      --nav-font: 'Poppins', sans-serif; /* Poppins for nav links */
+    }
+
+    /* Dark Mode specific variables */
+    body.dark-mode {
+      --background-color: #0F2D1F; /* Dark Green background */
+      --default-color: #E0E0E0; /* Light grey for general text */
+      --heading-color: #F5F5F5; /* Lighter grey for headings */
+      --accent-color: #FF4D4D; /* Slightly brighter red for dark mode */
+      --secondary-accent-color: #39FF14; /* Slightly brighter green for dark mode (neon green) */
+      --surface-color: #1A3B2A; /* Darker green for cards/elements */
+
+      /* Adjust rgba for dark mode */
+      --heading-color-rgb: 245, 245, 245;
+      --background-color-rgb: 15, 45, 31;
+    }
+
+    /* Color Presets */
+    .light-background {
+      background-color: var(--surface-color) !important;
+    }
+
+    .dark-background {
+      background-color: var(--background-color) !important;
+      color: var(--contrast-color) !important;
+    }
+
+    /* Smooth scroll */
+    :root {
+      scroll-behavior: smooth;
+    }
+
+    /*--------------------------------------------------------------
+    # General Styling & Shared Classes
+    --------------------------------------------------------------*/
+    body {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      font-family: var(--default-font);
+      overflow-x: hidden;
+      padding-top: 0 !important;
+      transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme transition */
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+      /* Disable scrolling when overlay is active */
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    a:hover {
+      color: var(--secondary-accent-color);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--heading-color);
+      font-family: var(--heading-font);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: color 0.4s ease; /* Smooth theme transition */
+    }
+
+    p, span, li {
+        transition: color 0.4s ease; /* Smooth theme transition for text elements */
+    }
+
+    /* PHP Email Form Messages */
+    .php-email-form .error-message {
+      display: none;
+      background: var(--accent-color); /* Red for error messages */
+      color: #ffffff;
+      text-align: left;
+      padding: 15px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    .php-email-form .sent-message {
+      display: none;
+      color: #ffffff;
+      background: var(--secondary-accent-color); /* Green for success messages */
+      text-align: center;
+      padding: 15px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    .php-email-form .loading {
+      display: none;
+      background: var(--surface-color);
+      text-align: center;
+      padding: 15px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+    }
+
+    .php-email-form .loading:before {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      margin: 0 10px -6px 0;
+      border: 3px solid var(--accent-color);
+      border-top-color: var(--surface-color);
+      animation: php-email-form-loading 1s linear infinite;
+    }
+
+    @keyframes php-email-form-loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /*--------------------------------------------------------------
+    # Header & Mobile Nav (NEW)
+    --------------------------------------------------------------*/
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      z-index: 1002; /* Above floating social and appbar */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* Adjusted background-color opacity for more transparency */
+      background-color: rgba(var(--background-color-rgb), 0.05); /* Very light background */
+      /* Increased blur for frosted glass effect */
+      backdrop-filter: blur(15px); /* Stronger blur */
+      -webkit-backdrop-filter: blur(15px); /* For Safari */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+      transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+    }
+
+    body.dark-mode .header {
+        background-color: rgba(var(--background-color-rgb), 0.1); /* Slightly more visible in dark mode */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Darker shadow in dark mode */
+    }
+
+    .header .logo {
+      margin-left: 25px;
+      color: var(--heading-color); /* Use heading color for logo text */
+      font-family: var(--heading-font);
+      font-size: 28px;
+      font-weight: 700;
+      text-decoration: none;
+      position: relative;
+      z-index: 1003;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Stronger shadow for visibility against transparent background */
+      transition: color 0.4s ease, text-shadow 0.4s ease;
+    }
+
+    .header .logo span {
+      color: var(--accent-color);
+      transition: color 0.4s ease;
+    }
+
+    /* Main Navigation (for desktop) */
+    .main-nav {
+      flex-grow: 1; /* Allows it to take available space */
+      text-align: center; /* Centers the ul */
+      margin: 0 25px; /* Adjust margin to ensure it's not too wide */
+    }
+
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex; /* Keeps items together while centering */
+      gap: 30px;
+    }
+
+    .main-nav a {
+      color: var(--contrast-color); /* Always white text for nav links */
+      font-family: var(--nav-font);
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      padding-bottom: 5px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Stronger shadow for visibility */
+    }
+
+    body.dark-mode .main-nav a {
+      color: var(--contrast-color); /* Keep white text in dark mode */
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Slightly stronger shadow in dark mode */
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+
+    .main-nav a:hover::after,
+    .main-nav a.active::after {
+      width: 100%;
+    }
+
+    /* Hamburger Menu for Mobile */
+    .mobile-nav-toggle {
+      position: fixed;
+      top: 30px;
+      right: 25px;
+      z-index: 1005;
+      background: transparent; /* No background image */
+      border: none;
+      font-size: 30px;
+      color: var(--accent-color); /* Use accent color for toggle icon */
+      cursor: pointer;
+      display: none; /* Hidden by default, shown on mobile */
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Stronger shadow for visibility */
+    }
+
+    body.dark-mode .mobile-nav-toggle {
+        color: var(--accent-color); /* Accent color for dark mode */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    .mobile-nav-toggle:hover {
+      color: var(--secondary-accent-color); /* Change to secondary accent on hover */
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%; /* Start off-screen */
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 45, 31, 0.98); /* Near-dark green for maximum text contrast */
+      z-index: 1002;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      backdrop-filter: blur(25px); /* Increased blur for more prominence */
+      -webkit-backdrop-filter: blur(25px); /* For Safari support */
+      box-shadow: -5px 0 30px rgba(0,0,0,0.5); /* Shadow for pop-out effect */
+    }
+
+    .mobile-nav.active {
+      right: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .mobile-nav ul li {
+      margin: 15px 0; /* Increased vertical margin for better spacing */
+    }
+
+    .mobile-nav a {
+      color: var(--contrast-color); /* Always white text for mobile nav links */
+      font-family: var(--heading-font);
+      font-size: 22px; /* Slightly larger font for better visibility */
+      font-weight: 700; /* Bolder font for more impact */
+      text-decoration: none;
+      transition: color 0.3s ease;
+      text-shadow: 0px 0px 10px rgba(255,255,255,0.3); /* Stronger glow for clarity */
+    }
+
+    .mobile-nav a:hover {
+      color: var(--accent-color); /* Keep accent color for hover */
+      text-shadow: none; /* Remove glow on hover if it clashes with accent */
+    }
+
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none; /* Hide main nav on mobile */
+      }
+
+      .mobile-nav-toggle {
+        display: block; /* Show hamburger on mobile */
+      }
+
+      .header .logo {
+        position: absolute;
+        left: 25px; /* Keep logo on the left */
+        top: 20px;
+        font-size: 24px; /* Slightly smaller logo on mobile */
+      }
+
+      /* Hide logo when mobile nav is active */
+      .mobile-nav.active + .logo-container .logo {
+        display: none;
+      }
+    }
+
+
+    /*--------------------------------------------------------------
+    # Top Text Navigation (OLD - No longer used for main nav)
+    --------------------------------------------------------------*/
+    /* This section is retained for reference but its styles are largely superseded by .main-nav and .mobile-nav */
+    .top-text-nav {
+      display: none; /* Hidden by default, replaced by main-nav/mobile-nav */
+    }
+
+
+    /*--------------------------------------------------------------
+    # Floating Social Only (Left)
+    --------------------------------------------------------------*/
+    .floating-social-only {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      background: rgba(var(--heading-color-rgb), 0.1);
+      /* Transparent background using RGB var */
+      border-radius: 0 15px 15px 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0px;
+      box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.5);
+      /* Even stronger shadow */
+      align-items: center;
+      backdrop-filter: blur(8px);
+      /* Added backdrop filter */
+    }
+
+    .floating-social-only a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--contrast-color); /* White icons */
+      padding: 12px;
+      font-size: 28px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      border-radius: 50%;
+      margin: 5px 0;
+      width: 50px;
+      height: 50px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      /* Text shadow for visibility */
+    }
+
+    .floating-social-only a:hover {
+      background: var(--accent-color);
+      transform: translateX(5px) scale(1.1);
+      color: var(--contrast-color);
+      box-shadow: 0 0 15px var(--accent-color);
+      text-shadow: none;
+      /* Remove text shadow on hover */
+    }
+
+    /* Ensure icons are white within the floating social bar */
+    .floating-social-only a i {
+      color: inherit; /* Inherit color from parent 'a' */
+    }
+
+    /* Tooltip for floating social */
+    .floating-social-only a .tooltiptext {
+      visibility: hidden;
+      width: auto;
+      background-color: rgba(var(--heading-color-rgb), 0.8);
+      /* Transparent background for tooltip */
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 10px;
+      position: absolute;
+      z-index: 1;
+      left: 100%;
+      margin-left: 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 14px;
+      white-space: nowrap;
+      backdrop-filter: blur(5px);
+      /* Blur for tooltip */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      /* Shadow for tooltip */
+    }
+
+    .floating-social-only a:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .floating-social-only a .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent rgba(var(--heading-color-rgb), 0.8) transparent transparent;
+    }
+
+    /* Dark mode for floating social */
+    body.dark-mode .floating-social-only {
+      background: rgba(var(--surface-color), 0.1);
+      /* Transparent background using surface color for dark mode */
+      box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.7);
+      /* Even stronger shadow for dark mode */
+    }
+
+    body.dark-mode .floating-social-only a {
+      color: var(--default-color);
+      /* Icons in dark mode */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    body.dark-mode .floating-social-only a:hover {
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      box-shadow: 0 0 15px var(--accent-color);
+    }
+
+    body.dark-mode .floating-social-only a .tooltiptext {
+      background-color: rgba(var(--surface-color), 0.8);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    body.dark-mode .floating-social-only a .tooltiptext::after {
+      border-color: transparent rgba(var(--surface-color), 0.8) transparent transparent;
+    }
+
+    /* Mobile adjustments for floating social - remains on left */
+    @media (max-width: 768px) {
+      .floating-social-only {
+        position: fixed;
+      left: 0;
+      top: 0%;
+      transform: translateY(50%);
+      z-index: 1000;
+      background: rgba(var(--heading-color-rgb), 0.1);
+      /* Transparent background using RGB var */
+      border-radius: 0 15px 15px 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      padding: 0px 0px;
+      box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.5);
+      /* Even stronger shadow */
+      align-items: center;
+      backdrop-filter: blur(8px);
+
+
+      }
+
+      .floating-social-only a {
+        font-size: 24px;
+        padding: 10px;
+        width: 45px;
+        height: 45px;
+      }
+
+      .floating-social-only a:hover {
+        transform: translateX(5px) scale(1.1); /* Keep original transform */
+      }
+
+      .floating-social-only a .tooltiptext {
+        left: 100%; /* Keep tooltip on right */
+        right: unset;
+        margin-right: 0;
+        margin-left: 10px;
+      }
+
+      .floating-social-only a .tooltiptext::after {
+        right: 100%; /* Keep tooltip arrow on right */
+        left: unset;
+        border-color: transparent rgba(var(--heading-color-rgb), 0.8) transparent transparent;
+      }
+    }
+
+
+    /*--------------------------------------------------------------
+    # Preloader
+    --------------------------------------------------------------*/
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      overflow: hidden;
+      background: var(--heading-color);
+      transition: all 0.8s ease-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #preloader .spinner-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+
+    #preloader .spinner-inner {
+      position: absolute;
+      inset: 0;
+      border: 8px solid #ffffff;
+      border-color: var(--accent-color) transparent var(--secondary-accent-color) transparent;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: animate-preloader 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    }
+
+    #preloader .spinner-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: var(--heading-font);
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes animate-preloader {
+      0% {
+        transform: rotate(0deg) scale(0.8);
+      }
+
+      50% {
+        transform: rotate(180deg) scale(1.1);
+      }
+
+      100% {
+        transform: rotate(360deg) scale(0.8);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.7;
+        transform: scale(0.9);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /*--------------------------------------------------------------
+    # Scroll Top Button & Theme Toggle Button (NEW Grouping)
+    --------------------------------------------------------------*/
+    /* Theme Toggle Button (Top Right) */
+    .theme-toggle-btn {
+      position: fixed;
+      top: 15px; /* Aligned with hamburger top */
+      right: 75px; /* Space from hamburger */
+      z-index: 1003; /* Above mobile nav toggle */
+      background-color: var(--accent-color);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0px 4px 12px rgba(255, 0, 0, 0.4); /* Red shadow */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px; /* Smaller for better fit in corner */
+      color: var(--contrast-color);
+      line-height: 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    .theme-toggle-btn:hover {
+      background-color: var(--secondary-accent-color); /* Change to green on hover */
+      color: var(--contrast-color);
+      transform: scale(1.1); /* Subtle scale on hover */
+      box-shadow: 0px 6px 15px rgba(0, 255, 0, 0.5); /* Green shadow */
+    }
+
+    /* Scroll Top Button (Bottom Right) */
+    #scroll-top {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      z-index: 99999;
+      background-color: var(--accent-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0px 4px 12px rgba(255, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: var(--contrast-color);
+      line-height: 0;
+      border: none;
+      cursor: pointer;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    #scroll-top.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #scroll-top:hover {
+      background-color: var(--secondary-accent-color); /* Change to green on hover */
+      color: var(--contrast-color);
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 15px rgba(0, 255, 0, 0.5);
+    }
+
+    /* Adjust for mobile: Theme toggle moves slightly */
+    @media (max-width: 768px) {
+      .theme-toggle-btn {
+        position: fixed;
+        top: 38px;
+        right: 75px;
+        z-index: 1003;
+        background-color: var(--accent-color);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0px 4px 12px rgba(255, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: var(--contrast-color);
+        line-height: 0;
+        border: none;
+        cursor: pointer;
+      }
+
+      .theme-toggle-btn:hover {
+        background-color: var(--secondary-accent-color);
+      }
+    }
+
+    #scroll-top {
+      width: 45px;
+      height: 45px;
+      font-size: 22px;
+      bottom: 15px;
+      right: 15px;
+      transform: none;
+    }
+    #scroll-top:hover {
+      transform: scale(1.05);
+    }
+
+
+    /*--------------------------------------------------------------
+    # Global Sections
+    --------------------------------------------------------------*/
+    section,
+    .section {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      padding: 80px 0;
+      overflow: clip;
+      position: relative;
+      z-index: 1;
+      transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme transition */
+    }
+
+    section:nth-child(even) {
+      background-color: var(--surface-color) !important;
+    }
+
+    section:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at top left, rgba(255, 0, 0, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at bottom right, rgba(0, 255, 0, 0.05) 0%, transparent 20%);
+      background-repeat: no-repeat;
+      background-size: 40% 40%;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    /* Dark mode for section background patterns */
+    body.dark-mode section:before {
+        background-image: radial-gradient(circle at top left, rgba(255, 77, 77, 0.08) 0%, transparent 20%),
+            radial-gradient(circle at bottom right, rgba(57, 255, 20, 0.08) 0%, transparent 20%);
+        opacity: 0.6; /* Slightly more visible in dark mode */
+    }
+
+    /*--------------------------------------------------------------
+    # Global Section Titles (Enhanced)
+    --------------------------------------------------------------*/
+    .section-title {
+      padding-bottom: 70px;
+      position: relative;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      position: relative;
+      color: var(--heading-color);
+      text-shadow: 2px 2px 5px rgba(26, 26, 26, 0.1);
+    }
+
+    .section-title h2:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--accent-color), var(--secondary-accent-color));
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      border-radius: 2px;
+    }
+
+    /* Glowing circle effect for section titles */
+    .section-title.glowing-circle h2:before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      /* Adjust position relative to h2 */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      /* Size of the circle */
+      height: 100px;
+      /* Size of the circle */
+      background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: -1;
+      animation: pulse-glow 3s infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      0% {
+        transform: translateX(-50%) scale(0.9);
+        opacity: 0.1;
+      }
+
+      100% {
+        transform: translateX(-50%) scale(1.1);
+        opacity: 0.25;
+      }
+    }
+
+
+    .section-title p {
+      margin-bottom: 0;
+      color: var(--default-color);
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-sub-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--heading-color);
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-sub-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(to right, var(--accent-color), var(--secondary-accent-color));
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+
+    /* Dark mode for section sub title */
+    body.dark-mode .section-sub-title {
+        color: var(--heading-color); /* Maintain heading color */
+    }
+
+    /*--------------------------------------------------------------
+    # Hero Section
+    --------------------------------------------------------------*/
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      padding: 100px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: var(--background-color); /* Changed to dark background for theme */
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      filter: grayscale(80%) brightness(30%); /* Darker effect */
+      transform: scale(1.05);
+    }
+
+    .hero:before {
+      content: "";
+      background: rgba(15, 45, 31, 0.85); /* Dark green overlay */
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    /* Dark mode for hero overlay */
+    body.dark-mode .hero:before {
+        background: rgba(15, 45, 31, 0.9); /* Even darker in dark mode */
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      color: var(--contrast-color);
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: 72px;
+      font-weight: 800;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(to right, var(--accent-color), var(--secondary-accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text-glow 2s infinite alternate;
+    }
+
+    @keyframes text-glow {
+      0% {
+        text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5), 0px 0px 20px rgba(0, 255, 0, 0.5);
+      }
+
+      100% {
+        text-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8), 0px 0px 30px rgba(0, 255, 0, 0.8);
+      }
+    }
+
+
+    .hero p {
+      margin: 10px 0 0 0;
+      font-size: 30px;
+      opacity: 0.9;
+      letter-spacing: 2px;
+      font-family: var(--nav-font);
+    }
+
+    .hero p span {
+      letter-spacing: 2px;
+      border-bottom: 3px solid var(--secondary-accent-color);
+      padding-bottom: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 24px;
+      }
+    }
+
+    /*--------------------------------------------------------------
+    # About Section (Enhanced)
+    --------------------------------------------------------------*/
+    .about .content {
+      padding-left: 20px;
+      /* Add some padding to separate from image */
+    }
+
+    .about .content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about .content ul li {
+      display: flex;
+      /* Use flexbox for icon and text alignment */
+      align-items: center;
+      /* Vertically center icon and text */
+      margin-bottom: 15px;
+      /* Add more space between list items */
+      font-size: 16px;
+      color: var(--default-color);
+    }
+
+    .about .content ul li i {
+      font-size: 24px;
+      /* Larger icons for better visibility */
+      color: var(--accent-color);
+      /* Use accent color for icons */
+      margin-right: 15px;
+      /* Space between icon and text */
+      min-width: 24px;
+      /* Prevent text from jumping if icon width varies */
+      text-align: center;
+      transition: transform 0.3s ease;
+      /* Add hover effect */
+    }
+
+    .about .content ul li:hover i {
+      transform: scale(1.1);
+      /* Slightly enlarge icon on hover */
+    }
+
+    .about .content p {
+      margin-bottom: 1.5rem;
+      /* Consistent spacing for paragraphs */
+      line-height: 1.7;
+      /* Improve readability */
+    }
+
+    /* Adjust the main row in about section for alignment */
+    .about .row.gy-4 {
+      align-items: center;
+      /* Vertically center the image and content columns */
+    }
+
+    /* Ensure image responsiveness */
+    .about .col-lg-4 img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      /* Add some rounded corners to the image */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      /* Subtle shadow */
+    }
+
+    @media (max-width: 991px) {
+      /* On smaller screens, stack columns */
+      .about .content {
+        padding-left: 0;
+        /* Remove left padding when stacked */
+        padding-top: 30px;
+        /* Add top padding when stacked below image */
+      }
+    }
+
+    /* Certificates Carousel */
+    .certificates-carousel {
+      padding: 30px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .certificates-carousel .swiper-slide {
+      width: 280px; /* Fixed width for each certificate item */
+      margin-right: 20px; /* Space between items */
+    }
+
+    .certificate-item {
+      background-color: var(--background-color); /* Use background-color var */
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      height: 100%; /* Ensure uniform height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.05); /* Subtle border for separation */
+    }
+
+    body.dark-mode .certificate-item {
+      background-color: var(--surface-color); /* Darker surface in dark mode */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255,255,255,0.1); /* Lighter border in dark mode */
+    }
+
+    .certificate-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-color: var(--accent-color); /* Match border to background on hover */
+    }
+
+    body.dark-mode .certificate-item:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-color: var(--accent-color);
+    }
+
+    .certificate-item .cert-icon {
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: var(--secondary-accent-color);
+        transition: color 0.3s ease;
+    }
+
+    .certificate-item h4 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: var(--heading-color);
+      transition: color 0.3s ease;
+    }
+
+    .certificate-item p {
+      font-size: 0.9em;
+      color: var(--default-color);
+      margin-bottom: 0;
+      transition: color 0.3s ease;
+    }
+
+    .certificate-item:hover .cert-icon,
+    .certificate-item:hover h4,
+    .certificate-item:hover p {
+      color: var(--contrast-color); /* Text color on hover */
+    }
+
+    /* Swiper Pagination (dots) */
+    .certificates-carousel .swiper-pagination {
+      position: static;
+      margin-top: 20px;
+    }
+
+    .certificates-carousel .swiper-pagination-bullet {
+      background: var(--accent-color);
+      opacity: 0.6;
+    }
+
+    .certificates-carousel .swiper-pagination-bullet-active {
+      background: var(--accent-color);
+      opacity: 1;
+    }
+
+    /* Certificate Details Modal */
+    .certificate-details-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .certificate-details-modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .certificate-details-modal-content {
+      background: var(--background-color); /* Use background-color var */
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      max-width: 700px;
+      width: 90%;
+      max-height: 90%;
+      overflow-y: auto;
+      position: relative;
+      transform: scale(0.9);
+      opacity: 0;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      text-align: center; /* Center content in modal */
+    }
+
+    .certificate-details-modal-overlay.active .certificate-details-modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    body.dark-mode .certificate-details-modal-content {
+      background: var(--surface-color); /* Darker surface in dark mode */
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .certificate-details-modal-content .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 30px;
+      color: var(--default-color);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .certificate-details-modal-content .close-btn:hover {
+      color: var(--accent-color);
+    }
+
+    .certificate-details-modal-content h3 {
+      font-size: 2em;
+      color: var(--heading-color);
+      margin-bottom: 20px;
+    }
+
+    .certificate-details-modal-content p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      color: var(--default-color);
+      margin-bottom: 20px;
+    }
+
+    .certificate-details-modal-content a.btn {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-color: var(--accent-color);
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .certificate-details-modal-content a.btn:hover {
+      background-color: var(--secondary-accent-color);
+      border-color: var(--secondary-accent-color);
+    }
+
+    /*--------------------------------------------------------------
+    # Skills Section (Enhanced)
+    ----------------------------------------------------------------*/
+    .skills .progress {
+      height: 60px;
+      display: block;
+      background: none;
+      border-radius: 0;
+      margin-bottom: 30px;
+    }
+
+    .skills .progress .skill {
+      color: var(--heading-color);
+      padding: 0;
+      margin: 0 0 8px 0;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* Align icon and text vertically */
+      font-weight: 700;
+      font-family: var(--heading-font);
+      font-size: 17px;
+    }
+
+    .skills .progress .skill i {
+      font-size: 22px;
+      margin-right: 10px;
+      color: var(--accent-color);
+      /* Color for skill icons */
+      transition: transform 0.3s ease;
+    }
+
+    .skills .progress .skill:hover i {
+      transform: scale(1.2);
+    }
+
+    .skills .progress .skill .val {
+      font-style: normal;
+      color: var(--accent-color);
+    }
+
+    .skills .progress-bar-wrap {
+      background: rgba(255, 0, 0, 0.1); /* Light red background */
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: inset 0px 1px 3px rgba(26, 26, 26, 0.1);
+    }
+
+    /* Dark mode override for skills progress bar background */
+    body.dark-mode .skills .progress-bar-wrap {
+      background: rgba(255, 77, 77, 0.2); /* Lighter red for dark mode */
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .skills .progress-bar {
+      width: 1px;
+      height: 100%;
+      transition: width 1.2s ease-in-out;
+      background: linear-gradient(to right, var(--accent-color), var(--secondary-accent-color));
+      border-radius: 6px;
+    }
+
+    /*--------------------------------------------------------------
+    # AI Portfolio Section (Redesigned)
+    --------------------------------------------------------------*/
+    .ai-portfolio-section {
+      padding: 80px 0;
+      background-color: var(--surface-color);
+    }
+
+    .ai-container {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+    }
+
+    @media (min-width: 768px) {
+      .ai-container {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+
+    .ai-section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .ai-section-title h2 {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--heading-color);
+    }
+
+    .ai-section-title p {
+      font-size: 18px;
+      color: var(--default-color);
+    }
+
+    .ai-portfolio-filters {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 30px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .ai-portfolio-filters li {
+      cursor: pointer;
+      padding: 10px 25px;
+      background-color: var(--background-color);
+      border-radius: 50px;
+      font-weight: 600;
+      color: var(--default-color);
+      transition: all 0.3s ease-in-out;
+      border: 1px solid rgba(26, 26, 26, 0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .ai-portfolio-filters li.ai-filter-active,
+    .ai-portfolio-filters li:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-color: var(--accent-color);
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+    }
+
+    /* Dark mode for portfolio filters */
+    body.dark-mode .ai-portfolio-filters li {
+      background-color: #1A3B2A; /* Dark green card background */
+      color: var(--default-color);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    body.dark-mode .ai-portfolio-filters li.ai-filter-active,
+    body.dark-mode .ai-portfolio-filters li:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-color: var(--accent-color);
+      box-shadow: 0 4px 10px rgba(255, 77, 77, 0.4);
+    }
+
+
+    .ai-project-card {
+      min-height: 350px;
+      background-color: var(--background-color); /* Use var for background */
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(26, 26, 26, 0.08);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      /* Align to top */
+      align-items: center;
+      text-align: center;
+      transition: all 0.4s ease-in-out;
+      padding: 25px;
+      height: 100%;
+    }
+
+    .ai-project-card:hover {
+      box-shadow: 0 12px 25px rgba(26, 26, 26, 0.18);
+      transform: translateY(-10px);
+    }
+
+    /* Dark mode for project cards */
+    body.dark-mode .ai-project-card {
+      background-color: var(--surface-color);
+      /* Darker cards */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      /* Stronger shadows for separation */
+    }
+
+    body.dark-mode .ai-project-card:hover {
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+
+
+    .ai-project-card .project-icon {
+      font-size: 50px;
+      color: var(--secondary-accent-color); /* Green icon */
+      margin-bottom: 20px;
+      animation: icon-pulse 1.5s infinite alternate;
+    }
+
+    @keyframes icon-pulse {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+
+    .ai-project-title h4 {
+      margin: 0;
+      color: var(--heading-color);
+      font-size: 1.5em;
+      /* Adjusted font size */
+      line-height: 1.3;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .ai-project-details-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(15, 45, 31, 0.95); /* Dark green overlay */
+      color: var(--contrast-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 35px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    }
+
+    body.dark-mode .ai-project-details-overlay {
+        background-color: rgba(15, 45, 31, 0.98); /* Slightly darker overlay in dark mode */
+    }
+
+    .ai-project-card:hover .ai-project-details-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .ai-project-details-overlay p {
+      margin-bottom: 25px;
+      font-size: 1.15em;
+      line-height: 1.8;
+      max-height: 70%;
+      overflow-y: auto;
+      font-style: normal;
+      /* Ensured no italics */
+    }
+
+    .ai-project-links .ai-details-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent-color); /* Red link text */
+      background-color: var(--contrast-color); /* White background */
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration: none; /* Ensure no underline */
+    }
+
+    body.dark-mode .ai-project-links .ai-details-link {
+        background-color: var(--background-color); /* Use dark mode background for link */
+        color: var(--accent-color);
+    }
+
+    .ai-project-links .ai-details-link:hover {
+      background-color: var(--secondary-accent-color); /* Green on hover */
+      color: var(--contrast-color); /* White text on green hover */
+    }
+
+    /*--------------------------------------------------------------
+    # Resume Section (Enhanced)
+    --------------------------------------------------------------*/
+    .resume .resume-item {
+      padding: 0 0 20px 20px;
+      margin-top: -2px;
+      border-left: 2px solid var(--accent-color);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .resume .resume-item:hover {
+      border-color: var(--secondary-accent-color);
+      background-color: var(--surface-color);
+      /* Subtle hover effect */
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Dark mode for resume items */
+    body.dark-mode .resume .resume-item:hover {
+      background-color: #1A3B2A; /* Darker green on hover */
+    }
+
+    body.dark-mode .resume .resume-item h5 {
+      background: #1A3B2A; /* Darker green for date background */
+      color: var(--default-color);
+    }
+
+    .resume .resume-item h4 {
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--heading-color);
+      margin-bottom: 10px;
+    }
+
+    .resume .resume-item h5 {
+      font-size: 16px;
+      background: var(--surface-color);
+      padding: 5px 15px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--default-color);
+      border-radius: 5px;
+    }
+
+    .resume .resume-item ul {
+      padding-left: 20px;
+    }
+
+    .resume .resume-item ul li {
+      padding-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .resume .resume-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .resume .resume-item::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      left: -9px;
+      top: 0;
+      background: var(--secondary-accent-color);
+      /* Green dot */
+      border: 2px solid var(--background-color);
+      box-shadow: 0 0 8px var(--secondary-accent-color);
+      /* Glowing effect */
+      transition: all 0.3s ease;
+    }
+
+    .resume .resume-item:hover::before {
+      background: var(--accent-color);
+      /* Red on hover for contrast */
+      box-shadow: 0 0 12px var(--accent-color);
+      /* Stronger glow on hover */
+    }
+
+    /*--------------------------------------------------------------
+    # Services Section (Enhanced - Icons Removed)
+    --------------------------------------------------------------*/
+    .services .row.gy-4 {
+      --bs-gutter-y: 24px;
+      /* Consistent vertical gutter */
+      --bs-gutter-x: 24px;
+      /* Consistent horizontal gutter */
+    }
+
+    .services .service-item {
+      position: relative;
+      cursor: pointer;
+      background-color: var(--background-color); /* Use var for background */
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease-in-out;
+      padding: 30px;
+      /* Increased padding inside the card */
+      height: 100%;
+      /* Ensure uniform height for grid alignment */
+      display: flex;
+      flex-direction: column;
+      /* Changed to column layout */
+      align-items: center;
+      /* Center items horizontally */
+      text-align: center;
+      /* Center text */
+    }
+
+    .services .service-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Dark mode for service items */
+    body.dark-mode .services .service-item {
+      background-color: var(--surface-color);
+      /* Darker cards */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      /* Stronger shadows for separation */
+    }
+
+
+    /* Icon styles removed */
+    .services .service-item .icon {
+      display: none;
+      /* Hide the icon */
+    }
+
+
+    .services .service-item div {
+      /* This targets the div containing h4 and p */
+      text-align: center;
+      /* Ensure text is centered within the card */
+      flex-grow: 1;
+      /* Allow text content to take available space */
+    }
+
+    .services .service-item h4.title {
+      font-size: 22px;
+      /* Slightly larger title */
+      margin-bottom: 15px;
+      /* Increased margin-bottom for better separation */
+      color: var(--heading-color);
+      line-height: 1.3;
+      margin-top: 0;
+      /* Ensure no unwanted margin-top */
+    }
+
+    .services .service-item p.description {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--default-color);
+      margin-bottom: 0;
+      margin-top: 0;
+      /* Ensure no unwanted margin-top */
+    }
+
+
+    /* Service Details Modal Overlay */
+    .service-details-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      /* Dark semi-transparent background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .service-details-modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .service-details-modal-content {
+      background: var(--background-color); /* Use background-color var */
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      max-width: 800px;
+      width: 90%;
+      max-height: 90%;
+      overflow-y: auto;
+      position: relative;
+      transform: scale(0.9);
+      opacity: 0;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .service-details-modal-overlay.active .service-details-modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    /* Dark mode for service details modal */
+    body.dark-mode .service-details-modal-content {
+      background: var(--surface-color); /* Darker surface */
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    body.dark-mode .service-details-modal-content h3 {
+      color: var(--heading-color);
+    }
+
+    body.dark-mode .service-details-modal-content p {
+      color: var(--default-color);
+    }
+
+    .service-details-modal-content .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 30px;
+      color: var(--default-color);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .service-details-modal-content .close-btn:hover {
+      color: var(--accent-color);
+    }
+
+    .service-details-modal-content h3 {
+      font-size: 32px;
+      color: var(--heading-color);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .service-details-modal-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--default-color);
+      text-align: left;
+    }
+
+    /* Adjust service item link to be clickable anywhere within the card */
+    .services .service-item .stretched-link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      /* Ensure it's above other elements but below overlay content */
+      cursor: pointer;
+    }
+
+    .services .service-item {
+      position: relative;
+      cursor: pointer;
+      /* Indicate clickability */
+    }
+
+    /*--------------------------------------------------------------
+    # Testimonials Section (Polished - No Images)
+    --------------------------------------------------------------*/
+    .testimonials .testimonial-item {
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      background: var(--background-color); /* Use background-color var */
+      border-radius: 12px;
+      height: auto;
+      /* Allow height to adjust based on content */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 30px;
+      /* Space from the top of its container */
+      transition: all 0.3s ease;
+    }
+
+    .testimonials .testimonial-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Dark mode for testimonials */
+    body.dark-mode .testimonials .testimonial-item {
+      background: var(--surface-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .testimonials .testimonial-item h3 {
+      color: var(--heading-color);
+    }
+
+    body.dark-mode .testimonials .testimonial-item h4 {
+      color: var(--accent-color);
+    }
+
+
+    .testimonials .testimonial-item p {
+      font-style: italic;
+      margin: 0 0 15px 0;
+      font-size: 16px;
+      line-height: 1.8;
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .testimonials .testimonial-item .quote-icon-left,
+    .testimonials .testimonial-item .quote-icon-right {
+      color: var(--secondary-accent-color);
+      /* Green color for quotes */
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .testimonials .testimonial-item .quote-icon-left {
+      position: absolute;
+      left: -10px;
+      top: -5px;
+    }
+
+    .testimonials .testimonial-item .quote-icon-right {
+      position: absolute;
+      right: -10px;
+      bottom: -5px;
+    }
+
+    .testimonials .testimonial-img {
+      display: none;
+      /* Hide images as requested */
+    }
+
+    .testimonials .testimonial-item h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 10px 0 5px 0;
+      color: var(--heading-color);
+      text-transform: capitalize;
+      /* More natural capitalization */
+    }
+
+    .testimonials .testimonial-item h4 {
+      font-size: 14px;
+      color: var(--accent-color);
+      /* Accent color for title */
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .testimonials .swiper-pagination {
+      margin-top: 20px;
+      position: relative;
+      bottom: auto;
+      left: auto;
+    }
+
+    .testimonials .swiper-pagination .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background-color: rgba(255, 0, 0, 0.3);
+      /* Lighter accent color */
+      opacity: 1;
+      border-radius: 50%;
+      margin: 0 6px;
+      transition: all 0.3s ease;
+    }
+
+    .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+      background-color: var(--accent-color);
+      /* Vibrant accent color when active */
+      transform: scale(1.2);
+    }
+
+    /* Footer styling */
+    footer {
+      padding-top: 60px;
+      /* Increased top padding to make its start more visible */
+      padding-bottom: 20px;
+      background-color: var(--surface-color);
+      /* Use a distinct background color if needed */
+      color: var(--default-color);
+      text-align: center;
+      font-size: 14px;
+      margin-top: 0;
+      /* Ensure no extra margin pushes it away */
+    }
+
+    /* Dark mode for footer */
+    body.dark-mode footer {
+      background-color: #1A3B2A; /* Dark green footer */
+      color: #E0E0E0;
+    }
+
+    /*--------------------------------------------------------------
+    # Contact Section Enhancements
+    --------------------------------------------------------------*/
+    .contact .info-wrap {
+      background-color: var(--background-color); /* Use var for background */
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Dark mode for contact info-wrap */
+    body.dark-mode .contact .info-wrap {
+      background-color: var(--surface-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact .info-item {
+      margin-bottom: 25px;
+      background-color: var(--surface-color);
+      padding: 15px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact .info-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dark mode for contact info-item */
+    body.dark-mode .contact .info-item {
+      background-color: #1A3B2A; /* Even darker green for info items */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact .info-item i {
+      font-size: 30px;
+      color: var(--accent-color);
+      line-height: 1;
+      margin-right: 20px;
+    }
+
+    .contact .info-item h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--heading-color);
+    }
+
+    .contact .info-item p {
+      font-size: 15px;
+      margin-bottom: 0;
+      color: var(--default-color);
+    }
+
+    .contact iframe {
+      border-radius: 12px;
+      margin-top: 25px;
+      height: 270px;
+      /* Ensure consistent height */
+      width: 100%;
+      /* Ensure responsiveness */
+      filter: grayscale(20%);
+      /* Subtle grayscale for theme consistency */
+      transition: filter 0.3s ease;
+    }
+
+    body.dark-mode .contact iframe {
+        filter: grayscale(50%) brightness(0.8); /* More muted in dark mode */
+    }
+
+    .contact iframe:hover {
+      filter: grayscale(0%);
+      /* Full color on hover */
+    }
+
+    .contact .php-email-form {
+      background-color: var(--background-color); /* Use var for background */
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      /* Match height with info-wrap */
+    }
+
+    /* Dark mode for contact form */
+    body.dark-mode .contact .php-email-form {
+      background-color: var(--surface-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact .php-email-form .form-control {
+      border-radius: 8px;
+      border: 1px solid var(--surface-color); /* Initial border */
+      padding: 12px 15px;
+      box-shadow: none;
+      transition: all 0.3s ease;
+      background-color: var(--background-color); /* Use background-color var for input */
+    }
+
+    .contact .php-email-form .form-control:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
+    }
+
+    /* Dark mode for form controls */
+    body.dark-mode .contact .php-email-form .form-control {
+      background-color: #1A3B2A; /* Darker input fields (dark green) */
+      color: var(--default-color);
+      border-color: #3B5C4B; /* Clearer border in dark mode */
+    }
+
+    body.dark-mode .contact .php-email-form .form-control::placeholder {
+      color: #A0A0A0;
+    }
+
+    body.dark-mode .contact .php-email-form .form-control:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 0.25rem rgba(255, 77, 77, 0.25);
+    }
+
+    .contact .php-email-form label {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--heading-color);
+      margin-bottom: 8px;
+      /* Added margin */
+    }
+
+    .contact .php-email-form button[type="submit"] {
+      background: linear-gradient(to right, var(--accent-color), var(--secondary-accent-color));
+      border: 0;
+      padding: 14px 40px;
+      color: #fff;
+      transition: 0.4s;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact .php-email-form button[type="submit"]:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+    }
+
+    /* Dark mode for php-email-form loading */
+    body.dark-mode .php-email-form .loading {
+      background: var(--surface-color);
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner-container">
+      <div class="spinner-inner"></div>
+      <div class="spinner-text">Loading...</div>
+    </div>
+  </div>
+
+  <!-- Header (for desktop navigation and mobile toggle) -->
+  <header id="header" class="header d-flex align-items-center">
+    <!-- Wrap logo in a div to easily hide/show it -->
+    <div class="logo-container">
+        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+          <span></span>
+        </a>
+    </div>
+
+    <!-- Main Navigation (Desktop Only) -->
+    <nav id="main-nav" class="main-nav">
+      <ul >
+        <li><a href="#hero" class="scrollto active">Home</a></li>
+        <li><a href="#about" class="scrollto">About</a></li>
+        <li><a href="#skills" class="scrollto">Skills</a></li>
+        <li><a href="#portfolio" class="scrollto">Projects</a></li>
+        <li><a href="#resume" class="scrollto">Resume</a></li>
+        <li><a href="#services" class="scrollto">Services</a></li>
+        <li><a href="#contact" class="scrollto">Contact</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- Mobile Navigation Toggle (Hamburger) -->
+    <button class="mobile-nav-toggle d-xl-none bi bi-list"></button>
+
+    <!-- Mobile Navigation Menu (Hidden by default) -->
+    <nav class="mobile-nav d-xl-none"
+    style="margin-top: 200px;">
+      <ul>
+        <li><a href="#hero" class="scrollto active">Home</a></li>
+        <li><a href="#about" class="scrollto">About</a></li>
+        <li><a href="#skills" class="scrollto">Skills</a></li>
+        <li><a href="#portfolio" class="scrollto">Projects</a></li>
+        <li><a href="#resume" class="scrollto">Resume</a></li>
+        <li><a href="#services" class="scrollto">Services</a></li>
+        <li><a href="#contact" class="scrollto">Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- Floating Social Only (Left) -->
+  <div class="floating-social-only">
+    <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+      <span class="tooltiptext">LinkedIn</span>
+    </a>
+    <a href="https://github.com/your-github-profile" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+      <span class="tooltiptext">GitHub</span>
+    </a>
+    <a href="https://dreamwiseagency.co.za" target="_blank" title="DreamWise Agency">
+      <i class="bi bi-globe"></i>
+      <span class="tooltiptext">DreamWise Agency</span>
+    </a>
+    <a href="https://www.uzuno.com" target="_blank" title="Uzuno E-commerce">
+      <i class="bi bi-bag"></i>
+      <span class="tooltiptext">Uzuno E-commerce</span>
+    </a>
+    <a href="tel:+263780297586" title="Call">
+      <i class="fas fa-phone"></i>
+      <span class="tooltiptext">Call Me</span>
+    </a>
+    <a href="mailto:Fortunemakunya33@gmail.com" title="Email">
+      <i class="fas fa-envelope"></i>
+      <span class="tooltiptext">Email Me</span>
+    </a>
+  </div>
+
+  <!-- Theme Toggle Button (Top Right) -->
+  <button id="themeToggle" class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+    <i class="bi bi-sun"></i> <!-- Sun icon for light mode -->
+    <i class="bi bi-moon" style="display:none;"></i> <!-- Moon icon for dark mode, hidden initially -->
+  </button>
+
+  <!-- Scroll Top Button (Bottom Right) -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/background.jpg" alt="Futuristic Network Background" data-aos="fade-in" loading="lazy">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Fortune Makunya</h2>
+        <p>I'm a <span class="typed" data-typed-items="Full-Stack Developer, AI Enthusiast, Computer Engineer, Problem Solver">Full-Stack Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container section-title glowing-circle" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>Driven Computer Engineering Graduate passionate about building intelligent full-stack systems to solve real-world problems.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/background.jpg" class="img-fluid" alt="Fortune Makunya . Portrait" loading="lazy">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>Computer Engineering Graduate | Full-Stack Developer | AI Enthusiast</h2>
+            <p class="py-3">
+              Driven and detail-oriented Computer Engineering graduate with strong proficiency in Python, Django, Flutter, and AI-based systems. Skilled in building complete full-stack systems from idea to deployment. Passionate about leveraging software to solve real-world problems—from AI health diagnostics to real-time transportation platforms.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-cpu"></i> <strong>Specialization:</strong> <span>Full-Stack & AI Systems</span></li>
+                  <li><i class="bi bi-phone"></i> <strong>Phone:</strong> <a href="tel:+263780297586"><span>+263780297586</span></a></li>
+                  <li><i class="bi bi-geo-alt"></i> <strong>Location:</strong> <span>Nyanga, Zimbabwe</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-calendar-event"></i> <strong>Availability:</strong> <span>Open to Opportunities</span></li>
+                  <li><i class="bi bi-journal-check"></i> <strong>Degree:</strong> <span>BSc Computer Engineering</span></li>
+                  <li><i class="bi bi-envelope"></i> <strong>Email:</strong> <a href="mailto:Fortunemakunya33@gmail.com"><span>Fortunemakunya33@gmail.com</span></a></li>
+                  <li><i class="bi bi-briefcase"></i> <strong>Learning:</strong> <span>Advanced AI Architectures</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3">
+              I am constantly expanding my knowledge in advanced AI architectures and modern software development practices. My goal is to build impactful and scalable solutions that drive innovation and address real-world challenges.
+            </p>
+          </div>
+        </div>
+
+        <!-- Certificates & Courses Carousel -->
+        <div class="col-lg-12 mt-5">
+          <h3 class="section-sub-title">Certificates & Courses</h3>
+          <p style="text-align: center;">My completed certifications and courses</p>
+
+
+          <div class="certificates-carousel swiper">
+
+            <div class="swiper-wrapper align-items-center">
+              <!-- Certificate Item 1: Scientific Computing & Python for Data Science -->
+              <div class="swiper-slide">
+                <div class="certificate-item" data-certificate-id="cert1">
+                  <i class="bi bi-calculator-fill cert-icon"></i>
+                  <h4>Scientific Computing & Python for Data Science</h4>
+                  <p>WorldQuant University</p>
+                </div>
+              </div>
+              <!-- Certificate Item 2: Cisco Cybersecurity -->
+              <div class="swiper-slide">
+                <div class="certificate-item" data-certificate-id="cert2">
+                  <i class="bi bi-shield-lock-fill cert-icon"></i>
+                  <h4>Cisco Cybersecurity</h4>
+                  <p>Cisco Networking Academy</p>
+                </div>
+              </div>
+              <!-- Certificate Item 3: Linux Essentials -->
+              <div class="swiper-slide">
+                <div class="certificate-item" data-certificate-id="cert3">
+                  <i class="fab fa-linux cert-icon"></i>
+                  <h4>Linux Essentials</h4>
+                  <p>Cisco Networking Academy</p>
+                </div>
+              </div>
+              <!-- Certificate Item 4: Mobility Fundamental -->
+              <div class="swiper-slide">
+                <div class="certificate-item" data-certificate-id="cert4">
+                  <i class="bi bi-wifi cert-icon"></i>
+                  <h4>Mobility Fundamental</h4>
+                  <p>Cisco Networking Academy</p>
+                </div>
+              </div>
+              <!-- Certificate Item 5: Linked_In Certificate (Placeholder for a general LinkedIn learning cert) -->
+              <div class="swiper-slide">
+                <div class="certificate-item" data-certificate-id="cert5">
+                  <i class="fab fa-linkedin cert-icon"></i>
+                  <h4>LinkedIn Learning Certificate</h4>
+                  <p>LinkedIn</p>
+                </div>
+              </div>
+              <!-- Add more certificate items as needed based on your actual certifications -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+      <div class="container section-title glowing-circle" data-aos="fade-up">
+        <h2>Technical Skills</h2>
+        <p>Broad expertise in Full-Stack Development, AI, and practical IT operations.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row skills-content skills-animation">
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"> <i class="fab fa-python"></i> <span>Python & Django</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"> <i class="fab fa-js"></i> <span>JavaScript & React</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"> <i class="fab fa-flutter"></i> <span>Flutter & Dart</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"> <i class="bi bi-robot"></i> <span>AI/ML (TensorFlow, GANs)</span> <i class="val">88%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"> <i class="bi bi-cloud-fill"></i> <span>Firebase & PostgreSQL</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"> <i class="bi bi-server"></i> <span>API Design & DevOps</span> <i class="val">82%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Skills Section -->
+
+    <!-- Projects Section (Formerly AI Portfolio) -->
+    <section id="portfolio" class="ai-portfolio-section ai-light-background">
+      <div class="container section-title glowing-circle" data-aos="fade-up">
+        <h2 style="color: var(--heading-color); font-weight: bold;">My Projects</h2>
+        <p style="color: var(--default-color);">Showcasing impactful full-stack, mobile, and AI solutions.</p>
+      </div>
+      <div class="ai-container">
+        <div class="ai-isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="ai-portfolio-filters ai-isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="ai-filter-active">All</li>
+            <li data-filter=".ai-filter-fullstack">Full-Stack</li>
+            <li data-filter=".ai-filter-ai-ml">AI/ML</li>
+            <li data-filter=".ai-filter-mobile">Mobile</li>
+            <li data-filter=".ai-filter-web">Web</li>
+          </ul>
+          <div class="row gy-4 ai-isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Project Card 1: RunneR – Proximity-Based Bakkie Booking App -->
+            <div class="col-lg-4 col-md-6 ai-portfolio-item ai-isotope-item ai-filter-mobile ai-filter-fullstack">
+              <div class="ai-project-card ai-h-100">
+                <i class="bi bi-truck project-icon"></i>
+                <div class="ai-project-title">
+                  <h4>RunneR – Bakkie Booking App</h4>
+                </div>
+                <div class="ai-project-details-overlay">
+                  <p>Flutter + Firebase app for goods transportation. Features driver/client registration, real-time matching, Google Maps integration, and Firebase for authentication & notifications.</p>
+                  <div class="ai-project-links">
+                    <a href="#" title="More Details" class="ai-details-link">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 2: DreamWise Agency – Professional Talent Platform -->
+            <div class="col-lg-4 col-md-6 ai-portfolio-item ai-isotope-item ai-filter-web ai-filter-fullstack">
+              <div class="ai-project-card ai-h-100">
+                <i class="bi bi-briefcase project-icon"></i>
+                <div class="ai-project-title">
+                  <h4>DreamWise Agency</h4>
+                </div>
+                <div class="ai-project-details-overlay">
+                  <p>Production-grade web app (dreamwiseagency.co.za) connecting talent with clients. Django backend with RESTful APIs, SEO, blog CMS. Flutter frontend in progress.</p>
+                  <div class="ai-project-links">
+                    <a href="https://dreamwiseagency.co.za" target="_blank" title="View Live" class="ai-details-link">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 3: DR Vision – AI-Based Diabetic Retinopathy Diagnostic Platform -->
+            <div class="col-lg-4 col-md-6 ai-portfolio-item ai-isotope-item ai-filter-ai-ml ai-filter-fullstack ai-filter-web">
+              <div class="ai-project-card ai-h-100">
+                <i class="bi bi-eye project-icon"></i>
+                <div class="ai-project-title">
+                  <h4>DR Vision – AI Diagnostic System</h4>
+                </div>
+                <div class="ai-project-details-overlay">
+                  <p>Django + TensorFlow platform (EfficientNetB7) for real-time retinal image diagnosis. Features doctor/patient/admin dashboards, GAN augmentation, PDF reports, and Firebase notifications.</p>
+                  <div class="ai-project-links">
+                    <a href="#" title="More Details" class="ai-details-link">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 4: VIBA – Proximity Video Chat App -->
+            <div class="col-lg-4 col-md-6 ai-portfolio-item ai-isotope-item ai-filter-mobile ai-filter-fullstack">
+              <div class="ai-project-card ai-h-100">
+                <i class="bi bi-camera-video project-icon"></i>
+                <div class="ai-project-title">
+                  <h4>VIBA – Proximity Video Chat</h4>
+                </div>
+                <div class="ai-project-details-overlay">
+                  <p>Real-time video chat app using WebRTC/WebSockets for proximity-based interactions. Django backend for signaling and Flutter frontend.</p>
+                  <div class="ai-project-links">
+                    <a href="#" title="More Details" class="ai-details-link">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 5: Uzuno E-commerce Website -->
+            <div class="col-lg-4 col-md-6 ai-portfolio-item ai-isotope-item ai-filter-web ai-filter-fullstack">
+              <div class="ai-project-card ai-h-100">
+                <i class="bi bi-shop project-icon"></i>
+                <div class="ai-project-title">
+                  <h4>Uzuno E-commerce Website</h4>
+                </div>
+                <div class="ai-project-details-overlay">
+                  <p>A full-featured e-commerce platform designed for selling various products online. Built with a Django backend and React frontend, optimized for user experience and scalability.</p>
+                  <div class="ai-project-links">
+                    <a href="https://www.uzuno.com" target="_blank" title="View Live" class="ai-details-link">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 6: Online Chat App -->
+            <div class="col-lg-4 col-md-6 ai-portfolio-item ai-isotope-item ai-filter-web ai-filter-fullstack">
+              <div class="ai-project-card ai-h-100">
+                <i class="bi bi-chat-dots project-icon"></i>
+                <div class="ai-project-title">
+                  <h4>Online Chat App</h4>
+                </div>
+                <div class="ai-project-details-overlay">
+                  <p>A real-time online chat application built with Django, demonstrating robust backend handling for user messaging and presence.</p>
+                  <div class="ai-project-links">
+                    <a href="#" title="More Details" class="ai-details-link">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 7: Android Leaf Disease Scanner -->
+            <div class="col-lg-4 col-md-6 ai-portfolio-item ai-isotope-item ai-filter-ai-ml ai-filter-mobile">
+              <div class="ai-project-card ai-h-100">
+                <i class="bi bi-currency-bitcoin project-icon"></i> <!-- Using an icon, as generic bio icon isn't present -->
+                <div class="ai-project-title">
+                  <h4>Android Leaf Disease Scanner</h4>
+                </div>
+                <div class="ai-project-details-overlay">
+                  <p>An AI-powered Android application capable of scanning and diagnosing leaf diseases using machine learning models for agricultural insights.</p>
+                  <div class="ai-project-links">
+                    <a href="#" title="More Details" class="ai-details-link">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 8: Off-campus Django application system -->
+            <div class="col-lg-4 col-md-6 ai-portfolio-item ai-isotope-item ai-filter-web ai-filter-fullstack">
+              <div class="ai-project-card ai-h-100">
+                <i class="bi bi-building project-icon"></i>
+                <div class="ai-project-title">
+                  <h4>Off-Campus Housing System</h4>
+                </div>
+                <div class="ai-project-details-overlay">
+                  <p>A web-based Django application designed to manage off-campus housing applications and listings for students, streamlining the rental process.</p>
+                  <div class="ai-project-links">
+                    <a href="#" title="More Details" class="ai-details-link">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section><!-- /Projects Section -->
+
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+      <div class="container section-title glowing-circle" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>My academic and professional journey.</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Fortune Makunya .</h4>
+              <p>Driven Computer Engineering Graduate with strong proficiency in Python, Django, Flutter, and AI-based systems. Skilled in building complete full-stack systems from idea to deployment.</p>
+              <ul>
+                <li>Nyanga, Zimbabwe</li>
+                <li><a href="tel:+263780297586">+263780297586</a> / <a href="tel:+263780297735">+263780297735</a></li>
+                <li><a href="mailto:Fortunemakunya33@gmail.com">Fortunemakunya33@gmail.com</a></li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Computer Engineering</h4>
+              <h5>[Start Year] - [End Year]</h5> <!-- Replace with actual years -->
+              <p>University of Zimbabwe</p>
+              <ul>
+                <li>Core Subjects: Advanced Database Systems, Microprocessors & Embedded Systems, Web & Mobile Technologies, Software Project Management, Object-Oriented Programming, Data Communications and Networks.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>A-Level</h4>
+              <h5>[Start Year] - [End Year]</h5> <!-- Replace with actual years -->
+              <p>St. Mary Magdalene’s High School</p>
+              <ul>
+                <li>Mathematics (A), Physics (C), Chemistry (C)</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>O-Level</h4>
+              <h5>2015 - 2020</h5> <!-- Replace with actual years -->
+              <p>St. Mary Magdalene’s High School</p>
+              <ul>
+                <li>10 subjects with A’s in Math, Chemistry, Agriculture, and more.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Tech Operations Intern</h4>
+              <h5>October 2023 - August 2024</h5> <!-- Replace with actual dates -->
+              <p>Lobels Bread</p>
+              <ul>
+                <li>**Hands-On Tech Experience:** Repaired and upgraded PCs, RAM, HDDs, and monitors; installed Windows OS and built LAN cables from scratch.</li>
+                <li>**Network & Server Management:** Resolved critical network issues and engaged in server startup and troubleshooting.</li>
+                <li>**IT Administration & Support:** Managed Active Directory (user account creation, unlocking users) and performed Microsoft 365 administration for mailbox and user management.</li>
+                <li>**Business Systems (SAGE 1000):** Opened and closed driver accounts, generated reports, and supported operational decisions, gaining insights into enterprise IT support for logistics and sales.</li>
+                <li>**Security & Surveillance:** Configured CCTV cameras and contributed to maintaining secure systems, understanding the role of technology in physical infrastructure.</li>
+                <li>**Networking in the Field:** Applied knowledge of Star Topology in real-world setups, appreciating its benefits and troubleshooting challenges.</li>
+                <li>**Soft Skills Development:** Enhanced communication across diverse departments, problem-solving under pressure, teamwork, adaptability, and professional confidence, fostering a solution-oriented mindset.</li>
+                <li>**Cross-functional Exposure:** Collaborated with the marketing team to promote products, providing a holistic view of business operations.</li>
+              </ul>
+            </div>
+
+            <!-- Remove previous professional experience from Clayton Gwava -->
+
+          </div>
+        </div>
+      </div>
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <div class="container section-title glowing-circle" data-aos="fade-up">
+        <h2>My Services</h2>
+        <p>Comprehensive full-stack and AI services for innovative solutions.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item">
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link" data-service-title="Full-Stack Web Development" data-service-details="Designing and developing robust web applications using Python (Django, Django REST Framework) for backend and modern JavaScript frameworks (React) for dynamic, responsive frontends.">Full-Stack Web Dev</a></h4>
+                <p class="description">Robust web applications with Django backends and React frontends.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item">
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link" data-service-title="Mobile App Development" data-service-details="Building cross-platform mobile applications for iOS and Android using Flutter and Dart, focusing on performance, user experience, and real-time capabilities with Firebase integration.">Mobile App Development</a></h4>
+                <p class="description">High-performance mobile apps for iOS/Android using Flutter and Dart.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item">
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link" data-service-title="AI/ML Solutions" data-service-details="Developing and deploying intelligent systems, including deep learning models for image recognition (TensorFlow, EfficientNet), data augmentation with GANs, and predictive analytics.">AI/ML Solutions</a></h4>
+                <p class="description">Intelligent systems, image recognition, predictive analytics, GANs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item">
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link" data-service-title="API Development & Integration" data-service-details="Creating secure, scalable, and well-documented RESTful APIs using Django REST Framework, implementing JWT for authentication, and integrating with third-party services.">API Development</a></h4>
+                <p class="description">Secure and scalable RESTful APIs with Django, JWT authentication.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item">
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link" data-service-title="Real-time Systems & Notifications" data-service-details="Implementing real-time functionalities using WebSockets (Django Channels) for chat applications and Firebase Cloud Messaging (FCM) for instant push notifications.">Real-time Systems</a></h4>
+                <p class="description">Real-time features via WebSockets and Firebase Cloud Messaging.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item">
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link" data-service-title="Database Design & Management" data-service-details="Designing efficient and scalable database schemas (PostgreSQL, SQLite) and managing data for complex applications, ensuring data integrity and performance.">Database Management</a></h4>
+                <p class="description">Efficient database design and management with PostgreSQL/SQLite.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+      <div class="container section-title glowing-circle" data-aos="fade-up">
+        <h2>Client Testimonials</h2>
+        <p>What clients say about my work.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"Fortune's dedication to quality in full-stack development is truly remarkable. The RunneR app functions flawlessly!"</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <h3>Client Name 1</h3>
+                <h4>CEO, Mobility Startup</h4>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"The DreamWise Agency website is a testament to Fortune's expertise in Django and responsive design. A fantastic platform."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <h3>Client Name 2</h3>
+                <h4>Founder, Creative Agency</h4>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"DR Vision's AI diagnostic capabilities are cutting-edge. Fortune's work in AI and integrating it into a full system is top-notch."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <h3>Dr. Innovator</h3>
+                <h4>Medical Tech Lead</h4>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"The real-time features in VIBA are smooth and reliable. Fortune truly understands WebSockets and modern mobile development."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <h3>Client Name 3</h3>
+                <h4>CTO, Communication Solutions</h4>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"Fortune's work on the Uzuno E-commerce website was exceptional, delivering a user-friendly and scalable online store."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <h3>Client Name 4</h3>
+                <h4>E-commerce Business Owner</h4>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title glowing-circle" data-aos="fade-up">
+        <h2>Contact Me</h2>
+        <p>Discuss your project or collaboration opportunities.</p>
+        <p>Call me on <a href="tel:+263780297586">+263780297586</a></p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>Nyanga, Zimbabwe</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p><a href="tel:+263780297586">+263780297586</a></p>
+                  <p><a href="tel:+263780297735">+263780297735</a></p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Me</h3>
+                  <p><a href="mailto:Fortunemakunya33@gmail.com">Fortunemakunya33@gmail.com</a></p>
+                </div>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15313.238478479538!2d31.0253457!3d-17.8286786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a54160408581%3A0x6b771e3d3b7a5a8f!2sHarare%2C%20Zimbabwe!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+           <form action="https://formspree.io/f/xgvyoapn" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required>
+                </div>
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required>
+                </div>
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <!-- Service Details Modal Overlay -->
+  <div id="serviceDetailsModal" class="service-details-modal-overlay">
+    <div class="service-details-modal-content">
+      <button id="closeServiceModalBtn" class="close-btn">&times;</button>
+      <h3 id="modalServiceTitle"></h3>
+      <p id="modalServiceDetails"></p>
+    </div>
+  </div>
+
+  <!-- Certificate Details Modal Overlay -->
+  <div class="certificate-details-modal-overlay">
+    <div class="certificate-details-modal-content">
+      <button class="close-btn">&times;</button>
+      <h3 id="modalCertificateTitle"></h3>
+      <p id="modalCertificateDetails"></p>
+      <a id="modalCertificateLink" href="#" target="_blank" class="btn btn-primary mt-3">View Certificate</a>
+    </div>
+  </div>
+
+  <footer id="footer" class="footer position-relative">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Fortune Makunya .</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <!-- Missing Waypoints Library - Added for skills animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" xintegrity="sha512-HDgbeWDwS28XGLs4+Cp7G8D5lV+a+xG0pQ+rF7m4QzRjL1i+v/Pj5y/vYFmD4A0lR1QG4a2wJ0d1eQ/m7P1+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Main JS File -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      "use strict";
+
+      try {
+        /**
+         * Preloader
+         * Removes the preloader once the entire page has loaded.
+         */
+        const preloader = document.querySelector('#preloader');
+        if (preloader) {
+          window.addEventListener('load', () => {
+            preloader.remove();
+          });
+        }
+
+        /**
+         * Scroll top button
+         * Shows/hides a scroll-to-top button based on scroll position.
+         */
+        let scrollTop = document.querySelector('.scroll-top');
+
+        function toggleScrollTop() {
+          if (scrollTop) {
+            window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+          }
+        }
+        window.addEventListener('load', toggleScrollTop);
+        document.addEventListener('scroll', toggleScrollTop);
+        if (scrollTop) {
+          scrollTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          });
+        }
+
+        /**
+         * Mobile Navigation Toggle
+         */
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const logoContainer = document.querySelector('.logo-container'); // Get the logo container
+
+        if (mobileNavToggle && mobileNav) {
+          mobileNavToggle.addEventListener('click', (e) => {
+            mobileNav.classList.toggle('active');
+            mobileNavToggle.classList.toggle('bi-list');
+            mobileNavToggle.classList.toggle('bi-x'); // Change icon to 'x' when active
+
+            // Toggle logo visibility
+            if (window.innerWidth <= 768) { // Only apply on mobile
+              if (mobileNav.classList.contains('active')) {
+                logoContainer.style.display = 'none'; // Hide logo
+              } else {
+                logoContainer.style.display = 'block'; // Show logo
+              }
+            }
+          });
+
+          // Close mobile nav when clicking on a link
+          mobileNav.querySelectorAll('a.scrollto').forEach(link => {
+            link.addEventListener('click', () => {
+              mobileNav.classList.remove('active');
+              mobileNavToggle.classList.remove('bi-x');
+              mobileNavToggle.classList.add('bi-list');
+              if (window.innerWidth <= 768) { // Only apply on mobile
+                logoContainer.style.display = 'block'; // Show logo when nav closes
+              }
+            });
+          });
+        }
+
+
+        /**
+         * Navbar links active state on scroll
+         * Adds 'active' class to navigation links based on scroll position.
+         */
+        let navbarlinks = document.querySelectorAll('#main-nav a');
+
+        function navbarlinksActive() {
+          navbarlinks.forEach(navbarlink => {
+            if (!navbarlink.hash) return;
+            let section = document.querySelector(navbarlink.hash);
+            if (!section) return;
+            let position = window.scrollY + 200;
+            if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+              navbarlink.classList.add('active');
+            } else {
+              navbarlink.classList.remove('active');
+            }
+          })
+        }
+        window.addEventListener('load', navbarlinksActive);
+        document.addEventListener('scroll', navbarlinksActive);
+
+
+        /**
+         * Typed.js for hero section
+         * Initializes a typing animation for the hero section text.
+         */
+        const typed = document.querySelector('.typed');
+        if (typed) {
+          let typed_strings = typed.getAttribute('data-typed-items');
+          typed_strings = typed_strings.split(',');
+          new Typed('.typed', {
+            strings: typed_strings,
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 2000
+          });
+        }
+
+        /**
+         * Skills animation
+         * Animates skill bars when they come into view.
+         */
+        let skilsContent = document.querySelector('.skills-content');
+        if (skilsContent) {
+          // Ensure Waypoint is loaded before creating a new instance
+          if (typeof Waypoint !== 'undefined') {
+            new Waypoint({
+              element: skilsContent,
+              offset: '80%',
+              handler: function(direction) {
+                let progressBars = document.querySelectorAll('.progress .progress-bar');
+                progressBars.forEach((el) => {
+                  el.style.width = el.getAttribute('aria-valuenow') + '%';
+                });
+              }
+            });
+          } else {
+            console.error("Waypoint library not loaded. Skills animation will not work.");
+          }
+        }
+
+
+        /**
+         * Init AOS (Animate On Scroll)
+         * Initializes the AOS library for scroll-triggered animations.
+         */
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        });
+
+        /**
+         * Initiate PureCounter
+         * Initializes PureCounter for animating numbers.
+         */
+        new PureCounter();
+
+        /**
+         * GLightbox for image modals
+         * Initializes GLightbox for creating a lightbox gallery.
+         */
+        const glightbox = GLightbox({
+          selector: '.glightbox'
+        });
+
+
+        /**
+         * Swiper for testimonials
+         * Initializes Swiper.js for the testimonials carousel.
+         */
+        new Swiper('.testimonials-swiper', {
+          speed: 600,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+          },
+          slidesPerView: 'auto',
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 40
+            },
+            1200: {
+              slidesPerView: 3,
+              spaceBetween: 1
+            }
+          }
+        });
+
+
+        /**
+         * Init swiper for certificates carousel
+         */
+        new Swiper('.certificates-carousel', {
+          speed: 600,
+          loop: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+          },
+          slidesPerView: 'auto',
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            992: {
+              slidesPerView: 3,
+              spaceBetween: 20
+            }
+          }
+        });
+
+        /**
+         * Isotope and ImagesLoaded for AI Portfolio filtering
+         * Initializes Isotope for filtering and sorting grid items, and ImagesLoaded to ensure correct layout after images load.
+         */
+        document.querySelectorAll('.ai-isotope-layout').forEach(function(isotopeItem) {
+          let aiPortfolioFilters = isotopeItem.querySelectorAll('.ai-portfolio-filters li');
+          let aiPortfolioContainer = isotopeItem.querySelector('.ai-isotope-container');
+
+          if (aiPortfolioFilters.length > 0 && aiPortfolioContainer) {
+            let aiIsotope = new Isotope(aiPortfolioContainer, {
+              itemSelector: '.ai-portfolio-item',
+              layoutMode: 'masonry',
+              filter: isotopeItem.getAttribute('data-default-filter') || '*'
+            });
+
+            aiPortfolioFilters.forEach(function(el) {
+              el.addEventListener('click', function() {
+                isotopeItem.querySelector('.ai-portfolio-filters .ai-filter-active').classList.remove('ai-filter-active');
+                this.classList.add('ai-filter-active');
+                aiIsotope.arrange({
+                  filter: this.getAttribute('data-filter')
+                });
+                aiIsotope.on('arrangeComplete', function() {
+                  AOS.refresh()
+                });
+              }, false);
+            });
+          }
+        });
+
+        /**
+         * Service Details Modal (NEW)
+         * Handles opening and closing a modal for service details.
+         */
+        const serviceModalOverlay = document.getElementById('serviceDetailsModal');
+        const closeServiceModalBtn = document.getElementById('closeServiceModalBtn');
+        const modalServiceTitle = document.getElementById('modalServiceTitle');
+        const modalServiceDetails = document.getElementById('modalServiceDetails');
+
+        document.querySelectorAll('.service-item .stretched-link').forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            const title = item.dataset.serviceTitle;
+            const details = item.dataset.serviceDetails;
+
+            modalServiceTitle.textContent = title;
+            modalServiceDetails.textContent = details;
+            serviceModalOverlay.classList.add('active');
+            document.body.classList.add('no-scroll'); // Disable background scroll
+          });
+        });
+
+        closeServiceModalBtn.addEventListener('click', () => {
+          serviceModalOverlay.classList.remove('active');
+          document.body.classList.remove('no-scroll'); // Re-enable background scroll
+        });
+
+        serviceModalOverlay.addEventListener('click', (e) => {
+          if (e.target === serviceModalOverlay) {
+            serviceModalOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+          }
+        });
+
+
+        /**
+         * Certificate Details Modal
+         * Handles opening and closing a modal for certificate details.
+         */
+        const certificateModalOverlay = document.querySelector('.certificate-details-modal-overlay');
+        const closeCertificateModalBtn = certificateModalOverlay.querySelector('.close-btn');
+        const modalCertificateTitle = document.getElementById('modalCertificateTitle');
+        const modalCertificateDetails = document.getElementById('modalCertificateDetails');
+        const modalCertificateLink = document.getElementById('modalCertificateLink');
+
+        // Data for certificates
+        const certificatesData = {
+          'cert1': {
+            title: 'Scientific Computing & Python for Data Science',
+            details: 'From WorldQuant University, this course enhanced my Python skills for numerical computing, data manipulation, statistical analysis, and data visualization, essential for data science roles.',
+            link: 'https://www.worldquantuniversity.org/certificate/YOUR_WQ_PYTHON_ID' // Replace with actual certificate link
+          },
+          'cert2': {
+            title: 'Cisco Cybersecurity',
+            details: 'Obtained from Cisco Networking Academy, this certification covers foundational cybersecurity concepts, threat detection, and security best practices.',
+            link: 'https://www.netacad.com/certificates/YOUR_CISCO_CYBER_ID' // Replace with actual certificate link
+          },
+          'cert3': {
+            title: 'Linux Essentials',
+            details: 'Certified by Cisco Networking Academy, demonstrating fundamental knowledge of Linux operating systems, command line, and basic administration tasks.',
+            link: 'https://www.netacad.com/certificates/YOUR_CISCO_LINUX_ID' // Replace with actual certificate link
+          },
+          'cert4': {
+            title: 'Mobility Fundamental',
+            details: 'A certification from Cisco Networking Academy, focusing on the basics of wireless technologies and mobile networking.',
+            link: 'https://www.netacad.com/certificates/YOUR_CISCO_MOBILITY_ID' // Replace with actual certificate link
+          },
+          'cert5': {
+            title: 'LinkedIn Learning Certificate',
+            details: 'Various certifications earned through LinkedIn Learning, covering a range of topics in software development, project management, and professional skills.',
+            link: 'https://www.linkedin.com/learning/certificates/YOUR_LINKEDIN_CERT_ID' // Replace with actual certificate link
+          }
+        };
+
+        document.querySelectorAll('.certificate-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const certId = item.dataset.certificateId;
+            const cert = certificatesData[certId];
+            if (cert) {
+              modalCertificateTitle.textContent = cert.title;
+              modalCertificateDetails.textContent = cert.details;
+              modalCertificateLink.href = cert.link;
+              certificateModalOverlay.classList.add('active');
+              document.body.classList.add('no-scroll'); // Disable background scroll
+            }
+          });
+        });
+
+        closeCertificateModalBtn.addEventListener('click', () => {
+          certificateModalOverlay.classList.remove('active');
+          document.body.classList.remove('no-scroll'); // Re-enable background scroll
+        });
+
+        certificateModalOverlay.addEventListener('click', (e) => {
+          if (e.target === certificateModalOverlay) {
+            certificateModalOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+          }
+        });
+
+        /**
+         * Theme Toggle Functionality
+         * Toggles between light and dark mode.
+         */
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const sunIcon = themeToggleBtn.querySelector('.bi-sun');
+        const moonIcon = themeToggleBtn.querySelector('.bi-moon');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark-mode');
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'inline';
+        } else {
+          document.body.classList.remove('dark-mode');
+          sunIcon.style.display = 'inline';
+          moonIcon.style.display = 'none';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
+          } else {
+            localStorage.setItem('theme', 'light');
+            sunIcon.style.display = 'inline';
+            moonIcon.style.display = 'none';
+          }
+        });
+
+      } catch (error) {
+        console.error("An error occurred in the main JavaScript execution:", error);
+      }
+    });
+  </script>
+</body>
+
+</html>
