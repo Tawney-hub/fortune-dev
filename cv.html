@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Makunya - Full Stack Developer CV</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- html2pdf.js CDN for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        /* Universal Box Sizing for consistent layout */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #eef2f6; /* Soft, professional background */
+            line-height: 1.7; /* Enhanced readability */
+            color: #333d4b; /* Darker, softer black for text */
+        }
+        /* Main Container */
+        .container {
+            max-width: 1000px; /* Slightly wider for modern feel */
+            margin: 2rem auto;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Deeper, more refined shadow */
+            border-radius: 18px; /* More pronounced rounded corners */
+            overflow: hidden;
+            border: 1px solid #e0e0e0; /* Subtle border for crispness */
+        }
+        /* Header Section */
+        .header {
+            background: linear-gradient(145deg, #1a237e 0%, #283593 100%); /* Deep blue gradient */
+            color: #ffffff;
+            padding: 3.5rem 3rem; /* Generous padding */
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem; /* More space between image and text */
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://placehold.co/1000x200/1a237e/283593?text=') no-repeat center center; /* Placeholder for subtle pattern/texture */
+            background-size: cover;
+            opacity: 0.1; /* Subtle opacity */
+            z-index: 1;
+        }
+        .header-content {
+            flex-grow: 1;
+            text-align: left;
+            z-index: 2;
+        }
+        .profile-image-container {
+            width: 140px; /* Larger image */
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #ffffff; /* Thicker white border */
+            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2); /* More prominent glow */
+            flex-shrink: 0;
+            z-index: 2;
+        }
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the container without stretching on web */
+            display: block; /* Remove extra space below image */
+        }
+        .header h1 {
+            font-size: 3.8rem; /* Very large name */
+            font-weight: 800; /* Extra bold */
+            letter-spacing: -0.04em; /* Tighter letter spacing */
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        .header p.title {
+            font-size: 1.8rem; /* Larger title */
+            font-weight: 400; /* Light weight */
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+        .header .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem; /* Space between icon and text */
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        .header .contact-info p i {
+            color: #a7d9fc; /* Lighter icon color */
+        }
+
+        /* Section Styling */
+        main {
+            padding: 3rem; /* Consistent padding */
+        }
+        .section-title {
+            color: #1a237e; /* Deep blue for titles */
+            border-bottom: 4px solid #42a5f5; /* Vibrant blue accent line */
+            padding-bottom: 0.8rem;
+            margin-bottom: 2.5rem; /* More spacing after title */
+            font-size: 2.6rem; /* Larger section titles */
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            page-break-after: avoid; /* Keep title with next content */
+        }
+        section p, section ul li {
+            font-size: 1.15rem; /* Slightly larger base font size */
+        }
+
+        /* List Items */
+        .list-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .list-item::before {
+            content: '•';
+            color: #42a5f5;
+            font-size: 1.6rem; /* Larger, more prominent bullet */
+            line-height: 1;
+            margin-right: 0.8rem;
+            flex-shrink: 0;
+            font-weight: 800;
+        }
+        .list-item strong {
+            color: #1a237e; /* Darker strong text */
+        }
+
+        /* Project & Experience Items */
+        .project-item, .service-item {
+            background-color: #f8faff; /* Very light blue background */
+            border: 1px solid #e1eaf3; /* Light blue border */
+            border-radius: 10px;
+            padding: 1.75rem; /* More padding */
+            margin-bottom: 1.75rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            page-break-inside: avoid; /* Prevent breaking inside these blocks */
+        }
+        .project-item:hover, .service-item:hover {
+            transform: translateY(-7px); /* More pronounced lift */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); /* Deeper shadow on hover */
+        }
+        .project-item h3, .service-item h3 {
+            font-size: 1.6rem; /* Larger project titles */
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 0.75rem;
+            page-break-after: avoid; /* Keep title with content */
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-left: 2.5rem; /* Deeper indentation */
+            border-left: 5px solid #42a5f5; /* Thicker, vibrant line */
+            position: relative;
+            page-break-inside: avoid; /* Prevent breaking inside these blocks */
+        }
+        .experience-item h3 {
+            font-size: 1.7rem; /* Larger experience title */
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+            page-break-after: avoid; /* Keep title with content */
+        }
+        .experience-item p.duration {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            page-break-after: avoid; /* Keep duration with content */
+        }
+        .experience-item ul {
+            list-style: none; /* Remove default list style */
+            padding: 0;
+            page-break-inside: avoid; /* Prevent breaking inside the ul */
+        }
+        .experience-item ul li {
+            position: relative;
+            padding-left: 1.5rem; /* Space for custom bullet */
+            margin-bottom: 0.75rem;
+            page-break-inside: avoid; /* Prevent breaking inside a list item */
+        }
+        .experience-item ul li::before {
+            content: '✓'; /* Custom checkmark bullet */
+            color: #28a745; /* Green checkmark */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        /* Education & Services */
+        .education-item {
+            margin-bottom: 1.5rem;
+            page-break-inside: avoid; /* Prevent breaking inside these blocks */
+        }
+        .education-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 0.4rem;
+            page-break-after: avoid; /* Keep title with content */
+        }
+        .education-item p {
+            font-size: 1.1rem;
+        }
+        .service-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* References Section */
+        .references-item {
+            margin-bottom: 1rem;
+            page-break-inside: avoid;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #e3f2fd; /* Light blue */
+            color: #444;
+            padding: 3rem;
+            text-align: center;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            margin-top: 3.5rem;
+            page-break-before: avoid; /* Try to keep footer on the same page as last content */
+        }
+        .footer p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Links */
+        a {
+            color: #1976d2; /* Professional link blue */
+            text-decoration: none;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+        a:hover {
+            color: #1565c0;
+            text-decoration: underline;
+        }
+
+        /* Download Button */
+        .download-button-container {
+            text-align: center;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .download-button {
+            background-color: #28a745; /* Green */
+            color: #ffffff;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 18px rgba(40, 167, 69, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border: none;
+            outline: none;
+        }
+        .download-button:hover {
+            background-color: #218838;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.45);
+        }
+        .download-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .container {
+                margin: 1rem;
+                border-radius: 10px;
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 2.5rem 1.5rem;
+                gap: 1.5rem;
+            }
+            .profile-image-container {
+                margin-bottom: 1rem;
+                width: 100px;
+                height: 100px;
+            }
+            .header h1 {
+                font-size: 3rem;
+            }
+            .header p.title {
+                font-size: 1.5rem;
+            }
+            .header .contact-info p {
+                font-size: 0.9rem;
+                justify-content: center;
+            }
+            main {
+                padding: 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1.8rem;
+            }
+            section p, section ul li {
+                font-size: 1rem;
+            }
+            .project-item, .service-item {
+                padding: 1.25rem;
+            }
+            .project-item h3, .service-item h3 {
+                font-size: 1.35rem;
+            }
+            .experience-item {
+                padding-left: 1.5rem;
+                border-left: 3px solid #42a5f5;
+            }
+            .experience-item h3 {
+                font-size: 1.4rem;
+            }
+            .download-button {
+                padding: 0.8rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            body {
+                background-color: #ffffff;
+            }
+            .header {
+                padding: 2rem 1rem;
+            }
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            .header p.title {
+                font-size: 1.2rem;
+            }
+            main {
+                padding: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            .grid-cols-3, .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            .download-button-container {
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Print Specific Styles for better PDF output */
+        @media print {
+            body {
+                background-color: #ffffff;
+                margin: 0;
+                padding: 0;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                min-height: 297mm; /* Set a minimum height for A4 to encourage proper pagination */
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                border-radius: 0;
+                border: none;
+                width: 100%;
+                max-width: 100%;
+            }
+            .download-button-container {
+                display: none; /* Hide download button in print */
+            }
+            .header, .footer {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .header {
+                padding: 2rem 1.5rem; /* Adjust header padding for print */
+            }
+            .profile-image-container {
+                border-color: #cccccc !important; /* Lighter border for print */
+                box-shadow: none !important;
+                display: block !important; /* Ensure visibility for print */
+                width: 140px; /* Explicit width for print */
+                height: 140px; /* Explicit height for print */
+                overflow: hidden;
+            }
+            .profile-image-container img.profile-image {
+                 display: block !important; /* Make sure the img tag is visible in print */
+                 width: 100% !important;
+                 height: 100% !important;
+                 object-fit: cover !important;
+            }
+            .section-title {
+                border-color: #bbdefb !important; /* Lighter accent for print */
+                page-break-after: avoid !important; /* Ensure title stays with content */
+            }
+            .experience-item, .project-item, .service-item, .education-item, .references-item {
+                page-break-inside: avoid !important; /* Ensure these blocks don't split */
+            }
+            a {
+                color: #0000ee !important; /* Standard blue for printed links */
+                text-decoration: underline !important;
+            }
+            .project-item, .service-item {
+                background-color: #ffffff !important;
+                border-color: #e0e0e0 !important;
+                box-shadow: none !important;
+            }
+            ul, ol {
+                page-break-inside: avoid !important;
+            }
+            li {
+                page-break-inside: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-200">
+    <div class="download-button-container">
+        <button id="downloadPdfBtn" class="download-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+            Download CV as PDF
+        </button>
+    </div>
+
+    <div class="container" id="cv-content">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-image-container">
+                <!-- Using img tag directly with specific dimensions for better PDF rendering -->
+                <img src="assets/img/background.jpg" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
+            </div>
+            <div class="header-content">
+                <h1 class="text-white">Fortune Makunya</h1>
+                <p class="title">Full Stack Developer (Django & Flutter)</p>
+                <div class="contact-info text-sm md:text-base space-y-2">
+                    <p><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</p>
+                    <p><i class="fas fa-phone-alt"></i> +263 780 297 586 / +263 718 240 059</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:Fortunemakunya33@gmail.com" class="text-white hover:text-blue-200">Fortunemakunya33@gmail.com</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/Tawney-hub/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200">github.com/Tawney-hub/</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-9a99a634a/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200">linkedin.com/in/fortune-makunya-9a99a634a/</a></p>
+                    <p><i class="fas fa-globe"></i> <a href="https://tawney-hub.github.io/fortune-dev/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200">tawney-hub.github.io/fortune-dev/</a></p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Professional Summary Section -->
+            <section class="mb-12">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                    Driven Computer Engineering Graduate passionate about building intelligent full-stack systems to solve real-world problems. A detail-oriented Full Stack Developer experienced in building reliable and practical web and mobile applications using Django and Flutter. Focused on solving real-world problems with clean, maintainable code. Hands-on experience with video communication, health diagnostics, e-commerce, and transport apps.
+                </p>
+            </section>
+
+            <!-- About Me Section -->
+            <section class="mb-12">
+                <h2 class="section-title">About Me</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    Driven and detail-oriented Computer Engineering graduate with strong proficiency in Python, Dart, Django, Flutter, and AI-based systems. Skilled in building complete full-stack systems from idea to deployment. Passionate about leveraging software to solve real-world problems—from AI health diagnostics to real-time transportation platforms.
+                </p>
+                <ul class="text-gray-700 space-y-4">
+                    <li class="list-item text-lg"><strong class="font-medium text-gray-800">Specialization:</strong> Full-Stack & AI Systems</li>
+                    <li class="list-item text-lg"><strong class="font-medium text-gray-800">Availability:</strong> Open to Opportunities</li>
+                    <li class="list-item text-lg">
+                        <strong class="font-medium text-gray-800">Learning:</strong> Advanced AI Architectures
+                        <span class="block ml-6 text-base text-gray-600 mt-1">I am constantly expanding my knowledge in advanced AI architectures and modern software development practices. My goal is to build impactful and scalable solutions that drive innovation and address real-world challenges.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section class="mb-12">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="text-gray-700 mb-8 text-lg">Broad expertise in Full-Stack Development, AI, and practical IT operations.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 text-gray-700">
+                    <div class="list-item text-lg"><strong>Languages & Frameworks:</strong> Python, Dart, Django, Django REST Framework, Flutter</div>
+                    <div class="list-item text-lg"><strong>AI/ML:</strong> TensorFlow, GANs</div>
+                    <div class="list-item text-lg"><strong>Databases:</strong> Firebase, PostgreSQL</div>
+                    <div class="list-item text-lg"><strong>Tools & Admin:</strong> Git, CPanel, PythonAnywhere, Active Directory, Microsoft 365</div>
+                    <div class="list-item text-lg"><strong>Concepts:</strong> API Design & DevOps, CMS (Django Admin, Blog Integration, SEO Basics), Firebase Realtime DB, Agora SDK</div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="mb-12">
+                <h2 class="section-title">Projects</h2>
+                <p class="text-gray-700 mb-8 text-lg">Showcasing impactful full-stack, mobile, and AI solutions.</p>
+
+                <div class="project-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">VIBA - Proximity Video Chat Platform</h3>
+                    <p class="text-gray-700 text-base leading-relaxed">Developed a location-based real-time video chat platform using Flutter and Firebase for video communication and presence detection.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">DR Vision - AI Diagnostic System</h3>
+                    <p class="text-gray-700 text-base leading-relaxed">AI-powered health diagnostic system using TensorFlow and Django. Doctors can upload retinal images, receive AI-generated results, and download PDF reports. Patients access results on mobile via a Flutter app.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">DreamWise Agency - Company Website</h3>
+                    <p class="text-gray-700 text-base leading-relaxed">Built a professional CMS website for a creative agency using Django templates. Integrated blog, services section, and SEO features. Maintained clean URLs and admin content management.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">RunneR - Bakkie Transport App</h3>
+                    <p class="text-gray-700 text-base leading-relaxed">Logistics platform for bakkie bookings. Flutter mobile app connects with Firebase backend, while Django provides admin reporting and booking management tools.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Uzuno - E-commerce Site</h3>
+                    <p class="text-gray-700 text-base leading-relaxed">Created a basic online store using Django templates. Included product listings, shopping cart, and user account management without frontend frameworks.</p>
+                </div>
+            </section>
+
+            <!-- Professional Experience Section -->
+            <section class="mb-12">
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="experience-item">
+                    <h3 class="text-xl font-semibold text-gray-900">IT Support Intern - Lobels Bread</h3>
+                    <p class="text-gray-600 mb-4 text-base duration">October 2023 - August 2024</p>
+                    <ul class="text-gray-700 space-y-2 text-base">
+                        <li>Repaired and upgraded PCs (RAM, HDDs, monitors); installed Windows OS and built LAN cables from scratch.</li>
+                        <li>Resolved critical network issues and engaged in server startup and troubleshooting.</li>
+                        <li>Managed Active Directory (user account creation, unlocking users) and performed Microsoft 365 administration for mailbox and user management.</li>
+                        <li>Opened and closed driver accounts, generated reports, and supported operational decisions using SAGE 1000, gaining insights into enterprise IT support for logistics and sales.</li>
+                        <li>Configured CCTV cameras and contributed to maintaining secure systems, understanding the role of technology in physical infrastructure.</li>
+                        <li>Applied knowledge of Star Topology in real-world setups, appreciating its benefits and troubleshooting challenges.</li>
+                        <li>Enhanced communication across diverse departments, problem-solving under pressure, teamwork, adaptability, and professional confidence, fostering a solution-oriented mindset.</li>
+                        <li>Collaborated with the marketing team to promote products, providing a holistic view of business operations.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="mb-12">
+                <h2 class="section-title">Education</h2>
+
+                <div class="education-item">
+                    <h3 class="text-xl font-semibold text-gray-900">BSc in Computer Engineering - University of Zimbabwe</h3>
+                    <p class="text-gray-600 mb-1 text-base">(Expected 2025)</p>
+                    <p class="text-gray-700 text-base"><strong class="font-medium text-gray-800">Core Subjects:</strong> Advanced Database Systems, Microprocessors & Embedded Systems, Web & Mobile Technologies, Software Project Management, Object-Oriented Programming, Data Communications and Networks.</p>
+                </div>
+                <div class="education-item">
+                    <h3 class="text-xl font-semibold text-gray-900">A-Level - St. Mary Magdalene’s High School</h3>
+                    <p class="text-gray-700 text-base">Mathematics (A), Physics (C), Chemistry (C)</p>
+                </div>
+                <div class="education-item">
+                    <h3 class="text-xl font-semibold text-gray-900">O-Level - St. Mary Magdalene’s High School</h3>
+                    <p class="text-gray-600 mb-1 text-base">2015 - 2020</p>
+                    <p class="text-gray-700 text-base">10 subjects with A’s in Math, Chemistry, Agriculture, and more.</p>
+                </div>
+            </section>
+
+            <!-- Soft Skills Section -->
+            <section class="mb-12">
+                <h2 class="section-title">Soft Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5 text-gray-700">
+                    <div class="list-item text-lg">Communication</div>
+                    <div class="list-item text-lg">Critical Thinking</div>
+                    <div class="list-item text-lg">Teamwork</div>
+                    <div class="list-item text-lg">Fast Learner</div>
+                    <div class="list-item text-lg">Calm Under Pressure</div>
+                </div>
+            </section>
+
+            <!-- References Section -->
+            <section class="mb-12">
+                <h2 class="section-title">References</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 text-gray-700">
+                    <div class="references-item">
+                        <p class="font-semibold text-lg text-gray-900">Leonie Mlambo</p>
+                        <p class="text-base text-gray-700">Lobels IT Officer</p>
+                        <p class="text-base text-gray-700">Phone: +263 789 072 823</p>
+                    </div>
+                    <div class="references-item">
+                        <p class="font-semibold text-lg text-gray-900">Mrs. Mukwazvure</p>
+                        <p class="text-base text-gray-700">UZ Computer Engineering Chairperson</p>
+                        <p class="text-base text-gray-700">Phone: +263 777 740 504</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer text-gray-800 rounded-b-xl">
+            <p class="font-semibold text-xl mb-3">Contact Me</p>
+            <p class="text-lg">Call me on <a href="tel:+263780297586" class="hover:underline">+263 780 297 586</a> / <a href="tel:+263780297735" class="hover:underline">+263 780 297 735</a></p>
+            <p class="text-lg">Email me: <a href="mailto:Fortunemakunya33@gmail.com" class="hover:underline">Fortunemakunya33@gmail.com</a></p>
+            <p class="mt-4 text-lg">Location: Harare, Zimbabwe</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('downloadPdfBtn').addEventListener('click', function() {
+            const element = document.getElementById('cv-content');
+
+            // Force load the image and then generate PDF
+            const imgElement = element.querySelector('.profile-image');
+            if (imgElement && !imgElement.complete) {
+                // If image is not loaded, wait for it
+                const tempImg = new Image();
+                tempImg.src = imgElement.src;
+                tempImg.onload = () => {
+                    console.log('Profile image loaded for PDF generation.');
+                    generatePdf(element);
+                };
+                tempImg.onerror = () => {
+                    console.error('Profile image failed to load, generating PDF without it.');
+                    generatePdf(element); // Proceed even if image fails to load
+                };
+            } else {
+                // If no image element or already loaded, proceed
+                generatePdf(element);
+            }
+        });
+
+        function generatePdf(element) {
+            html2pdf(element, {
+                margin: 10,
+                filename: 'Fortune_Makunya_CV.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: {
+                    scale: 4, /* Increased scale for higher resolution in PDF */
+                    logging: true,
+                    dpi: 300, /* Higher DPI for better print quality */
+                    letterRendering: true,
+                    useCORS: true
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            });
+        }
+    </script>
+</body>
+</html>
