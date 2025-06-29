@@ -18,27 +18,56 @@
             box-sizing: border-box;
         }
 
+        /* Custom Color Palette */
+        :root {
+            --primary-green: hsl(140, 60%, 30%); /* Dark Green */
+            --secondary-red: hsl(0, 70%, 50%); /* Vibrant Red */
+            --light-green-tint: hsl(140, 10%, 90%); /* For subtle backgrounds */
+            --lighter-green-tint: hsl(140, 10%, 95%);
+            --text-dark: #333d4b;
+            --text-light: #ffffff;
+            --text-soft-gray: #555;
+            --border-light-gray: #e0e0e0;
+
+            /* Semantic mapping for easier use */
+            --header-bg-start: var(--primary-green);
+            --header-bg-end: hsl(140, 70%, 40%); /* Slightly lighter green for gradient */
+            --icon-accent: hsl(0, 70%, 70%); /* A lighter red for contrast on dark green - adjusted to green for consistent palette */
+            --icon-on-dark-bg: hsl(140, 70%, 70%); /* Lighter green for icons on dark backgrounds */
+            --section-title-color: var(--primary-green);
+            --accent-line-color: linear-gradient(to right, var(--primary-green), var(--secondary-red));
+            --bullet-color: var(--primary-green);
+            --item-bg: var(--lighter-green-tint);
+            --item-border: hsl(140, 10%, 90%);
+            --strong-text-color: var(--primary-green);
+            --link-color: var(--primary-green);
+            --link-hover-color: var(--secondary-red);
+            --button-bg: var(--primary-green);
+            --button-hover-bg: hsl(140, 70%, 25%); /* Darker green for button hover */
+            --footer-bg: var(--light-green-tint);
+        }
+
         /* Base Styles */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #eef2f6; /* Soft, professional background */
             line-height: 1.7; /* Enhanced readability */
-            color: #333d4b; /* Darker, softer black for text */
+            color: var(--text-dark); /* Darker, softer black for text */
         }
         /* Main Container */
         .container {
             max-width: 1000px; /* Slightly wider for modern feel */
             margin: 2rem auto;
-            background-color: #ffffff;
+            background-color: var(--text-light);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Deeper, more refined shadow */
             border-radius: 18px; /* More pronounced rounded corners */
             overflow: hidden;
-            border: 1px solid #e0e0e0; /* Subtle border for crispness */
+            border: 1px solid var(--border-light-gray); /* Subtle border for crispness */
         }
         /* Header Section */
         .header {
-            background: linear-gradient(145deg, #1a237e 0%, #283593 100%); /* Deep blue gradient */
-            color: #ffffff;
+            background: linear-gradient(145deg, var(--header-bg-start) 0%, var(--header-bg-end) 100%); /* Deep green gradient */
+            color: var(--text-light);
             padding: 3.5rem 3rem; /* Generous padding */
             border-top-left-radius: 18px;
             border-top-right-radius: 18px;
@@ -55,7 +84,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://placehold.co/1000x200/1a237e/283593?text=') no-repeat center center; /* Placeholder for subtle pattern/texture */
+            background: url('assets/img/background.jpg') no-repeat center center; /* Placeholder for subtle pattern/texture */
             background-size: cover;
             opacity: 0.1; /* Subtle opacity */
             z-index: 1;
@@ -70,7 +99,7 @@
             height: 140px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #ffffff; /* Thicker white border */
+            border: 5px solid var(--text-light); /* Thicker white border */
             box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2); /* More prominent glow */
             flex-shrink: 0;
             z-index: 2;
@@ -103,7 +132,7 @@
             opacity: 0.9;
         }
         .header .contact-info p i {
-            color: #a7d9fc; /* Lighter icon color */
+            color: var(--icon-on-dark-bg); /* Lighter green icon color for dark background */
         }
 
         /* Section Styling */
@@ -111,8 +140,9 @@
             padding: 3rem; /* Consistent padding */
         }
         .section-title {
-            color: #1a237e; /* Deep blue for titles */
-            border-bottom: 4px solid #42a5f5; /* Vibrant blue accent line */
+            color: var(--section-title-color); /* Deep green for titles */
+            border-bottom: 4px solid; /* Use generic border for gradient */
+            border-image: var(--accent-line-color) 1; /* Apply gradient border */
             padding-bottom: 0.8rem;
             margin-bottom: 2.5rem; /* More spacing after title */
             font-size: 2.6rem; /* Larger section titles */
@@ -132,7 +162,7 @@
         }
         .list-item::before {
             content: '•';
-            color: #42a5f5;
+            color: var(--bullet-color);
             font-size: 1.6rem; /* Larger, more prominent bullet */
             line-height: 1;
             margin-right: 0.8rem;
@@ -140,13 +170,13 @@
             font-weight: 800;
         }
         .list-item strong {
-            color: #1a237e; /* Darker strong text */
+            color: var(--strong-text-color); /* Darker strong text */
         }
 
         /* Project & Experience Items */
         .project-item, .service-item {
-            background-color: #f8faff; /* Very light blue background */
-            border: 1px solid #e1eaf3; /* Light blue border */
+            background-color: var(--item-bg); /* Very light green tint background */
+            border: 1px solid var(--item-border); /* Light green tint border */
             border-radius: 10px;
             padding: 1.75rem; /* More padding */
             margin-bottom: 1.75rem;
@@ -160,7 +190,7 @@
         .project-item h3, .service-item h3 {
             font-size: 1.6rem; /* Larger project titles */
             font-weight: 600;
-            color: #1a237e;
+            color: var(--strong-text-color);
             margin-bottom: 0.75rem;
             page-break-after: avoid; /* Keep title with content */
         }
@@ -168,20 +198,20 @@
         .experience-item {
             margin-bottom: 2.5rem;
             padding-left: 2.5rem; /* Deeper indentation */
-            border-left: 5px solid #42a5f5; /* Thicker, vibrant line */
+            border-left: 5px solid var(--primary-green); /* Thicker, vibrant line */
             position: relative;
             page-break-inside: avoid; /* Prevent breaking inside these blocks */
         }
         .experience-item h3 {
             font-size: 1.7rem; /* Larger experience title */
             font-weight: 600;
-            color: #1a237e;
+            color: var(--strong-text-color);
             margin-bottom: 0.5rem;
             page-break-after: avoid; /* Keep title with content */
         }
         .experience-item p.duration {
             font-size: 1.1rem;
-            color: #555;
+            color: var(--text-soft-gray);
             margin-bottom: 1rem;
             page-break-after: avoid; /* Keep duration with content */
         }
@@ -198,7 +228,7 @@
         }
         .experience-item ul li::before {
             content: '✓'; /* Custom checkmark bullet */
-            color: #28a745; /* Green checkmark */
+            color: var(--primary-green); /* Green checkmark */
             position: absolute;
             left: 0;
             top: 0;
@@ -213,7 +243,7 @@
         .education-item h3 {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1a237e;
+            color: var(--strong-text-color);
             margin-bottom: 0.4rem;
             page-break-after: avoid; /* Keep title with content */
         }
@@ -223,7 +253,7 @@
         .service-item p {
             font-size: 1rem;
             line-height: 1.5;
-            color: #555;
+            color: var(--text-soft-gray);
         }
 
         /* References Section */
@@ -234,8 +264,8 @@
 
         /* Footer */
         .footer {
-            background-color: #e3f2fd; /* Light blue */
-            color: #444;
+            background-color: var(--footer-bg); /* Light green tint */
+            color: var(--text-dark);
             padding: 3rem;
             text-align: center;
             border-bottom-left-radius: 18px;
@@ -250,12 +280,12 @@
 
         /* Links */
         a {
-            color: #1976d2; /* Professional link blue */
+            color: var(--link-color); /* Professional link green */
             text-decoration: none;
             transition: color 0.3s ease, text-decoration 0.3s ease;
         }
         a:hover {
-            color: #1565c0;
+            color: var(--link-hover-color);
             text-decoration: underline;
         }
 
@@ -266,13 +296,13 @@
             margin-bottom: 2.5rem;
         }
         .download-button {
-            background-color: #28a745; /* Green */
-            color: #ffffff;
+            background-color: var(--button-bg); /* Green */
+            color: var(--text-light);
             padding: 1rem 2.2rem;
             border-radius: 50px;
             font-weight: 700;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 6px 18px rgba(40, 167, 69, 0.35);
+            box-shadow: 0 6px 18px hsla(140, 60%, 30%, 0.35);
             display: inline-flex;
             align-items: center;
             gap: 1rem;
@@ -284,9 +314,9 @@
             outline: none;
         }
         .download-button:hover {
-            background-color: #218838;
+            background-color: var(--button-hover-bg);
             transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.45);
+            box-shadow: 0 10px 25px hsla(140, 60%, 30%, 0.45);
         }
         .download-button:active {
             transform: translateY(0);
@@ -338,7 +368,7 @@
             }
             .experience-item {
                 padding-left: 1.5rem;
-                border-left: 3px solid #42a5f5;
+                border-left: 3px solid var(--primary-green);
             }
             .experience-item h3 {
                 font-size: 1.4rem;
@@ -421,13 +451,13 @@
                 overflow: hidden;
             }
             .profile-image-container img.profile-image {
-                 display: block !important; /* Make sure the img tag is visible in print */
-                 width: 100% !important;
-                 height: 100% !important;
-                 object-fit: cover !important;
+                    display: block !important; /* Make sure the img tag is visible in print */
+                    width: 100% !important;
+                    height: 100% !important;
+                    object-fit: cover !important;
             }
             .section-title {
-                border-color: #bbdefb !important; /* Lighter accent for print */
+                border-color: hsl(140, 60%, 40%) !important; /* Adjust print border to a slightly lighter green */
                 page-break-after: avoid !important; /* Ensure title stays with content */
             }
             .experience-item, .project-item, .service-item, .education-item, .references-item {
@@ -451,7 +481,7 @@
         }
     </style>
 </head>
-<body class="selection:bg-blue-200">
+<body class="selection:bg-green-200">
     <div class="download-button-container">
         <button id="downloadPdfBtn" class="download-button">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
@@ -466,7 +496,7 @@
         <header class="header">
             <div class="profile-image-container">
                 <!-- Using img tag directly with specific dimensions for better PDF rendering -->
-                <img src="assets/img/background.jpg" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
+                <img src="https://placehold.co/140x140/0A6A0A/ffffff?text=FM" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
             </div>
             <div class="header-content">
                 <h1 class="text-white">Fortune Makunya</h1>
@@ -474,10 +504,10 @@
                 <div class="contact-info text-sm md:text-base space-y-2">
                     <p><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</p>
                     <p><i class="fas fa-phone-alt"></i> +263 780 297 586 / +263 718 240 059</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:Fortunemakunya33@gmail.com" class="text-white hover:text-blue-200">Fortunemakunya33@gmail.com</a></p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/Tawney-hub/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200">github.com/Tawney-hub/</a></p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-9a99a634a/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200">linkedin.com/in/fortune-makunya-9a99a634a/</a></p>
-                    <p><i class="fas fa-globe"></i> <a href="https://tawney-hub.github.io/fortune-dev/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200">tawney-hub.github.io/fortune-dev/</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:Fortunemakunya33@gmail.com" class="text-white hover:text-green-200">Fortunemakunya33@gmail.com</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/Tawney-hub/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">github.com/Tawney-hub/</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-9a99a634a/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">linkedin.com/in/fortune-makunya-9a99a634a/</a></p>
+                    <p><i class="fas fa-globe"></i> <a href="https://tawney-hub.github.io/fortune-dev/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">tawney-hub.github.io/fortune-dev/</a></p>
                 </div>
             </div>
         </header>
@@ -544,6 +574,18 @@
                 <div class="project-item">
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Uzuno - E-commerce Site</h3>
                     <p class="text-gray-700 text-base leading-relaxed">Created a basic online store using Django templates. Included product listings, shopping cart, and user account management without frontend frameworks.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Online Chat App</h3>
+                    <p class="text-gray-700 text-base leading-relaxed">A real-time online chat application built with Django, demonstrating robust backend handling for user messaging and presence.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Champs Africa Website</h3>
+                    <p class="text-gray-700 text-base leading-relaxed">This is a website for Champs Africa SA company.</p>
+                </div>
+                <div class="project-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Off-campus Django application system</h3>
+                    <p class="text-gray-700 text-base leading-relaxed">A web-based Django application designed to manage off-campus housing applications and listings for students, streamlining the rental process.</p>
                 </div>
             </section>
 
@@ -655,11 +697,11 @@
             html2pdf(element, {
                 margin: 10,
                 filename: 'Fortune_Makunya_CV.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { type: 'jpeg', quality: 0.85 }, // Reduced quality for smaller file size
                 html2canvas: {
-                    scale: 4, /* Increased scale for higher resolution in PDF */
+                    scale: 2, // Reduced scale for smaller file size
                     logging: true,
-                    dpi: 300, /* Higher DPI for better print quality */
+                    dpi: 150, // Reduced DPI for smaller file size
                     letterRendering: true,
                     useCORS: true
                 },
