@@ -904,13 +904,38 @@
         align-items: center !important;
         justify-content: space-between !important;
       }
-      .hamburger {
-        display: flex !important;
-        margin-left: auto !important;
-        z-index: 10;
-      }
       .floating-call-icons {
+        order: 1;
+        flex: 0 0 auto;
         margin-right: 0 !important;
+      }
+      .navbar-spacer {
+        flex: 1 1 auto;
+        min-width: 10px;
+      }
+      .nav-menu {
+        order: 2;
+        display: none !important;
+      }
+      .nav-menu.active {
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed;
+        left: 0;
+        top: 70px;
+        width: 100vw;
+        background: var(--white-color);
+        z-index: 1001;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+        gap: 2rem;
+      }
+      .hamburger {
+        order: 3;
+        display: flex !important;
+        flex: 0 0 auto;
+        margin-left: 0 !important;
+        z-index: 1002;
       }
     }
   </style>
@@ -930,6 +955,11 @@
           <i class="fab fa-whatsapp"></i>
           <span class="tooltip">WhatsApp</span>
         </a>
+        <button class="hamburger" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <a href="mailto:Fortunemakunya33@gmail.com" class="floating-call-icon" title="Email Me">
           <i class="fas fa-envelope"></i>
           <span class="tooltip">Email Me</span>
@@ -939,6 +969,7 @@
           <span class="tooltip">GitHub</span>
         </a>
       </div>
+
       <ul class="nav-menu">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
@@ -946,11 +977,6 @@
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </nav>
 
