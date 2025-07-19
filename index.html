@@ -861,22 +861,25 @@
         display: flex !important;
         position: static !important;
         flex-direction: row !important;
-        gap: 10px !important;
-        margin-left: 0.5rem;
-        margin-right: auto;
-        top: auto !important;
-        right: auto !important;
-        left: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        z-index: 1;
-        background: none;
-        box-shadow: none;
+        gap: 12px !important;
+        margin: 0 0.5rem 0 0.5rem !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        background: none !important;
+        box-shadow: none !important;
+        z-index: 2 !important;
+      }
+      body > .floating-call-icons {
+        display: none !important;
       }
     }
     @media (min-width: 769px) {
       .navbar .floating-call-icons {
         display: none !important;
+      }
+      body > .floating-call-icons {
+        display: flex !important;
       }
     }
 
