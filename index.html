@@ -850,94 +850,7 @@
       transition: opacity 0.3s;
     }
 
-    @media (max-width: 768px) {
-      .logo {
-        display: none !important;
-      }
-      .navbar-container {
-        position: relative;
-      }
-      .navbar .floating-call-icons {
-        display: flex !important;
-        position: static !important;
-        flex-direction: row !important;
-        gap: 12px !important;
-        margin: 0 0.5rem 0 0.5rem !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
-        background: none !important;
-        box-shadow: none !important;
-        z-index: 2 !important;
-      }
-      body > .floating-call-icons {
-        display: none !important;
-      }
-    }
-    @media (min-width: 769px) {
-      .navbar .floating-call-icons {
-        display: none !important;
-      }
-      body > .floating-call-icons {
-        display: flex !important;
-      }
-    }
-
-    /* Hide the floating-call-icons from the side/bottom on mobile */
-    @media (max-width: 768px) {
-      body > .floating-call-icons {
-        display: none !important;
-      }
-    }
-
-    /* Keep the floating-call-icons on the side for desktop */
-    @media (min-width: 769px) {
-      body > .floating-call-icons {
-        display: flex !important;
-      }
-    }
-
-    /* Move floating-call-icons HTML into navbar for mobile */
-    @media (max-width: 768px) {
-      .navbar-container {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-      }
-      .floating-call-icons {
-        order: 1;
-        flex: 0 0 auto;
-        margin-right: 0 !important;
-      }
-      .navbar-spacer {
-        flex: 1 1 auto;
-        min-width: 10px;
-      }
-      .nav-menu {
-        order: 2;
-        display: none !important;
-      }
-      .nav-menu.active {
-        display: flex !important;
-        flex-direction: column !important;
-        position: fixed;
-      left: 0;
-        top: 70px;
-        width: 100vw;
-        background: var(--white-color);
-        z-index: 1001;
-        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-        padding: 2rem 0;
-        gap: 2rem;
-      }
-      .hamburger {
-        order: 3;
-        display: flex !important;
-        flex: 0 0 auto;
-        margin-left: 0 !important;
-        z-index: 1002;
-      }
-    }
+    /* Mobile navbar layout - applied immediately */
     @media (max-width: 768px) {
       .logo {
         display: none !important;
@@ -949,8 +862,9 @@
         width: 100% !important;
         padding: 0 1rem !important;
       }
-      .floating-call-icons {
+      .navbar .floating-call-icons {
         display: flex !important;
+        position: static !important;
         flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
@@ -960,6 +874,8 @@
         margin: 0 !important;
         padding: 0 !important;
         gap: 8px !important;
+        order: 1 !important;
+        flex: 0 0 auto !important;
       }
       .floating-call-icon {
         flex: 0 0 auto !important;
@@ -999,7 +915,7 @@
         transition: var(--transition) !important;
       }
       .nav-menu {
-        order: 4;
+        order: 4 !important;
         display: none !important;
       }
       .nav-menu.active {
@@ -1014,6 +930,9 @@
         box-shadow: 0 10px 27px rgba(0,0,0,0.05) !important;
         padding: 2rem 0 !important;
         gap: 2rem !important;
+      }
+      body > .floating-call-icons {
+        display: none !important;
       }
     }
     
@@ -1036,6 +955,16 @@
       .hamburger span {
         width: 18px !important;
         height: 2px !important;
+      }
+    }
+
+    /* Desktop layout */
+    @media (min-width: 769px) {
+      .navbar .floating-call-icons {
+        display: none !important;
+      }
+      body > .floating-call-icons {
+        display: flex !important;
       }
     }
   </style>
