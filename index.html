@@ -898,6 +898,21 @@
     }
 
     /* Move floating-call-icons HTML into navbar for mobile */
+    @media (max-width: 768px) {
+      .navbar-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+      .hamburger {
+        display: flex !important;
+        margin-left: auto !important;
+        z-index: 10;
+      }
+      .floating-call-icons {
+        margin-right: 0 !important;
+      }
+    }
   </style>
 </head>
 
