@@ -953,7 +953,7 @@
         flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
-        width: 100% !important;
+        width: auto !important;
         background: none !important;
         box-shadow: none !important;
         margin: 0 !important;
@@ -961,7 +961,11 @@
       }
       .floating-call-icon {
         flex: 0 0 auto !important;
-        margin: 0 2px !important;
+        margin: 0 2vw !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+        border-radius: 50% !important;
+        touch-action: manipulation;
       }
       .floating-call-icons > .hamburger {
         display: flex !important;
@@ -969,13 +973,16 @@
         order: 3 !important;
         background: none !important;
         border: none !important;
-        margin: 0 2px !important;
+        margin: 0 2vw !important;
         align-self: center !important;
         z-index: 10 !important;
         width: 44px !important;
         height: 44px !important;
         justify-content: center !important;
         align-items: center !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        touch-action: manipulation;
       }
       .nav-menu {
         order: 4;
