@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortune Makunya - Full Stack Developer CV</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Fortune Makunya - CV</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- html2pdf.js CDN for PDF generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         /* Universal Box Sizing for consistent layout */
@@ -492,132 +488,47 @@
     </div>
 
     <div class="container" id="cv-content">
-        <!-- Header Section -->
         <header class="header">
             <div class="profile-image-container">
-                <!-- Using img tag directly with specific dimensions for better PDF rendering -->
                 <img src="https://placehold.co/140x140/0A6A0A/ffffff?text=FM" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
             </div>
             <div class="header-content">
                 <h1 class="text-white">Fortune Makunya</h1>
-                <p class="title">Full Stack Developer (Django & Flutter)</p>
+                <p class="title">Aspiring Professional</p>
                 <div class="contact-info text-sm md:text-base space-y-2">
                     <p><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</p>
                     <p><i class="fas fa-phone-alt"></i> +263 780 297 586 / +263 718 240 059</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:Fortunemakunya33@gmail.com" class="text-white hover:text-green-200">Fortunemakunya33@gmail.com</a></p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/Tawney-hub/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">github.com/Tawney-hub/</a></p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-9a99a634a/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">linkedin.com/in/fortune-makunya-9a99a634a/</a></p>
-                    <p><i class="fas fa-globe"></i> <a href="https://tawney-hub.github.io/fortune-dev/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">tawney-hub.github.io/fortune-dev/</a></p>
                 </div>
             </div>
         </header>
 
         <main>
-            <!-- Professional Summary Section -->
             <section class="mb-12">
                 <h2 class="section-title">Professional Summary</h2>
                 <p class="text-gray-700 leading-relaxed text-lg">
-                    Driven Computer Engineering Graduate passionate about building intelligent full-stack systems to solve real-world problems. A detail-oriented Full Stack Developer experienced in building reliable and practical web and mobile applications using Django and Flutter. Focused on solving real-world problems with clean, maintainable code. Hands-on experience with video communication, health diagnostics, e-commerce, and transport apps.
+                    Highly motivated and diligent individual with a strong academic background in Science subjects at A-Level. Eager to apply acquired knowledge and develop new skills in a professional environment. A fast learner with excellent communication and problem-solving abilities, ready to contribute effectively to a team.
                 </p>
             </section>
 
-            <!-- About Me Section -->
             <section class="mb-12">
                 <h2 class="section-title">About Me</h2>
                 <p class="text-gray-700 leading-relaxed mb-6 text-lg">
-                    Driven and detail-oriented Computer Engineering graduate with strong proficiency in Python, Dart, Django, Flutter, and AI-based systems. Skilled in building complete full-stack systems from idea to deployment. Passionate about leveraging software to solve real-world problems—from AI health diagnostics to real-time transportation platforms.
+                    Dedicated and enthusiastic, I am a recent A-Level graduate with a solid foundation in Mathematics, Physics, and Chemistry. I possess a strong work ethic and a proactive approach to learning and personal development. I am passionate about acquiring new skills and contributing meaningfully to any organization.
                 </p>
                 <ul class="text-gray-700 space-y-4">
-                    <li class="list-item text-lg"><strong class="font-medium text-gray-800">Specialization:</strong> Full-Stack & AI Systems</li>
+                    <li class="list-item text-lg"><strong class="font-medium text-gray-800">Key Strengths:</strong> Problem-solving, Adaptability, Communication</li>
                     <li class="list-item text-lg"><strong class="font-medium text-gray-800">Availability:</strong> Open to Opportunities</li>
                     <li class="list-item text-lg">
-                        <strong class="font-medium text-gray-800">Learning:</strong> Advanced AI Architectures
-                        <span class="block ml-6 text-base text-gray-600 mt-1">I am constantly expanding my knowledge in advanced AI architectures and modern software development practices. My goal is to build impactful and scalable solutions that drive innovation and address real-world challenges.</span>
+                        <strong class="font-medium text-gray-800">Growth Mindset:</strong> Continuously seeking to expand my knowledge and practical abilities.
+                        <span class="block ml-6 text-base text-gray-600 mt-1">I am committed to continuous learning and am keen to embark on a career path that allows me to grow professionally and make a positive impact.</span>
                     </li>
                 </ul>
             </section>
 
-            <!-- Technical Skills Section -->
-            <section class="mb-12">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="text-gray-700 mb-8 text-lg">Broad expertise in Full-Stack Development, AI, and practical IT operations.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 text-gray-700">
-                    <div class="list-item text-lg"><strong>Languages & Frameworks:</strong> Python, Dart, Django, Django REST Framework, Flutter</div>
-                    <div class="list-item text-lg"><strong>AI/ML:</strong> TensorFlow, GANs</div>
-                    <div class="list-item text-lg"><strong>Databases:</strong> Firebase, PostgreSQL</div>
-                    <div class="list-item text-lg"><strong>Tools & Admin:</strong> Git, CPanel, PythonAnywhere, Active Directory, Microsoft 365</div>
-                    <div class="list-item text-lg"><strong>Concepts:</strong> API Design & DevOps, CMS (Django Admin, Blog Integration, SEO Basics), Firebase Realtime DB, Agora SDK</div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section class="mb-12">
-                <h2 class="section-title">Projects</h2>
-                <p class="text-gray-700 mb-8 text-lg">Showcasing impactful full-stack, mobile, and AI solutions.</p>
-
-                <div class="project-item">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">VIBA - Proximity Video Chat Platform</h3>
-                    <p class="text-gray-700 text-base leading-relaxed">Developed a location-based real-time video chat platform using Flutter and Firebase for video communication and presence detection.</p>
-                </div>
-                <div class="project-item">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">DR Vision - AI Diagnostic System</h3>
-                    <p class="text-gray-700 text-base leading-relaxed">AI-powered health diagnostic system using TensorFlow and Django. Doctors can upload retinal images, receive AI-generated results, and download PDF reports. Patients access results on mobile via a Flutter app.</p>
-                </div>
-                <div class="project-item">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">DreamWise Agency - Company Website</h3>
-                    <p class="text-gray-700 text-base leading-relaxed">Built a professional CMS website for a creative agency using Django templates. Integrated blog, services section, and SEO features. Maintained clean URLs and admin content management.</p>
-                </div>
-                <div class="project-item">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">RunneR - Bakkie Transport App</h3>
-                    <p class="text-gray-700 text-base leading-relaxed">Logistics platform for bakkie bookings. Flutter mobile app connects with Firebase backend, while Django provides admin reporting and booking management tools.</p>
-                </div>
-                <div class="project-item">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Uzuno - E-commerce Site</h3>
-                    <p class="text-gray-700 text-base leading-relaxed">Created a basic online store using Django templates. Included product listings, shopping cart, and user account management without frontend frameworks.</p>
-                </div>
-                <div class="project-item">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Online Chat App</h3>
-                    <p class="text-gray-700 text-base leading-relaxed">A real-time online chat application built with Django, demonstrating robust backend handling for user messaging and presence.</p>
-                </div>
-                <div class="project-item">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Champs Africa Website</h3>
-                    <p class="text-gray-700 text-base leading-relaxed">This is a website for Champs Africa SA company.</p>
-                </div>
-                <div class="project-item">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Off-campus Django application system</h3>
-                    <p class="text-gray-700 text-base leading-relaxed">A web-based Django application designed to manage off-campus housing applications and listings for students, streamlining the rental process.</p>
-                </div>
-            </section>
-
-            <!-- Professional Experience Section -->
-            <section class="mb-12">
-                <h2 class="section-title">Professional Experience</h2>
-
-                <div class="experience-item">
-                    <h3 class="text-xl font-semibold text-gray-900">IT Support Intern - Lobels Bread</h3>
-                    <p class="text-gray-600 mb-4 text-base duration">October 2023 - August 2024</p>
-                    <ul class="text-gray-700 space-y-2 text-base">
-                        <li>Repaired and upgraded PCs (RAM, HDDs, monitors); installed Windows OS and built LAN cables from scratch.</li>
-                        <li>Resolved critical network issues and engaged in server startup and troubleshooting.</li>
-                        <li>Managed Active Directory (user account creation, unlocking users) and performed Microsoft 365 administration for mailbox and user management.</li>
-                        <li>Opened and closed driver accounts, generated reports, and supported operational decisions using SAGE 1000, gaining insights into enterprise IT support for logistics and sales.</li>
-                        <li>Configured CCTV cameras and contributed to maintaining secure systems, understanding the role of technology in physical infrastructure.</li>
-                        <li>Applied knowledge of Star Topology in real-world setups, appreciating its benefits and troubleshooting challenges.</li>
-                        <li>Enhanced communication across diverse departments, problem-solving under pressure, teamwork, adaptability, and professional confidence, fostering a solution-oriented mindset.</li>
-                        <li>Collaborated with the marketing team to promote products, providing a holistic view of business operations.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Education Section -->
             <section class="mb-12">
                 <h2 class="section-title">Education</h2>
 
-                <div class="education-item">
-                    <h3 class="text-xl font-semibold text-gray-900">BSc in Computer Engineering - University of Zimbabwe</h3>
-                    <p class="text-gray-600 mb-1 text-base">(Expected 2025)</p>
-                    <p class="text-gray-700 text-base"><strong class="font-medium text-gray-800">Core Subjects:</strong> Advanced Database Systems, Microprocessors & Embedded Systems, Web & Mobile Technologies, Software Project Management, Object-Oriented Programming, Data Communications and Networks.</p>
-                </div>
                 <div class="education-item">
                     <h3 class="text-xl font-semibold text-gray-900">A-Level - St. Mary Magdalene’s High School</h3>
                     <p class="text-gray-700 text-base">Mathematics (A), Physics (C), Chemistry (C)</p>
@@ -629,7 +540,6 @@
                 </div>
             </section>
 
-            <!-- Soft Skills Section -->
             <section class="mb-12">
                 <h2 class="section-title">Soft Skills</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5 text-gray-700">
@@ -641,26 +551,23 @@
                 </div>
             </section>
 
-            <!-- References Section -->
             <section class="mb-12">
                 <h2 class="section-title">References</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 text-gray-700">
                     <div class="references-item">
-                        <p class="font-semibold text-lg text-gray-900">Leonie Mlambo</p>
-                        <p class="text-base text-gray-700">Lobels IT Officer</p>
-                        <p class="text-base text-gray-700">Phone: +263 789 072 823</p>
-                    </div>
-                    <div class="references-item">
                         <p class="font-semibold text-lg text-gray-900">Mrs. Mukwazvure</p>
-                        <p class="text-base text-gray-700">UZ Computer Engineering Chairperson</p>
+                        <p class="text-base text-gray-700">Former High School Teacher</p>
                         <p class="text-base text-gray-700">Phone: +263 777 740 504</p>
+                    </div>
+                     <div class="references-item">
+                        <p class="font-semibold text-lg text-gray-900">Available upon request</p>
+                        <p class="text-base text-gray-700">Further references can be provided as needed.</p>
                     </div>
                 </div>
             </section>
 
         </main>
 
-        <!-- Footer Section -->
         <footer class="footer text-gray-800 rounded-b-xl">
             <p class="font-semibold text-xl mb-3">Contact Me</p>
             <p class="text-lg">Call me on <a href="tel:+263780297586" class="hover:underline">+263 780 297 586</a> / <a href="tel:+263780297735" class="hover:underline">+263 780 297 735</a></p>
