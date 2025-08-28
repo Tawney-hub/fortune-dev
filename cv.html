@@ -289,12 +289,40 @@
             text-decoration: underline;
         }
 
-        /* Download Button */
+        /* Download Button Container */
         .download-button-container {
             text-align: center;
             margin-top: 2.5rem;
             margin-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
         }
+
+        /* Back Button */
+        .back-button {
+            background-color: var(--text-soft-gray);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-size: 1rem;
+            border: 2px solid var(--text-soft-gray);
+        }
+        
+        .back-button:hover {
+            background-color: var(--text-dark);
+            border-color: var(--text-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Download Button */
         .download-button {
             background-color: var(--button-bg); /* Green */
             color: var(--text-light);
@@ -377,6 +405,15 @@
                 padding: 0.8rem 1.8rem;
                 font-size: 1rem;
             }
+            .download-button-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .back-button, .download-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 600px) {
@@ -410,6 +447,18 @@
             .download-button-container {
                 margin-top: 1.5rem;
                 margin-bottom: 1.5rem;
+                padding: 0 1rem;
+            }
+            .back-button, .download-button {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem;
+            }
+            .header .contact-info p {
+                font-size: 0.8rem;
+            }
+            .profile-image-container {
+                width: 80px;
+                height: 80px;
             }
         }
 
@@ -483,6 +532,12 @@
 </head>
 <body class="selection:bg-green-200">
     <div class="download-button-container">
+        <!-- Back Button -->
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Portfolio
+        </a>
+        
         <button id="downloadPdfBtn" class="download-button">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -496,7 +551,7 @@
         <header class="header">
             <div class="profile-image-container">
                 <!-- Using img tag directly with specific dimensions for better PDF rendering -->
-                <img src="https://placehold.co/140x140/0A6A0A/ffffff?text=FM" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
+                <img src="assets/img/background.jpg" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
             </div>
             <div class="header-content">
                 <h1 class="text-white">Fortune Makunya</h1>
@@ -506,7 +561,7 @@
                     <p><i class="fas fa-phone-alt"></i> +263 780 297 586 / +263 718 240 059</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:Fortunemakunya33@gmail.com" class="text-white hover:text-green-200">Fortunemakunya33@gmail.com</a></p>
                     <p><i class="fab fa-github"></i> <a href="https://github.com/Tawney-hub/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">github.com/Tawney-hub/</a></p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-9a99a634a/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">linkedin.com/in/fortune-makunya-9a99a634a/</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-677b86380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">linkedin.com/in/fortune-makunya-677b86380</a></p>
                     <p><i class="fas fa-globe"></i> <a href="https://tawney-hub.github.io/fortune-dev/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">tawney-hub.github.io/fortune-dev/</a></p>
                 </div>
             </div>
@@ -615,7 +670,7 @@
 
                 <div class="education-item">
                     <h3 class="text-xl font-semibold text-gray-900">BSc in Computer Engineering - University of Zimbabwe</h3>
-                    <p class="text-gray-600 mb-1 text-base">(Expected 2025)</p>
+                    <p class="text-gray-600 mb-1 text-base">(Completed 2025)</p>
                     <p class="text-gray-700 text-base"><strong class="font-medium text-gray-800">Core Subjects:</strong> Advanced Database Systems, Microprocessors & Embedded Systems, Web & Mobile Technologies, Software Project Management, Object-Oriented Programming, Data Communications and Networks.</p>
                 </div>
                 <div class="education-item">
