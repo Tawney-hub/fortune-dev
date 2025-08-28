@@ -60,6 +60,8 @@
       --light-color: #F8F9FA; /* Light Gray */
       --gray-color: #6C757D; /* Medium Gray */
       --white-color: #FFFFFF; /* White */
+
+
     }
 
     /* General Body Styles */
@@ -223,7 +225,6 @@
         font-size: 1.25rem;
       }
     }
-
     /* Custom Message Box Styling */
     .message-box-overlay {
       position: fixed;
@@ -299,28 +300,25 @@
       <!-- Logo - Hidden on smaller screens by default, but visible on larger screens -->
       <a href="#" class="logo text-3xl font-extrabold text-primary-color no-underline transition-opacity duration-300 hidden md:block">FM</a>
       
-      <!-- Mobile Navigation -->
-      <div class="md:hidden flex items-center space-x-3">
-        <!-- Quick Action Icons -->
-        <a href="tel:+263780297586" class="w-10 h-10 rounded-full bg-primary-color text-white-color flex items-center justify-center text-sm shadow-md transition-all duration-300 hover:bg-secondary-color" aria-label="Call Me">
+      <!-- Floating Call Icons (Mobile & Tablet) -->
+      <!-- This group will be visible on mobile/tablet and hidden on desktop -->
+      <div class="md:hidden flex items-center justify-center space-x-2 flex-grow">
+        <a href="tel:+263780297586" class="floating-call-icon w-11 h-11 rounded-full bg-primary-color text-white-color flex items-center justify-center text-lg shadow-md transition-all duration-300 hover:bg-secondary-color" aria-label="Call Me">
           <i class="fas fa-phone"></i>
         </a>
-        <a href="https://wa.me/263780297586" class="w-10 h-10 rounded-full bg-primary-color text-white-color flex items-center justify-center text-sm shadow-md transition-all duration-300 hover:bg-secondary-color" target="_blank" aria-label="WhatsApp">
+        <a href="https://wa.me/263780297586" class="floating-call-icon w-11 h-11 rounded-full bg-primary-color text-white-color flex items-center justify-center text-lg shadow-md transition-all duration-300 hover:bg-secondary-color" target="_blank" aria-label="WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
-        
-        <!-- Hamburger Menu -->
-        <button class="hamburger w-10 h-10 flex flex-col justify-center items-center cursor-pointer bg-transparent border-none rounded-full hover:bg-gray-100 transition-all duration-300" aria-label="Open navigation">
-          <span class="block w-5 h-0.5 bg-dark-color mb-1 transition-all duration-300"></span>
-          <span class="block w-5 h-0.5 bg-dark-color mb-1 transition-all duration-300"></span>
-          <span class="block w-5 h-0.5 bg-dark-color transition-all duration-300"></span>
+        <!-- Hamburger for mobile menu -->
+        <button class="hamburger flex flex-col cursor-pointer bg-transparent border-none p-2 rounded-full w-11 h-11 items-center justify-center" aria-label="Open navigation">
+          <span class="block w-6 h-0.5 bg-dark-color my-0.5 transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-dark-color my-0.5 transition-all duration-300"></span>
+          <span class="block w-6 h-0.5 bg-dark-color my-0.5 transition-all duration-300"></span>
         </button>
-        
-        <!-- Quick Action Icons -->
-        <a href="mailto:Fortunemakunya33@gmail.com" class="w-10 h-10 rounded-full bg-primary-color text-white-color flex items-center justify-center text-sm shadow-md transition-all duration-300 hover:bg-secondary-color" aria-label="Email Me">
+        <a href="mailto:Fortunemakunya33@gmail.com" class="floating-call-icon w-11 h-11 rounded-full bg-primary-color text-white-color flex items-center justify-center text-lg shadow-md transition-all duration-300 hover:bg-secondary-color" aria-label="Email Me">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://github.com/Tawney-hub/" class="w-10 h-10 rounded-full bg-primary-color text-white-color flex items-center justify-center text-sm shadow-md transition-all duration-300 hover:bg-secondary-color" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/Tawney-hub/" class="floating-call-icon w-11 h-11 rounded-full bg-primary-color text-white-color flex items-center justify-center text-lg shadow-md transition-all duration-300 hover:bg-secondary-color" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -338,18 +336,18 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-color to-[#0A5A0A] text-white-color text-center relative overflow-hidden pt-20 pb-10">
-    <div class="absolute inset-0 bg-[url('assets/img/bg.jpg')] bg-center bg-cover opacity-20 z-10"></div>
-    <div class="hero-content relative z-20 max-w-4xl px-4 sm:px-6">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 animate-fadeInUp leading-tight" data-aos="fade-up">Fortune Makunya</h1>
-      <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 opacity-90 animate-fadeInUp px-2" data-aos="fade-up" data-aos-delay="200">
+    <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080/0A6A0A/ffffff?text=Background')] bg-center bg-cover opacity-10 z-10"></div>
+    <div class="hero-content relative z-20 max-w-3xl px-4">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 animate-fadeInUp" data-aos="fade-up">Fortune Makunya</h1>
+      <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fadeInUp" data-aos="fade-up" data-aos-delay="200">
         I'm a <span class="typed font-semibold" data-typed-items="Full-Stack Developer, AI Engineer, Mobile Developer, Problem Solver">Full-Stack Developer</span>
       </p>
-      <div class="cta-buttons flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fadeInUp" data-aos="fade-up" data-aos-delay="400">
-        <a href="#projects" class="btn w-full sm:w-auto bg-white-color text-primary-color py-3 px-6 sm:px-8 rounded-full font-semibold no-underline transition-all duration-300 hover:translate-y-[-3px] hover:shadow-lg text-center">View My Work</a>
-        <a href="cv.html" class="btn w-full sm:w-auto bg-transparent text-white-color border-2 border-white-color py-3 px-6 sm:px-8 rounded-full font-semibold no-underline transition-all duration-300 hover:bg-white-color hover:text-primary-color text-center" target="_blank">
+      <div class="cta-buttons flex flex-col sm:flex-row gap-4 justify-center flex-wrap animate-fadeInUp" data-aos="fade-up" data-aos-delay="400">
+        <a href="#projects" class="btn bg-white-color text-primary-color py-3 px-8 rounded-full font-semibold no-underline transition-all duration-300 hover:translate-y-[-3px] hover:shadow-lg">View My Work</a>
+        <a href="cv.html" class="btn bg-transparent text-white-color border-2 border-white-color py-3 px-8 rounded-full font-semibold no-underline transition-all duration-300 hover:bg-white-color hover:text-primary-color" target="_blank">
           <i class="fas fa-download mr-2"></i> Download CV
         </a>
-        <a href="#contact" class="btn w-full sm:w-auto bg-transparent text-white-color border-2 border-white-color py-3 px-6 sm:px-8 rounded-full font-semibold no-underline transition-all duration-300 hover:bg-white-color hover:text-primary-color text-center">Get In Touch</a>
+        <a href="#contact" class="btn bg-transparent text-white-color border-2 border-white-color py-3 px-8 rounded-full font-semibold no-underline transition-all duration-300 hover:bg-white-color hover:text-primary-color">Get In Touch</a>
       </div>
     </div>
   </section>
@@ -361,14 +359,14 @@
         <h2 class="text-4xl font-bold text-dark-color mb-4">About Me</h2>
         <p class="text-lg text-gray-color max-w-2xl mx-auto">Driven Computer Engineering Graduate passionate about building intelligent full-stack systems to solve real-world problems.</p>
       </div>
-      <div class="about-content grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 items-start">
-        <div class="about-image rounded-custom-xl overflow-hidden shadow-custom-shadow order-2 lg:order-1" data-aos="fade-right">
-          <img src="assets/img/background.jpg" alt="Fortune Makunya" class="w-full h-auto block">
+      <div class="about-content grid grid-cols-1 md:grid-cols-3 gap-16 items-center">
+        <div class="about-image rounded-custom-xl overflow-hidden shadow-custom-shadow" data-aos="fade-right">
+          <img src="https://placehold.co/600x600/0A6A0A/ffffff?text=Fortune+Makunya" alt="Fortune Makunya" class="w-full h-auto block">
         </div>
-        <div class="about-text lg:col-span-2 order-1 lg:order-2" data-aos="fade-left">
-          <h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-dark-color">Full-Stack Developer & AI Engineer</h3>
-          <p class="text-base sm:text-lg text-gray-color mb-6 sm:mb-8 leading-relaxed">I'm a detail-oriented Full Stack Developer experienced in building reliable and practical web and mobile applications using Django and Flutter. Focused on solving real-world problems with clean, maintainable code. Hands-on experience with video communication, health diagnostics, e-commerce, and transport apps.</p>
-          <div class="about-details grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-x-8 sm:gap-y-4">
+        <div class="about-text md:col-span-2" data-aos="fade-left">
+          <h3 class="text-3xl font-bold mb-6 text-dark-color">Full-Stack Developer & AI Engineer</h3>
+          <p class="text-lg text-gray-color mb-8 leading-relaxed">I'm a detail-oriented Full Stack Developer experienced in building reliable and practical web and mobile applications using Django and Flutter. Focused on solving real-world problems with clean, maintainable code. Hands-on experience with video communication, health diagnostics, e-commerce, and transport apps.</p>
+          <div class="about-details grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
             <div class="detail-item flex items-center gap-4">
               <i class="fas fa-map-marker-alt text-primary-color text-xl w-6"></i>
               <div>
@@ -424,8 +422,8 @@
         <h2 class="text-4xl font-bold text-dark-color mb-4">Technical Skills</h2>
         <p class="text-lg text-gray-color max-w-2xl mx-auto">Broad expertise in Full-Stack Development, AI, and practical IT operations.</p>
       </div>
-      <div class="skills-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-        <div class="skill-category bg-white-color p-6 sm:p-8 rounded-custom-xl shadow-custom-shadow transition-all duration-300 hover:translate-y-[-5px] hover:shadow-custom-hover-shadow" data-aos="fade-up" data-aos-delay="100">
+      <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="skill-category bg-white-color p-8 rounded-custom-xl shadow-custom-shadow transition-all duration-300 hover:translate-y-[-5px] hover:shadow-custom-hover-shadow" data-aos="fade-up" data-aos-delay="100">
           <h3 class="text-2xl font-semibold mb-6 text-dark-color flex items-center gap-2">
             <i class="fab fa-python text-primary-color"></i> Backend Development
           </h3>
@@ -575,18 +573,20 @@
         <h2 class="text-4xl font-bold text-dark-color mb-4">Featured Projects</h2>
         <p class="text-lg text-gray-color max-w-2xl mx-auto">Showcasing impactful full-stack, mobile, and AI solutions.</p>
       </div>
-      <div class="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
         <!-- Project 1 -->
         <div class="project-card bg-white-color rounded-custom-xl overflow-hidden shadow-custom-shadow transition-all duration-300 hover:translate-y-[-10px] hover:shadow-custom-hover-shadow" data-aos="fade-up" data-aos-delay="100">
           <div class="project-image h-52 bg-gradient-to-br from-primary-color to-secondary-color flex items-center justify-center text-white-color text-5xl">
             <i class="fas fa-truck"></i>
           </div>
-          <div class="project-content p-6 sm:p-8">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-dark-color">RunneR – Bakkie Booking App</h3>
-            <p class="text-sm sm:text-base text-gray-color mb-4 sm:mb-6 leading-relaxed">Flutter + Firebase app for goods transportation. Features driver/client registration, real-time matching, Google Maps integration, and Firebase for authentication & notifications.</p>
-            <div class="project-links flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="#" class="btn-demo bg-primary-color text-white-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px] text-center">Live Demo</a>
-              <a href="https://github.com/Tawney-hub/" target="_blank" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px] text-center">Source Code</a>
+          <div class="project-content p-8">
+            <h3 class="text-2xl font-semibold mb-4 text-dark-color">RunneR – Bakkie Booking App</h3>
+            <p class="text-gray-color mb-6 leading-relaxed">Flutter + Firebase app for goods transportation. Features driver/client registration, real-time matching, Google Maps integration, and Firebase for authentication & notifications.</p>
+            <div class="project-links flex gap-4">
+              <a href="#" class="btn-demo bg-primary-color text-white-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px]">Live Demo</a>
+              <a href="#" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px]">Source Code</a>
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
             </div>
           </div>
         </div>
@@ -599,9 +599,10 @@
           <div class="project-content p-8">
             <h3 class="text-2xl font-semibold mb-4 text-dark-color">DreamWise Agency</h3>
             <p class="text-gray-color mb-6 leading-relaxed">Production-grade web app connecting talent with clients. Django backend with RESTful APIs, SEO, blog CMS. Flutter frontend in progress.</p>
-            <div class="project-links flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="https://dreamwiseagency.co.za" target="_blank" class="btn-demo bg-primary-color text-white-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px] text-center">Live Demo</a>
-              <a href="https://github.com/Tawney-hub/" target="_blank" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px] text-center">Source Code</a>
+            <div class="project-links flex gap-4">
+              <a href="https://dreamwiseagency.co.za" target="_blank" class="btn-demo bg-primary-color text-white-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px]">Live Demo</a>
+              <a href="#" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px]">Source Code</a>
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
             </div>
           </div>
         </div>
@@ -611,12 +612,13 @@
           <div class="project-image h-52 bg-gradient-to-br from-primary-color to-secondary-color flex items-center justify-center text-white-color text-5xl">
             <i class="fas fa-eye"></i>
           </div>
-          <div class="project-content p-6 sm:p-8">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-dark-color">DR Vision – AI Diagnostic System</h3>
-            <p class="text-sm sm:text-base text-gray-color mb-4 sm:mb-6 leading-relaxed">Django + TensorFlow platform for real-time retinal image diagnosis. Features doctor/patient/admin dashboards, GAN augmentation, PDF reports.</p>
-            <div class="project-links flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="#" class="btn-demo bg-primary-color text-white-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px] text-center">Live Demo</a>
-              <a href="https://github.com/Tawney-hub/" target="_blank" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px] text-center">Source Code</a>
+          <div class="project-content p-8">
+            <h3 class="text-2xl font-semibold mb-4 text-dark-color">DR Vision – AI Diagnostic System</h3>
+            <p class="text-gray-color mb-6 leading-relaxed">Django + TensorFlow platform for real-time retinal image diagnosis. Features doctor/patient/admin dashboards, GAN augmentation, PDF reports.</p>
+            <div class="project-links flex gap-4">
+              <a href="#" class="btn-demo bg-primary-color text-white-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px]">Live Demo</a>
+              <a href="#" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px]">Source Code</a>
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
             </div>
           </div>
         </div>
@@ -626,12 +628,13 @@
           <div class="project-image h-52 bg-gradient-to-br from-primary-color to-secondary-color flex items-center justify-center text-white-color text-5xl">
             <i class="fas fa-video"></i>
           </div>
-          <div class="project-content p-6 sm:p-8">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-dark-color">VIBA – Proximity Video Chat</h3>
-            <p class="text-sm sm:text-base text-gray-color mb-4 sm:mb-6 leading-relaxed">Real-time video chat app using WebRTC/WebSockets for proximity-based interactions. Django backend for signaling and Flutter frontend.</p>
-            <div class="project-links flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="#" class="btn-demo bg-primary-color text-white-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px] text-center">Live Demo</a>
-              <a href="https://github.com/Tawney-hub/" target="_blank" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px] text-center">Source Code</a>
+          <div class="project-content p-8">
+            <h3 class="text-2xl font-semibold mb-4 text-dark-color">VIBA – Proximity Video Chat</h3>
+            <p class="text-gray-color mb-6 leading-relaxed">Real-time video chat app using WebRTC/WebSockets for proximity-based interactions. Django backend for signaling and Flutter frontend.</p>
+            <div class="project-links flex gap-4">
+              <a href="#" class="btn-demo bg-primary-color text-white-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px]">Live Demo</a>
+              <a href="#" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px]">Source Code</a>
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
             </div>
           </div>
         </div>
@@ -641,12 +644,13 @@
           <div class="project-image h-52 bg-gradient-to-br from-primary-color to-secondary-color flex items-center justify-center text-white-color text-5xl">
             <i class="fas fa-shopping-cart"></i>
           </div>
-          <div class="project-content p-6 sm:p-8">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-dark-color">Uzuno E-commerce Website</h3>
-            <p class="text-sm sm:text-base text-gray-color mb-4 sm:mb-6 leading-relaxed">A full-featured e-commerce platform designed for selling various products online. Built with Django backend and React frontend.</p>
-            <div class="project-links flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="https://www.uzuno.com" target="_blank" class="btn-demo bg-primary-color text-white-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px] text-center">Live Demo</a>
-              <a href="https://github.com/Tawney-hub/" target="_blank" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px] text-center">Source Code</a>
+          <div class="project-content p-8">
+            <h3 class="text-2xl font-semibold mb-4 text-dark-color">Uzuno E-commerce Website</h3>
+            <p class="text-gray-color mb-6 leading-relaxed">A full-featured e-commerce platform designed for selling various products online. Built with Django backend and React frontend.</p>
+            <div class="project-links flex gap-4">
+              <a href="https://www.uzuno.com" target="_blank" class="btn-demo bg-primary-color text-white-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px]">Live Demo</a>
+              <a href="#" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px]">Source Code</a>
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
             </div>
           </div>
         </div>
@@ -656,12 +660,13 @@
           <div class="project-image h-52 bg-gradient-to-br from-primary-color to-secondary-color flex items-center justify-center text-white-color text-5xl">
             <i class="fas fa-comments"></i>
           </div>
-          <div class="project-content p-6 sm:p-8">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-dark-color">Online Chat App</h3>
-            <p class="text-sm sm:text-base text-gray-color mb-4 sm:mb-6 leading-relaxed">A real-time online chat application built with Django, demonstrating robust backend handling for user messaging and presence.</p>
-            <div class="project-links flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="#" class="btn-demo bg-primary-color text-white-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px] text-center">Live Demo</a>
-              <a href="https://github.com/Tawney-hub/" target="_blank" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px] text-center">Source Code</a>
+          <div class="project-content p-8">
+            <h3 class="text-2xl font-semibold mb-4 text-dark-color">Online Chat App</h3>
+            <p class="text-gray-color mb-6 leading-relaxed">A real-time online chat application built with Django, demonstrating robust backend handling for user messaging and presence.</p>
+            <div class="project-links flex gap-4">
+              <a href="#" class="btn-demo bg-primary-color text-white-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-secondary-color hover:translate-y-[-2px]">Live Demo</a>
+              <a href="#" class="btn-code bg-transparent text-primary-color border border-primary-color py-2 px-6 rounded-full font-medium text-sm no-underline transition-all duration-300 hover:bg-primary-color hover:text-white-color hover:translate-y-[-2px]">Source Code</a>
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
             </div>
           </div>
         </div>
@@ -676,8 +681,9 @@
         <h2 class="text-4xl font-bold text-dark-color mb-4">Get In Touch</h2>
         <p class="text-lg text-gray-color max-w-2xl mx-auto">Let's discuss your project or collaboration opportunities.</p>
       </div>
-      <div class="contact-content grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-        <div class="contact-info bg-light-color p-6 sm:p-8 rounded-custom-xl h-fit" data-aos="fade-right">
+      <div class="contact-content grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="contact-info bg-light-color p-8 rounded-custom-xl h-fit" data-aos="fade-right">
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
           <div class="contact-item flex items-start gap-4 mb-8">
             <i class="fas fa-map-marker-alt text-primary-color text-2xl w-8 mt-1"></i>
             <div>
@@ -715,7 +721,8 @@
             </div>
           </div>
         </div>
-        <div class="contact-form lg:col-span-2 bg-white-color p-6 sm:p-8 rounded-custom-xl shadow-custom-shadow" data-aos="fade-left">
+        <div class="contact-form md:col-span-2 bg-white-color p-8 rounded-custom-xl shadow-custom-shadow" data-aos="fade-left">
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
           <form action="https://formspree.io/f/your-formspree-id" method="POST">
             <div class="form-group mb-6">
               <label for="name" class="block mb-2 font-medium text-dark-color">Your Name</label>
@@ -744,7 +751,8 @@
   <footer class="footer bg-dark-color text-white-color text-center py-8">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="social-links flex justify-center gap-6 mb-4">
-        <a href="https://www.linkedin.com/in/fortune-makunya-677b86380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-white-color text-2xl transition-all duration-300 hover:text-primary-color hover:translate-y-[-3px]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/fortune-makunya-9a99a634a/" target="_blank" class="text-white-color text-2xl transition-all duration-300 hover:text-primary-color hover:translate-y-[-3px]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
         <a href="https://github.com/Tawney-hub/" target="_blank" class="text-white-color text-2xl transition-all duration-300 hover:text-primary-color hover:translate-y-[-3px]" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="tel:+263780297586" class="text-white-color text-2xl transition-all duration-300 hover:text-primary-color hover:translate-y-[-3px]" aria-label="Phone"><i class="fas fa-phone"></i></a>
         <a href="mailto:Fortunemakunya33@gmail.com" class="text-white-color text-2xl transition-all duration-300 hover:text-primary-color hover:translate-y-[-3px]" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -823,7 +831,6 @@
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
-      
       // Toggle Tailwind classes for mobile menu visibility
       if (navMenu.classList.contains('active')) {
         navMenu.classList.remove('hidden');
@@ -837,6 +844,7 @@
         
         // Restore body scroll
         document.body.style.overflow = '';
+>>>>>>> b29558e649ef08c7effd7319e0e9024c59b80b69
       }
 
       // Animate hamburger icon
