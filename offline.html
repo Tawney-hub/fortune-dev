@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Fortune Makunya Portfolio</title>
+    <meta name="theme-color" content="#0A6A0A">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0A6A0A, #FFFFFF);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .offline-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 3px solid #DC3545;
+            max-width: 500px;
+            margin: 2rem;
+        }
+
+        .offline-icon {
+            font-size: 4rem;
+            color: #DC3545;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            color: #0A6A0A;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .retry-btn {
+            background: #0A6A0A;
+            color: white;
+            border: 2px solid #DC3545;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .retry-btn:hover {
+            background: #DC3545;
+            border-color: #0A6A0A;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+        }
+
+        .features {
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .features h3 {
+            color: #0A6A0A;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: #0A6A0A;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .offline-container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📱</div>
+        <h1>You're Offline</h1>
+        <p>Don't worry! Fortune's portfolio is available offline. You can still view cached content and access previously loaded sections.</p>
+        
+        <button class="retry-btn" onclick="window.location.reload()">Try Again</button>
+        
+        <div class="features">
+            <h3>What's Available Offline:</h3>
+            <ul>
+                <li>Portfolio content and images</li>
+                <li>Skills and experience sections</li>
+                <li>Project showcases</li>
+                <li>Contact information</li>
+                <li>Navigation between sections</li>
+            </ul>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
+            <strong>Tip:</strong> Install this portfolio as a PWA for the best offline experience!
+        </p>
+    </div>
+
+    <script>
+        // Check if we're back online
+        window.addEventListener('online', () => {
+            // Show online notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #0A6A0A;
+                color: white;
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(10, 106, 10, 0.3);
+                z-index: 10000;
+                animation: slideInRight 0.3s ease-out;
+            `;
+            notification.innerHTML = '🌐 You\'re back online!';
+            document.body.appendChild(notification);
+
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 3000);
+        });
+
+        // Add slide-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 

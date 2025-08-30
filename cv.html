@@ -220,8 +220,12 @@
         /* Download Button Container */
         .download-button-container {
             text-align: center;
-            margin-top: 2rem; /* Reduced margin */
-            margin-bottom: 2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
         }
 
         /* Back Button */
@@ -359,8 +363,20 @@
                 grid-template-columns: 1fr;
             }
             .download-button-container {
-                margin-top: 1.2rem;
-                margin-bottom: 1.2rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                padding: 0 1rem;
+            }
+            .back-button, .download-button {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem;
+            }
+            .header .contact-info p {
+                font-size: 0.8rem;
+            }
+            .profile-image-container {
+                width: 80px;
+                height: 80px;
             }
         }
 
@@ -446,7 +462,8 @@
     <div class="container" id="cv-content">
         <header class="header">
             <div class="profile-image-container">
-                <img src="https://placehold.co/140x140/0A6A0A/ffffff?text=FM" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
+                <!-- Using img tag directly with specific dimensions for better PDF rendering -->
+                <img src="assets/img/background.jpg" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
             </div>
             <div class="header-content">
                 <h1 class="text-white">Fortune Makunya</h1>
@@ -454,9 +471,9 @@
                     <p><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</p>
                     <p><i class="fas fa-phone-alt"></i> +263 780 297 586 / +263 718 240 059</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:Fortunemakunya33@gmail.com" class="text-white hover:text-green-200">Fortunemakunya33@gmail.com</a></p>
-                    
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-9a99a634a/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">linkedin.com/in/fortune-makunya-9a99a634a/</a></p>
-            
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/Tawney-hub/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">github.com/Tawney-hub/</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-677b86380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">linkedin.com/in/fortune-makunya-677b86380</a></p>
+                    <p><i class="fas fa-globe"></i> <a href="https://tawney-hub.github.io/fortune-dev/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">tawney-hub.github.io/fortune-dev/</a></p>
                 </div>
             </div>
         </header>
@@ -499,19 +516,14 @@
                 <h2 class="section-title">Education</h2>
 
                 <div class="education-item">
-
                     <h3 class="text-xl font-semibold text-gray-900">BSc in Computer Engineering - University of Zimbabwe</h3>
                     <p class="text-gray-600 mb-1 text-base">(Completed 2025)</p>
                     <p class="text-gray-700 text-base"><strong class="font-medium text-gray-800">Core Subjects:</strong> Advanced Database Systems, Microprocessors & Embedded Systems, Web & Mobile Technologies, Software Project Management, Object-Oriented Programming, Data Communications and Networks.</p>
-
-                    <h3 class="text-lg font-semibold text-gray-900">A-Level - St. Mary Magdalene’s High School</h3>
-                    <p class="text-gray-600 mb-1 text-sm">2019 - 2020</p>
-                    <p class="text-gray-700 text-sm">Mathematics (A), Physics (C), Chemistry (C)</p>
                 </div>
                 <div class="education-item">
-                    <h3 class="text-lg font-semibold text-gray-900">O-Level - St. Mary Magdalene’s High School</h3>
+                    <h3 class="text-lg font-semibold text-gray-900">O-Level - St. Mary Magdalene's High School</h3>
                     <p class="text-gray-600 mb-1 text-sm">2015 - 2018</p>
-                    <p class="text-gray-700 text-sm">10 subjects with A’s in Math, Chemistry, Agriculture, and more.</p>
+                    <p class="text-gray-700 text-sm">10 subjects with A's in Math, Chemistry, Agriculture, and more.</p>
                 </div>
             </section>
         </main>
