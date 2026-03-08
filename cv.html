@@ -1,580 +1,919 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortune Makunya - CV</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <style>
-        /* Universal Box Sizing for consistent layout */
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fortune Makunya — Founder & Full-Stack Developer | Zimbabwe</title>
+<meta name="description" content="Fortune Makunya — Solo founder, Full-Stack Developer & AI Engineer from Harare, Zimbabwe. Creator of JustGlow beauty marketplace, Viba live video app, RunneR bakkie booking app, Fluxi Agency and published author of Strangers in Proximity on Amazon.">
+<meta name="keywords" content="Fortune Makunya, Full-Stack Developer Zimbabwe, Founder Zimbabwe, Flutter Developer, Django Developer, JustGlow, Viba App, RunneR App, Fluxi Agency, Strangers in Proximity, Harare Developer, Zimbabwe Tech, Mobile App Developer Africa, ERPNext Developer, WhatsApp Chatbot Developer">
+<meta name="author" content="Fortune Makunya">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tawney-hub.github.io/fortune-dev/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tawney-hub.github.io/fortune-dev/">
+<meta property="og:title" content="Fortune Makunya — Founder & Full-Stack Developer | Zimbabwe">
+<meta property="og:description" content="Solo founder & full-stack developer from Harare, Zimbabwe. Builder of JustGlow, Viba, RunneR. Author of Strangers in Proximity.">
+<meta property="og:image" content="https://tawney-hub.github.io/fortune-dev/assets/img/background.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fortune Makunya — Founder & Full-Stack Developer">
+<meta name="twitter:description" content="Solo founder from Zimbabwe. Builder of JustGlow, Viba, RunneR. Author. Django · Flutter · ERPNext.">
+<meta name="twitter:image" content="https://tawney-hub.github.io/fortune-dev/assets/img/background.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Fortune Makunya","jobTitle":"Founder & Full-Stack Developer","url":"https://tawney-hub.github.io/fortune-dev/","email":"fortunemakunya88@gmail.com","telephone":"+263780297586","address":{"@type":"PostalAddress","addressLocality":"Harare","addressCountry":"ZW"},"sameAs":["https://github.com/Tawney-hub/","https://www.linkedin.com/in/fortune-makunya-677b86380","https://fluxi.agency"],"worksFor":{"@type":"Organization","name":"Fluxi Agency","url":"https://fluxi.agency"},"knowsAbout":["Flutter","Django","Python","ERPNext","Frappe","Firebase","WhatsApp API","GIS","Machine Learning"]}</script>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#050505">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+/* ── RESET & TOKENS ── */
+:root{
+  --bg:#050505;--s1:#0d0d0d;--s2:#141414;--s3:#1c1c1c;
+  --ln:#1e1e1e;--ln2:#2c2c2c;
+  --mt:#525252;--bd:#8a8a8a;--hd:#f2f2f2;--wh:#ffffff;
+  --lime:#c9f135;--lime2:rgba(201,241,53,.08);--limeb:rgba(201,241,53,.2);
+  --grn:#00c864;--org:#ff9500;--r:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--bd);font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden;cursor:none}
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-thumb{background:var(--lime);border-radius:1px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
 
-        /* Custom Color Palette */
-        :root {
-            --primary-green: hsl(140, 60%, 30%); /* Dark Green */
-            --secondary-red: hsl(0, 70%, 50%); /* Vibrant Red */
-            --light-green-tint: hsl(140, 10%, 90%); /* For subtle backgrounds */
-            --lighter-green-tint: hsl(140, 10%, 95%);
-            --text-dark: #333d4b;
-            --text-light: #ffffff;
-            --text-soft-gray: #555;
-            --border-light-gray: #e0e0e0;
+/* ── CURSOR ── */
+#cr,#cr2{position:fixed;border-radius:50%;pointer-events:none;z-index:99999;top:0;left:0}
+#cr{width:8px;height:8px;background:var(--lime);mix-blend-mode:difference;transition:transform .1s}
+#cr2{width:30px;height:30px;border:1px solid rgba(201,241,53,.3);transition:left .1s ease,top .1s ease,width .2s,height .2s,border-color .2s;margin:-11px 0 0 -11px}
+body.hov #cr{transform:scale(2.8)}
+body.hov #cr2{width:50px;height:50px;margin:-21px 0 0 -21px;border-color:rgba(201,241,53,.5)}
 
-            /* Semantic mapping for easier use */
-            --header-bg-start: var(--primary-green);
-            --header-bg-end: hsl(140, 70%, 40%); /* Slightly lighter green for gradient */
-            --icon-accent: hsl(0, 70%, 70%); /* A lighter red for contrast on dark green - adjusted to green for consistent palette */
-            --icon-on-dark-bg: hsl(140, 70%, 70%); /* Lighter green for icons on dark backgrounds */
-            --section-title-color: var(--primary-green);
-            --accent-line-color: linear-gradient(to right, var(--primary-green), var(--secondary-red));
-            --bullet-color: var(--primary-green);
-            --item-bg: var(--lighter-green-tint);
-            --item-border: hsl(140, 10%, 90%);
-            --strong-text-color: var(--primary-green);
-            --link-color: var(--primary-green);
-            --link-hover-color: var(--secondary-red);
-            --button-bg: var(--primary-green);
-            --button-hover-bg: hsl(140, 70%, 25%); /* Darker green for button hover */
-            --footer-bg: var(--light-green-tint);
-        }
+/* ── NOISE ── */
+body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.5}
 
-        /* Base Styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #eef2f6; /* Soft, professional background */
-            line-height: 1.6; /* Adjusted for one page */
-            color: var(--text-dark); /* Darker, softer black for text */
-        }
-        /* Main Container */
-        .container {
-            max-width: 900px; /* Slightly narrower to fit content */
-            margin: 1.5rem auto; /* Adjusted margin */
-            background-color: var(--text-light);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Refined shadow */
-            border-radius: 15px; /* Slightly smaller rounded corners */
-            overflow: hidden;
-            border: 1px solid var(--border-light-gray);
-        }
-        /* Header Section */
-        .header {
-            background: linear-gradient(145deg, var(--header-bg-start) 0%, var(--header-bg-end) 100%);
-            color: var(--text-light);
-            padding: 2.5rem 2.5rem; /* Reduced padding */
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 2rem; /* Reduced gap */
-            position: relative;
-            overflow: hidden;
-        }
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('assets/img/background.jpg') no-repeat center center;
-            background-size: cover;
-            opacity: 0.1;
-            z-index: 1;
-        }
-        .header-content {
-            flex-grow: 1;
-            text-align: left;
-            z-index: 2;
-        }
-        .profile-image-container {
-            width: 120px; /* Slightly smaller image */
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid var(--text-light); /* Thinner white border */
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
-            flex-shrink: 0;
-            z-index: 2;
-        }
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .header h1 {
-            font-size: 3.2rem; /* Adjusted name size */
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 0.4rem;
-        }
-        .header p.title {
-            font-size: 1.6rem; /* Adjusted title size */
-            font-weight: 400;
-            opacity: 0.95;
-            margin-bottom: 1.2rem;
-        }
-        .header .contact-info p {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.95rem; /* Slightly smaller contact info */
-            line-height: 1.4;
-            opacity: 0.9;
-        }
-        .header .contact-info p i {
-            color: var(--icon-on-dark-bg);
-        }
+/* ── PRELOADER ── */
+#pre{position:fixed;inset:0;background:var(--bg);z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity 1s ease,visibility 1s ease}
+#pre.off{opacity:0;visibility:hidden}
+.prn{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,6vw,72px);color:var(--wh);letter-spacing:-3px}
+.prn span{color:var(--lime)}
+.prb{width:140px;height:1px;background:var(--ln2);overflow:hidden;border-radius:1px}
+.prf{height:100%;background:linear-gradient(90deg,var(--lime),#8fff00);width:0;animation:prf 1.5s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes prf{to{width:100%}}
+.prt{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mt);letter-spacing:3px}
 
-        /* Section Styling */
-        main {
-            padding: 2.5rem; /* Reduced padding */
-        }
-        .section-title {
-            color: var(--section-title-color);
-            border-bottom: 3px solid; /* Thinner border for titles */
-            border-image: var(--accent-line-color) 1;
-            padding-bottom: 0.6rem;
-            margin-bottom: 2rem; /* Reduced spacing */
-            font-size: 2.2rem; /* Smaller section titles */
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            page-break-after: avoid;
-        }
-        section p, section ul li {
-            font-size: 1.05rem; /* Slightly smaller base font size */
-        }
+/* ── SCROLL BAR ── */
+#spg{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--lime),#8fff00);z-index:9997;width:0;box-shadow:0 0 8px var(--lime)}
 
-        /* List Items */
-        .list-item {
-            margin-bottom: 0.6rem; /* Reduced margin */
-            display: flex;
-            align-items: flex-start;
-        }
-        .list-item::before {
-            content: '•';
-            color: var(--bullet-color);
-            font-size: 1.4rem; /* Smaller bullet */
-            line-height: 1;
-            margin-right: 0.7rem;
-            flex-shrink: 0;
-            font-weight: 800;
-        }
-        .list-item strong {
-            color: var(--strong-text-color);
-        }
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:24px 0;transition:all .35s ease}
+.nav.sc{background:rgba(5,5,5,.94);backdrop-filter:blur(28px) saturate(180%);padding:14px 0;border-bottom:1px solid var(--ln)}
+.nw{max-width:1160px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nlogo{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;color:var(--wh);letter-spacing:-.5px}
+.nlogo span{color:var(--lime)}
+.nlist{display:flex;gap:2px;list-style:none}
+.nlist a{font-size:13px;font-weight:500;color:var(--mt);padding:8px 14px;border-radius:100px;transition:all .25s ease}
+.nlist a:hover,.nlist a.on{color:var(--lime);background:var(--lime2)}
+.nr{display:flex;gap:10px;align-items:center}
+.btn-h{background:var(--lime);color:#000;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:9px 22px;border-radius:100px;transition:all .25s ease;border:none;cursor:pointer}
+.btn-h:hover{background:#d8ff40;transform:translateY(-1px);box-shadow:0 8px 24px rgba(201,241,53,.28)}
+.thbtn{width:34px;height:34px;border-radius:50%;border:1px solid var(--ln2);background:var(--s1);color:var(--mt);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .25s ease}
+.thbtn:hover{border-color:var(--lime);color:var(--lime)}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hbg span{display:block;width:20px;height:1.5px;background:var(--bd);border-radius:1px;transition:all .3s ease}
+.hbg.on span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.hbg.on span:nth-child(2){opacity:0}
+.hbg.on span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
 
-        /* Education */
-        .education-item {
-            margin-bottom: 1.2rem; /* Reduced margin */
-            page-break-inside: avoid;
-        }
-        .education-item h3 {
-            font-size: 1.35rem; /* Smaller education title */
-            font-weight: 600;
-            color: var(--strong-text-color);
-            margin-bottom: 0.3rem;
-            page-break-after: avoid;
-        }
-        .education-item p {
-            font-size: 1rem; /* Smaller education text */
-        }
+/* ── MOBILE NAV ── */
+.mnav{position:fixed;inset:0;background:rgba(5,5,5,.98);backdrop-filter:blur(40px);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;visibility:hidden;transition:all .4s ease}
+.mnav.on{opacity:1;visibility:visible}
+.mnav a{font-family:'Syne',sans-serif;font-size:clamp(32px,7vw,52px);font-weight:800;color:var(--hd);padding:8px 24px;transition:color .25s ease;letter-spacing:-1.5px}
+.mnav a:hover{color:var(--lime)}
+.mnav-cta{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--lime);letter-spacing:1px}
 
-        /* Footer */
-        .footer {
-            background-color: var(--footer-bg);
-            color: var(--text-dark);
-            padding: 2.5rem; /* Reduced padding */
-            text-align: center;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            margin-top: 3rem; /* Reduced margin */
-            page-break-before: avoid;
-        }
-        .footer p {
-            font-size: 1rem; /* Smaller footer text */
-            line-height: 1.7;
-        }
-        .footer p.font-semibold {
-            font-size: 1.15rem; /* Smaller footer title */
-            margin-bottom: 0.8rem;
-        }
+/* ── FLOAT SOCIAL ── */
+.fsoc{position:fixed;left:20px;top:50%;transform:translateY(-50%);z-index:500;display:flex;flex-direction:column;align-items:center;gap:10px}
+.fsoc::before,.fsoc::after{content:'';display:block;width:1px;height:52px;background:var(--ln2)}
+.fsoc a{width:34px;height:34px;border:1px solid var(--ln2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--mt);font-size:13px;background:var(--s1);transition:all .25s ease}
+.fsoc a:hover{border-color:var(--lime);color:var(--lime);background:var(--lime2);transform:scale(1.1)}
 
+/* ── SECTION ── */
+section{padding:110px 0}
+.w{max-width:1160px;margin:0 auto;padding:0 28px}
+.div{border:none;border-top:1px solid var(--ln);margin:0}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--lime);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.lbl::before{content:'';display:block;width:24px;height:1px;background:var(--lime)}
+h2.st{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,58px);line-height:1.05;letter-spacing:-2px;color:var(--wh);margin-bottom:14px}
+h2.st em{color:var(--lime);font-style:italic}
+.sd{color:var(--mt);font-size:15px;line-height:1.75;max-width:500px}
 
-        /* Links */
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.3s ease, text-decoration 0.3s ease;
-        }
-        a:hover {
-            color: var(--link-hover-color);
-            text-decoration: underline;
-        }
+/* ── BADGES ── */
+.badge{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 10px;border-radius:100px}
+.badge.live{background:rgba(0,200,100,.08);color:var(--grn);border:1px solid rgba(0,200,100,.2)}
+.badge.live::before{content:'';width:5px;height:5px;background:var(--grn);border-radius:50%;animation:bk 2s infinite;flex-shrink:0}
+.badge.soon{background:var(--lime2);color:var(--lime);border:1px solid var(--limeb)}
+.badge.wip{background:rgba(255,149,0,.07);color:var(--org);border:1px solid rgba(255,149,0,.18)}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:0}}
 
-        /* Download Button Container */
-        .download-button-container {
-            text-align: center;
-            margin-top: 2.5rem;
-            margin-bottom: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
+/* ── BUTTONS ── */
+.bp{background:var(--lime);color:#000;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;padding:13px 28px;border-radius:100px;display:inline-flex;align-items:center;gap:8px;transition:all .25s ease;border:none;cursor:pointer}
+.bp:hover{background:#d8ff40;transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,241,53,.22)}
+.bs{background:transparent;color:var(--bd);font-size:14px;font-weight:500;padding:12px 28px;border-radius:100px;border:1px solid var(--ln2);display:inline-flex;align-items:center;gap:8px;transition:all .25s ease}
+.bs:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-2px)}
 
-        /* Back Button */
-        .back-button {
-            background-color: var(--text-soft-gray);
-            color: var(--text-light);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            font-size: 1rem;
-            border: 2px solid var(--text-soft-gray);
-        }
-        
-        .back-button:hover {
-            background-color: var(--text-dark);
-            border-color: var(--text-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:130px 0 90px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(.07) contrast(1.2)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 75% 45%,rgba(201,241,53,.05) 0%,transparent 65%),linear-gradient(to bottom,transparent 55%,var(--bg) 100%),linear-gradient(to right,var(--bg) 0%,transparent 18%)}
+.hgrid{position:absolute;inset:0;z-index:0;background:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:68px 68px;opacity:.22;mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black 0%,transparent 75%)}
+/* Glowing orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.1;z-index:0;animation:orbm 9s ease-in-out infinite alternate;pointer-events:none}
+.o1{width:560px;height:560px;background:var(--lime);top:-15%;right:0%}
+.o2{width:280px;height:280px;background:#00ffb3;bottom:8%;left:35%;animation-delay:-4s}
+@keyframes orbm{from{transform:translate(0,0) scale(1)}to{transform:translate(25px,-18px) scale(1.06)}}
 
-        /* Download Button */
-        .download-button {
-            background-color: var(--button-bg);
-            color: var(--text-light);
-            padding: 0.9rem 2rem; /* Reduced padding */
-            border-radius: 40px; /* Slightly smaller radius */
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px hsla(140, 60%, 30%, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            cursor: pointer;
-            font-size: 1.1rem; /* Smaller font size */
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            border: none;
-            outline: none;
-        }
-        .download-button:hover {
-            background-color: var(--button-hover-bg);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px hsla(140, 60%, 30%, 0.4);
-        }
-        .download-button:active {
-            transform: translateY(0);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-        }
+.hinn{position:relative;z-index:2}
+.hchip{display:inline-flex;align-items:center;gap:8px;background:var(--lime2);border:1px solid var(--limeb);border-radius:100px;padding:6px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--lime);letter-spacing:.5px;margin-bottom:28px}
+.hchip .dot{width:6px;height:6px;background:var(--lime);border-radius:50%;animation:bk 1.8s infinite;box-shadow:0 0 6px var(--lime)}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(54px,10vw,116px);line-height:.92;letter-spacing:-4px;color:var(--wh);margin-bottom:10px}
+.hero h1 .ghost{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.18)}
+.hero h1 .accent{color:var(--lime)}
+.hsubt{font-size:clamp(15px,1.8vw,19px);color:var(--mt);margin:24px 0 40px;max-width:460px;line-height:1.7}
+.hacts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hstats{display:flex;gap:44px;margin-top:68px;padding-top:44px;border-top:1px solid var(--ln);flex-wrap:wrap}
+.hstat-n{font-family:'Syne',sans-serif;font-weight:800;font-size:38px;color:var(--wh);line-height:1}
+.hstat-n span{color:var(--lime)}
+.hstat-l{font-size:11px;color:var(--mt);margin-top:5px;letter-spacing:.5px}
+/* Floating card */
+.hcard{position:absolute;right:0;top:38%;background:var(--s2);border:1px solid var(--ln2);border-radius:14px;padding:18px 22px;min-width:210px;animation:flt 5s ease-in-out infinite;z-index:3}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hc-t{font-size:11px;color:var(--mt);font-family:'JetBrains Mono',monospace;letter-spacing:1px;margin-bottom:6px}
+.hc-v{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;color:var(--lime)}
+.hc-s{font-size:12px;color:var(--mt);margin-top:4px}
+/* Counter line */
+.hcount{display:flex;gap:8px;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--ln)}
+.hcount-dot{width:7px;height:7px;border-radius:50%;background:var(--grn);animation:bk 2s infinite;box-shadow:0 0 6px var(--grn)}
+.hcount-t{font-size:11px;color:var(--mt);font-family:'JetBrains Mono',monospace}
 
-        /* Responsive Adjustments */
-        @media (max-width: 900px) {
-            .container {
-                margin: 1rem;
-                border-radius: 10px;
-            }
-            .header {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 1.5rem;
-                gap: 1.2rem;
-            }
-            .profile-image-container {
-                margin-bottom: 0.8rem;
-                width: 100px;
-                height: 100px;
-            }
-            .header h1 {
-                font-size: 2.8rem;
-            }
-            .header p.title {
-                font-size: 1.4rem;
-            }
-            .header .contact-info p {
-                font-size: 0.85rem;
-                justify-content: center;
-            }
-            main {
-                padding: 1.8rem;
-            }
-            .section-title {
-                font-size: 1.9rem;
-                margin-bottom: 1.5rem;
-            }
-            section p, section ul li {
-                font-size: 0.95rem;
-            }
-            .education-item h3 {
-                font-size: 1.2rem;
-            }
-            .download-button {
-                padding: 0.7rem 1.6rem;
-                font-size: 0.95rem;
-            }
-            .download-button-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .back-button, .download-button {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-        }
+/* ── ABOUT ── */
+.about-g{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.about-img{position:relative}
+.about-img::before{content:'';position:absolute;inset:-1px;border-radius:16px;background:linear-gradient(135deg,var(--lime) 0%,transparent 55%);z-index:0;opacity:.22}
+.about-img img{width:100%;border-radius:14px;position:relative;z-index:1;filter:grayscale(15%);transition:filter .4s ease}
+.about-img:hover img{filter:grayscale(0%)}
+.atag{position:absolute;bottom:22px;left:22px;z-index:2;background:rgba(5,5,5,.92);border:1px solid var(--ln2);border-radius:10px;padding:12px 16px;backdrop-filter:blur(12px)}
+.atag-t{font-size:10px;color:var(--mt);font-family:'JetBrains Mono',monospace;letter-spacing:1px;margin-bottom:3px}
+.atag-v{font-size:14px;color:var(--lime);font-weight:600;font-family:'Syne',sans-serif}
+.info-g{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin:28px 0;list-style:none}
+.info-g li{font-size:13px;color:var(--mt);display:flex;gap:7px;align-items:flex-start}
+.info-g li strong{color:var(--hd);font-weight:500;white-space:nowrap}
+.abtns{display:flex;gap:12px;flex-wrap:wrap}
 
-        @media (max-width: 600px) {
-            .container {
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
-            }
-            body {
-                background-color: #ffffff;
-            }
-            .header {
-                padding: 1.5rem 1rem;
-            }
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            .header p.title {
-                font-size: 1.1rem;
-            }
-            main {
-                padding: 1.2rem;
-            }
-            .section-title {
-                font-size: 1.6rem;
-                margin-bottom: 1.2rem;
-            }
-            .grid-cols-3, .grid-cols-2 {
-                grid-template-columns: 1fr;
-            }
-            .download-button-container {
-                margin-top: 1.5rem;
-                margin-bottom: 1.5rem;
-                padding: 0 1rem;
-            }
-            .back-button, .download-button {
-                font-size: 0.9rem;
-                padding: 0.7rem 1.2rem;
-            }
-            .header .contact-info p {
-                font-size: 0.8rem;
-            }
-            .profile-image-container {
-                width: 80px;
-                height: 80px;
-            }
-        }
+/* ── SKILLS ── */
+.sk-g{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
+.sk-c{background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);padding:28px;transition:all .3s ease}
+.sk-c:hover{border-color:var(--limeb);background:var(--s2);transform:translateY(-2px)}
+.sk-ct{font-size:12px;font-weight:600;color:var(--mt);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:22px;display:flex;align-items:center;gap:8px}
+.sk-ct i{color:var(--lime);font-size:16px}
+.sk-row{margin-bottom:16px}
+.sk-rh{display:flex;justify-content:space-between;font-size:13px;margin-bottom:7px}
+.sk-rh span:first-child{color:var(--hd)}
+.sk-rh span:last-child{color:var(--lime);font-family:'JetBrains Mono',monospace;font-size:11px}
+.sk-bar{height:2px;background:var(--ln2);border-radius:1px;overflow:hidden}
+.sk-fill{height:100%;background:linear-gradient(90deg,var(--lime),rgba(201,241,53,.5));width:0;border-radius:1px;transition:width 1.4s cubic-bezier(.25,.46,.45,.94)}
 
-        /* Print Specific Styles for better PDF output */
-        @media print {
-            body {
-                background-color: #ffffff;
-                margin: 0;
-                padding: 0;
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                min-height: 297mm; /* Set a minimum height for A4 to encourage proper pagination */
-            }
-            .container {
-                box-shadow: none;
-                margin: 0;
-                border-radius: 0;
-                border: none;
-                width: 100%;
-                max-width: 100%;
-            }
-            .download-button-container {
-                display: none; /* Hide download button in print */
-            }
-            .header, .footer {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .header {
-                padding: 1.8rem 1.2rem; /* Adjust header padding for print */
-            }
-            .profile-image-container {
-                border-color: #cccccc !important; /* Lighter border for print */
-                box-shadow: none !important;
-                display: block !important; /* Ensure visibility for print */
-                width: 120px; /* Explicit width for print */
-                height: 120px; /* Explicit height for print */
-                overflow: hidden;
-            }
-            .profile-image-container img.profile-image {
-                    display: block !important; /* Make sure the img tag is visible in print */
-                    width: 100% !important;
-                    height: 100% !important;
-                    object-fit: cover !important;
-            }
-            .section-title {
-                border-color: hsl(140, 60%, 40%) !important; /* Adjust print border to a slightly lighter green */
-                page-break-after: avoid !important; /* Ensure title stays with content */
-            }
-            .education-item {
-                page-break-inside: avoid !important; /* Ensure these blocks don't split */
-            }
-            a {
-                color: #0000ee !important; /* Standard blue for printed links */
-                text-decoration: underline !important;
-            }
-            ul, ol {
-                page-break-inside: avoid !important;
-            }
-            li {
-                page-break-inside: avoid !important;
-            }
-        }
-    </style>
+/* ── RESUME ── */
+.res-g{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:52px}
+.res-gt{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--lime);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--ln)}
+.res-i{padding:20px;border:1px solid var(--ln);border-radius:var(--r);margin-bottom:14px;background:var(--s1);transition:all .3s ease}
+.res-i:hover{border-color:var(--limeb);background:var(--s2)}
+.res-role{font-size:15px;font-weight:600;color:var(--wh);margin-bottom:4px;font-family:'Syne',sans-serif}
+.res-co{font-size:13px;color:var(--lime);margin-bottom:5px}
+.res-dt{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mt);margin-bottom:12px}
+.res-desc{font-size:13px;color:var(--mt);line-height:1.65}
+.res-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:10px;padding:3px 10px;border-radius:100px;background:rgba(201,241,53,.06);color:rgba(201,241,53,.7);border:1px solid rgba(201,241,53,.12);font-family:'JetBrains Mono',monospace}
+
+/* ── PROJECTS ── */
+.proj-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.pc{background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);overflow:hidden;transition:all .4s ease;display:flex;flex-direction:column;position:relative}
+.pc:hover{border-color:var(--limeb);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.pc.feat{grid-column:span 2;border-color:rgba(201,241,53,.12)}
+.pc-head{padding:24px 24px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.pc-icon{width:44px;height:44px;background:var(--lime2);border:1px solid var(--limeb);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.pc-lks{display:flex;gap:7px}
+.plk{width:32px;height:32px;border-radius:50%;border:1px solid var(--ln2);background:var(--s2);color:var(--mt);display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .25s ease}
+.plk:hover{border-color:var(--lime);color:var(--lime)}
+.plk.lv{background:var(--lime);border-color:var(--lime);color:#000}
+.plk.lv:hover{background:#d8ff40}
+.pc-body{padding:20px 24px 24px;flex:1}
+.pc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:20px;color:var(--wh);margin-bottom:8px;letter-spacing:-.3px}
+.pc-desc{font-size:13px;color:var(--mt);line-height:1.65;margin-bottom:16px}
+.pc-tags{display:flex;flex-wrap:wrap;gap:5px}
+.ptag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:100px;background:var(--s2);color:var(--mt);border:1px solid var(--ln)}
+.pc.feat .pc-name{font-size:26px}
+.pc.feat .pc-desc{font-size:14px}
+
+/* ── CLIENTS ── */
+.cl-g{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
+.cl-c{background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);padding:20px;transition:all .3s ease;display:block}
+.cl-c:hover{border-color:var(--limeb);transform:translateY(-2px);background:var(--s2)}
+.cl-n{font-size:15px;font-weight:600;color:var(--wh);margin-bottom:5px;font-family:'Syne',sans-serif}
+.cl-d{font-size:12px;color:var(--mt);line-height:1.5}
+.cl-l{font-size:11px;color:var(--lime);margin-top:10px;display:flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace}
+
+/* ── NOVEL ── */
+.nov-c{background:var(--s1);border:1px solid var(--limeb);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-top:44px}
+.nov-inf{padding:48px}
+.nov-genre{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--lime);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.nov-title{font-family:'Syne',sans-serif;font-weight:800;font-size:38px;color:var(--wh);line-height:1.1;margin-bottom:8px;letter-spacing:-1px}
+.nov-ser{font-size:13px;color:var(--mt);margin-bottom:20px}
+.nov-desc{font-size:14px;color:var(--mt);line-height:1.75;margin-bottom:28px}
+.nov-btns{display:flex;gap:12px;flex-wrap:wrap}
+.nov-vis{background:linear-gradient(135deg,#0a140a 0%,#0f200f 50%,#0a140a 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:320px}
+.nov-vis::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,241,53,.1) 0%,transparent 65%)}
+.nov-vis-lines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(201,241,53,.025) 28px,rgba(201,241,53,.025) 29px)}
+.nov-art{text-align:center;z-index:1;font-family:'Syne',sans-serif;position:relative}
+.nov-art-series{font-size:10px;font-family:'JetBrains Mono',monospace;color:rgba(201,241,53,.45);letter-spacing:4px;margin-bottom:14px}
+.nov-art-title{font-size:34px;font-weight:800;color:var(--lime);line-height:1.1;margin-bottom:10px;letter-spacing:-1px}
+.nov-art-line{width:40px;height:1px;background:var(--lime);margin:12px auto}
+.nov-art-by{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:1px}
+.nov-art-link{font-size:10px;color:rgba(201,241,53,.35);font-family:'JetBrains Mono',monospace;margin-top:14px;letter-spacing:1px}
+
+/* ── CONTACT ── */
+.cont-g{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:52px}
+.cont-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+.cont-ico{width:40px;height:40px;flex-shrink:0;background:var(--lime2);border:1px solid var(--limeb);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--lime);font-size:16px}
+.cont-it{font-size:11px;color:var(--mt);font-family:'JetBrains Mono',monospace;letter-spacing:1px;margin-bottom:2px}
+.cont-iv{font-size:15px;color:var(--hd);font-weight:500}
+.form-w{background:var(--s1);border:1px solid var(--ln);border-radius:16px;padding:32px}
+.fg{margin-bottom:16px}
+.fg label{font-size:11px;color:var(--mt);margin-bottom:6px;display:block;font-family:'JetBrains Mono',monospace;letter-spacing:1px}
+.fg input,.fg textarea{width:100%;background:var(--bg);border:1px solid var(--ln);border-radius:9px;padding:12px 16px;color:var(--hd);font-family:'Inter',sans-serif;font-size:14px;transition:border-color .25s ease;outline:none;resize:vertical}
+.fg input:focus,.fg textarea:focus{border-color:var(--lime)}
+.fg textarea{min-height:120px}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* ── FOOTER ── */
+footer{padding:40px 0;border-top:1px solid var(--ln)}
+.ft-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.ft-copy{font-size:13px;color:var(--mt)}
+.ft-links{display:flex;gap:20px}
+.ft-links a{font-size:13px;color:var(--mt);transition:color .25s ease}
+.ft-links a:hover{color:var(--lime)}
+
+/* ── SCROLL TOP ── */
+#stb{position:fixed;bottom:24px;right:24px;width:40px;height:40px;background:var(--lime);color:#000;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;visibility:hidden;transition:all .3s ease;z-index:500}
+#stb.on{opacity:1;visibility:visible}
+#stb:hover{background:#d8ff40;transform:translateY(-3px)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeup{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.au{animation:fadeup .7s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.45s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .fsoc,.hcard{display:none}
+  .proj-g{grid-template-columns:1fr 1fr}
+  .pc.feat{grid-column:span 2}
+}
+@media(max-width:768px){
+  .nlist,.nr{display:none}
+  .hbg{display:flex}
+  section{padding:76px 0}
+  .about-g,.cont-g,.res-g,.nov-c{grid-template-columns:1fr}
+  .sk-g{grid-template-columns:1fr}
+  .proj-g{grid-template-columns:1fr}
+  .pc.feat{grid-column:span 1}
+  .hstats{gap:24px}
+  .info-g{grid-template-columns:1fr}
+  .cl-g{grid-template-columns:1fr}
+  .nov-vis{min-height:200px}
+  .fg-row{grid-template-columns:1fr}
+}
+
+/* ── LIGHT MODE ── */
+body.light{
+  --bg:#f8f8f8;--s1:#f0f0f0;--s2:#e8e8e8;--s3:#e0e0e0;
+  --ln:#e0e0e0;--ln2:#d0d0d0;
+  --mt:#777;--bd:#444;--hd:#111;--wh:#111;
+  --lime:#1a7a1a;--lime2:rgba(26,122,26,.06);--limeb:rgba(26,122,26,.18);
+}
+body.light .hero-bg img{filter:grayscale(100%) brightness(.85)}
+body.light .hgrid{opacity:.12}
+body.light .hero h1 .ghost{-webkit-text-stroke:1px rgba(0,0,0,.15)}
+body.light .nov-vis{background:linear-gradient(135deg,#e8f5e8,#d0f0d0)}
+body.light .orb{display:none}
+</style>
 </head>
-<body class="selection:bg-green-200">
-    <div class="download-button-container">
-        <!-- Back Button -->
-        <a href="index.html" class="back-button">
-            <i class="fas fa-arrow-left mr-2"></i>
-            Back to Portfolio
+<body>
+
+<!-- Custom cursor -->
+<div id="cr"></div>
+<div id="cr2"></div>
+
+<!-- Preloader -->
+<div id="pre">
+  <div class="prn">Fortune<span>.</span></div>
+  <div class="prb"><div class="prf"></div></div>
+  <div class="prt">LOADING · HARARE · ZW</div>
+</div>
+
+<!-- Scroll progress -->
+<div id="spg"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nw">
+    <a href="#" class="nlogo">Fortune<span>.</span></a>
+    <ul class="nlist">
+      <li><a href="#about" class="nl">About</a></li>
+      <li><a href="#skills" class="nl">Skills</a></li>
+      <li><a href="#resume" class="nl">Resume</a></li>
+      <li><a href="#projects" class="nl">Projects</a></li>
+      <li><a href="#contact" class="nl">Contact</a></li>
+    </ul>
+    <div class="nr">
+      <button class="thbtn" id="thbtn" title="Toggle theme"><i class="bi bi-sun"></i></button>
+      <a href="tel:+263780297586" class="btn-h">Hire Me</a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mnav" id="mnav">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#resume">Resume</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+  <div class="mnav-cta">+263 780 297 586</div>
+</div>
+
+<!-- Float social -->
+<aside class="fsoc">
+  <a href="https://github.com/Tawney-hub/" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+  <a href="https://www.linkedin.com/in/fortune-makunya-677b86380" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+  <a href="mailto:fortunemakunya88@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
+</aside>
+
+<main>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="assets/img/bg.jpg" alt="">
+  </div>
+  <div class="hgrid"></div>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+
+  <div class="w hinn">
+    <div class="hchip au d1">
+      <span class="dot"></span>
+      Available for freelance &amp; partnerships
+    </div>
+    <h1 class="au d2">
+      Fortune<br>
+      <span class="ghost">Makunya</span>
+    </h1>
+    <p class="hsubt au d3">
+      Founder &amp; Full-Stack Developer from Zimbabwe.<br>
+      Building products that connect, empower and disrupt.
+    </p>
+    <div class="hacts au d4">
+      <a href="#projects" class="bp">View My Work <i class="bi bi-arrow-right"></i></a>
+      <a href="#contact" class="bs">Get In Touch</a>
+    </div>
+    <div class="hstats au d4">
+      <div><div class="hstat-n">6<span>+</span></div><div class="hstat-l">Live Products</div></div>
+      <div><div class="hstat-n">80<span>+</span></div><div class="hstat-l">GitHub Repos</div></div>
+      <div><div class="hstat-n">200<span>+</span></div><div class="hstat-l">Fluxi Clients</div></div>
+      <div><div class="hstat-n">3</div><div class="hstat-l">Countries Reached</div></div>
+    </div>
+  </div>
+
+  <!-- Floating card -->
+  <div class="hcard" data-aos="fade-left" data-aos-delay="600">
+    <div class="hc-t">🇿🇼 HARARE, ZW</div>
+    <div class="hc-v">Building globally</div>
+    <div class="hc-s">Django · Flutter · ERPNext</div>
+    <div class="hcount">
+      <div class="hcount-dot"></div>
+      <div class="hcount-t">Available now</div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about">
+  <div class="w">
+    <div class="about-g">
+      <div class="about-img" data-aos="fade-right">
+        <img src="assets/img/background.jpg" alt="Fortune Makunya">
+        <div class="atag">
+          <div class="atag-t">BSc COMPUTER ENGINEERING</div>
+          <div class="atag-v">University of Zimbabwe · 2025</div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <div class="lbl">About Me</div>
+        <h2 class="st">A builder who ships<br><em>real products</em></h2>
+        <p class="sd">Self-taught developer turned founder. I build full-stack systems, mobile apps and digital platforms from Harare, Zimbabwe — solo, unfunded and fully shipped. My work spans beauty marketplaces, live video platforms, logistics apps, ERPs and published fiction.</p>
+        <ul class="info-g">
+          <li><strong>Name:</strong> Fortune Makunya</li>
+          <li><strong>Location:</strong> Harare, Zimbabwe</li>
+          <li><strong>Phone:</strong> +263 780 297 586</li>
+          <li><strong>Email:</strong> fortunemakunya88@gmail.com</li>
+          <li><strong>Agency:</strong> fluxi.agency</li>
+          <li><strong>GitHub:</strong> Tawney-hub (80+ repos)</li>
+        </ul>
+        <div class="abtns">
+          <a href="https://fluxi.agency" target="_blank" class="bp" style="font-size:13px;padding:10px 20px;">Fluxi Agency <i class="bi bi-arrow-up-right"></i></a>
+          <a href="https://github.com/Tawney-hub/" target="_blank" class="bs" style="font-size:13px;padding:10px 20px;">GitHub <i class="bi bi-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══════════════ SKILLS ═══════════════ -->
+<section id="skills">
+  <div class="w">
+    <div data-aos="fade-up">
+      <div class="lbl">Technical Skills</div>
+      <h2 class="st">What I build <em>with</em></h2>
+    </div>
+    <div class="sk-g">
+      <div class="sk-c" data-aos="fade-up" data-aos-delay="100">
+        <div class="sk-ct"><i class="bi bi-server"></i> Backend Development</div>
+        <div class="sk-row"><div class="sk-rh"><span>Python &amp; Django</span><span>95%</span></div><div class="sk-bar"><div class="sk-fill" data-w="95"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>RESTful APIs</span><span>95%</span></div><div class="sk-bar"><div class="sk-fill" data-w="95"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>Frappe / ERPNext</span><span>82%</span></div><div class="sk-bar"><div class="sk-fill" data-w="82"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>PostgreSQL &amp; Firebase</span><span>92%</span></div><div class="sk-bar"><div class="sk-fill" data-w="92"></div></div></div>
+      </div>
+      <div class="sk-c" data-aos="fade-up" data-aos-delay="150">
+        <div class="sk-ct"><i class="bi bi-phone"></i> Mobile Development</div>
+        <div class="sk-row"><div class="sk-rh"><span>Flutter &amp; Dart</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill" data-w="90"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>Cross-platform Apps</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill" data-w="90"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>Mobile UI/UX</span><span>88%</span></div><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>Play Store Deployment</span><span>95%</span></div><div class="sk-bar"><div class="sk-fill" data-w="95"></div></div></div>
+      </div>
+      <div class="sk-c" data-aos="fade-up" data-aos-delay="200">
+        <div class="sk-ct"><i class="bi bi-robot"></i> AI &amp; Machine Learning</div>
+        <div class="sk-row"><div class="sk-rh"><span>TensorFlow &amp; GANs</span><span>88%</span></div><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>Computer Vision</span><span>85%</span></div><div class="sk-bar"><div class="sk-fill" data-w="85"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>Predictive Analytics</span><span>82%</span></div><div class="sk-bar"><div class="sk-fill" data-w="82"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>WhatsApp Bot Dev</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill" data-w="90"></div></div></div>
+      </div>
+      <div class="sk-c" data-aos="fade-up" data-aos-delay="250">
+        <div class="sk-ct"><i class="bi bi-terminal"></i> DevOps &amp; Tools</div>
+        <div class="sk-row"><div class="sk-rh"><span>Git &amp; Version Control</span><span>92%</span></div><div class="sk-bar"><div class="sk-fill" data-w="92"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>Linux &amp; Server Admin</span><span>88%</span></div><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>GIS Systems</span><span>85%</span></div><div class="sk-bar"><div class="sk-fill" data-w="85"></div></div></div>
+        <div class="sk-row"><div class="sk-rh"><span>SEO &amp; Digital Marketing</span><span>80%</span></div><div class="sk-bar"><div class="sk-fill" data-w="80"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══════════════ RESUME ═══════════════ -->
+<section id="resume">
+  <div class="w">
+    <div data-aos="fade-up">
+      <div class="lbl">Experience &amp; Education</div>
+      <h2 class="st">The journey <em>so far</em></h2>
+    </div>
+    <div class="res-g">
+      <div data-aos="fade-right" data-aos-delay="100">
+        <div class="res-gt">// Work Experience</div>
+        <div class="res-i">
+          <div class="res-role">Junior Software Engineer</div>
+          <div class="res-co">Current Role · Frappe/ERPNext</div>
+          <div class="res-dt">2025 — Present</div>
+          <div class="res-desc">Building and customising ERPNext school management systems. Applying enterprise-grade Frappe framework directly to Fluxi ERP product line.</div>
+          <div class="res-tags"><span class="tag">Frappe</span><span class="tag">ERPNext</span><span class="tag">Python</span></div>
+        </div>
+        <div class="res-i">
+          <div class="res-role">Founder &amp; Lead Developer</div>
+          <div class="res-co">Fluxi Agency — fluxi.agency</div>
+          <div class="res-dt">2023 — Present</div>
+          <div class="res-desc">Web development, mobile apps, GIS systems, branding and digital marketing for SA &amp; Zimbabwe businesses. 200+ clients served across Southern Africa.</div>
+          <div class="res-tags"><span class="tag">Django</span><span class="tag">Flutter</span><span class="tag">GIS</span><span class="tag">Branding</span></div>
+        </div>
+        <div class="res-i">
+          <div class="res-role">Junior Software Engineer</div>
+          <div class="res-co">Dreamwise Agency SA — Remote</div>
+          <div class="res-dt">2024 — 2025</div>
+          <div class="res-desc">Built and deployed client websites using Django &amp; cPanel. Designed responsive UI/UX for SA-based clients.</div>
+          <div class="res-tags"><span class="tag">Django</span><span class="tag">cPanel</span><span class="tag">SEO</span></div>
+        </div>
+        <div class="res-i">
+          <div class="res-role">IT Support Intern</div>
+          <div class="res-co">Lobels Bread Pvt Ltd</div>
+          <div class="res-dt">Oct 2023 — Aug 2024</div>
+          <div class="res-desc">Hardware, networking, Active Directory, Microsoft 365 admin, SAGE 1000 operations, CCTV configuration.</div>
+          <div class="res-tags"><span class="tag">Networking</span><span class="tag">AD</span><span class="tag">M365</span></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <div class="res-gt">// Education</div>
+        <div class="res-i">
+          <div class="res-role">BSc Computer Engineering</div>
+          <div class="res-co">University of Zimbabwe</div>
+          <div class="res-dt">Completed 2025 · Grade: 2.1</div>
+          <div class="res-desc">Advanced Database Systems, Microprocessors, Web &amp; Mobile Technologies, Software Project Management, Data Communications.</div>
+          <div class="res-tags"><span class="tag">Engineering</span><span class="tag">2.1 Honours</span></div>
+        </div>
+        <div class="res-i">
+          <div class="res-role">A-Level</div>
+          <div class="res-co">St. Mary Magdalene's High School</div>
+          <div class="res-dt">2020</div>
+          <div class="res-desc">Mathematics (A) · Physics (C) · Chemistry (C)</div>
+        </div>
+        <div class="res-i">
+          <div class="res-role">O-Level</div>
+          <div class="res-co">St. Mary Magdalene's High School</div>
+          <div class="res-dt">2015 — 2020</div>
+          <div class="res-desc">10 subjects — A grades in Mathematics, Chemistry, Agriculture and more.</div>
+        </div>
+        <div class="res-i" style="border-color:rgba(201,241,53,.2);background:rgba(201,241,53,.03)">
+          <div class="res-role" style="color:var(--lime)">Self-taught Extras</div>
+          <div class="res-dt">Ongoing</div>
+          <div class="res-desc">WhatsApp Business API &amp; Chatbots · Google Maps API · WebRTC · GIS Development · Amazon KDP Publishing · Facebook &amp; TikTok Ads</div>
+          <div class="res-tags"><span class="tag">80+ GitHub repos</span><span class="tag">6 live products</span><span class="tag">Published author</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══════════════ PROJECTS ═══════════════ -->
+<section id="projects">
+  <div class="w">
+    <div data-aos="fade-up">
+      <div class="lbl">Projects &amp; Products</div>
+      <h2 class="st">Things I've <em>built &amp; shipped</em></h2>
+    </div>
+
+    <!-- My products label -->
+    <div style="margin-top:52px;" data-aos="fade-up">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mt);letter-spacing:3px;text-transform:uppercase;margin-bottom:18px;">// My Products</p>
+    </div>
+
+    <div class="proj-g">
+
+      <!-- JustGlow FEATURED -->
+      <div class="pc feat" data-aos="fade-up" data-aos-delay="100">
+        <div class="pc-head">
+          <div class="pc-icon">💅</div>
+          <div class="pc-lks">
+            <a href="https://tryjustglow.com" target="_blank" class="plk lv" title="Website"><i class="bi bi-globe2"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=com.justglow.app" target="_blank" class="plk lv" title="Play Store"><i class="bi bi-google-play"></i></a>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="badge live" style="margin-bottom:10px">Live · Zimbabwe / SA / Zambia</div>
+          <div class="pc-name">JustGlow</div>
+          <div class="pc-desc">Beauty services marketplace — find and book nail techs, hair stylists, makeup artists, photographers, tattoo artists and decorators near you. Live map discovery, WhatsApp booking bot, artist profiles and reviews. 116 verified artists onboarded across 3 countries.</div>
+          <div class="pc-tags">
+            <span class="ptag">Flutter</span><span class="ptag">Django</span><span class="ptag">Google Maps</span><span class="ptag">WhatsApp Bot</span><span class="ptag">Firebase</span><span class="ptag">PWA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Viba -->
+      <div class="pc" data-aos="fade-up" data-aos-delay="150">
+        <div class="pc-head">
+          <div class="pc-icon">📡</div>
+          <div class="pc-lks">
+            <a href="https://play.google.com/store/apps/details?id=com.viba.app" target="_blank" class="plk lv" title="Play Store"><i class="bi bi-google-play"></i></a>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="badge live" style="margin-bottom:10px">Live on Play Store</div>
+          <div class="pc-name">Viba</div>
+          <div class="pc-desc">Proximity-based live video app. See a live map of video conversations happening near you. Tap a hotspot and join instantly. No algorithm. No social graph. Just real connection.</div>
+          <div class="pc-tags"><span class="ptag">Flutter</span><span class="ptag">WebRTC</span><span class="ptag">Django REST</span><span class="ptag">GIS</span></div>
+        </div>
+      </div>
+
+      <!-- RunneR -->
+      <div class="pc" data-aos="fade-up" data-aos-delay="200">
+        <div class="pc-head">
+          <div class="pc-icon">🚛</div>
+          <div class="pc-lks">
+            <a href="https://play.google.com/store/apps/details?id=com.runner_app.app" target="_blank" class="plk lv" title="Play Store"><i class="bi bi-google-play"></i></a>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="badge wip" style="margin-bottom:10px">Launching Soon · SA</div>
+          <div class="pc-name">RunneR</div>
+          <div class="pc-desc">InDrive-style bakkie &amp; truck booking app for South Africa. Customers post jobs, drivers bid in real time. Google Maps integration, real-time matching within 5km radius.</div>
+          <div class="pc-tags"><span class="ptag">Flutter</span><span class="ptag">Firebase</span><span class="ptag">GIS</span><span class="ptag">Google Maps</span></div>
+        </div>
+      </div>
+
+      <!-- WhatsApp Bot -->
+      <div class="pc" data-aos="fade-up" data-aos-delay="220">
+        <div class="pc-head">
+          <div class="pc-icon">💬</div>
+        </div>
+        <div class="pc-body">
+          <div class="badge live" style="margin-bottom:10px">Live · JustGlow</div>
+          <div class="pc-name">WhatsApp Booking Bot</div>
+          <div class="pc-desc">Fully automated WhatsApp chatbot handling service selection, availability checks, booking confirmation, reminders and payment instructions. Built on WhatsApp Business API.</div>
+          <div class="pc-tags"><span class="ptag">WhatsApp API</span><span class="ptag">Django</span><span class="ptag">Automation</span></div>
+        </div>
+      </div>
+
+      <!-- School ERP -->
+      <div class="pc" data-aos="fade-up" data-aos-delay="240">
+        <div class="pc-head">
+          <div class="pc-icon">🏫</div>
+        </div>
+        <div class="pc-body">
+          <div class="badge soon" style="margin-bottom:10px">Launching · SA Market</div>
+          <div class="pc-name">School ERP</div>
+          <div class="pc-desc">Full school management system for SA private schools — admissions, fee collection, timetables, attendance, exam results and parent portal. Built on Frappe/ERPNext.</div>
+          <div class="pc-tags"><span class="ptag">Frappe</span><span class="ptag">ERPNext</span><span class="ptag">Python</span><span class="ptag">MariaDB</span></div>
+        </div>
+      </div>
+
+      <!-- Retinopathy AI -->
+      <div class="pc" data-aos="fade-up" data-aos-delay="260">
+        <div class="pc-head">
+          <div class="pc-icon">🔬</div>
+        </div>
+        <div class="pc-body">
+          <div class="badge live" style="margin-bottom:10px">Academic · Deployed</div>
+          <div class="pc-name">Retinopathy AI System</div>
+          <div class="pc-desc">Diabetic retinopathy detection using EfficientNetB7. Doctor dashboard (Django) + patient mobile app (Flutter) with real-time notifications and classification results.</div>
+          <div class="pc-tags"><span class="ptag">TensorFlow</span><span class="ptag">Django</span><span class="ptag">Flutter</span><span class="ptag">EfficientNetB7</span></div>
+        </div>
+      </div>
+
+    </div><!-- /proj-g -->
+
+    <!-- Fluxi Clients -->
+    <div style="margin-top:64px;" data-aos="fade-up">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mt);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">// Fluxi Agency — Client Work</p>
+      <div class="cl-g">
+        <a href="https://www.mzondiservicecentre.co.za/" target="_blank" class="cl-c" data-aos="fade-up" data-aos-delay="100">
+          <div class="cl-n">Mzondi Service Centre</div>
+          <div class="cl-d">Automotive services website · De Doorns, South Africa · Tyre repairs, panel beating, diagnostics</div>
+          <div class="cl-l">mzondiservicecentre.co.za <i class="bi bi-arrow-up-right"></i></div>
         </a>
-        
-        <button id="downloadPdfBtn" class="download-button">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-            Download CV as PDF
-        </button>
+        <a href="https://pandatoursza.co.za/" target="_blank" class="cl-c" data-aos="fade-up" data-aos-delay="150">
+          <div class="cl-n">Panda Tours SA</div>
+          <div class="cl-d">Premium travel &amp; transport website · Johannesburg · Airport transfers, luxury fleet, tour packages</div>
+          <div class="cl-l">pandatoursza.co.za <i class="bi bi-arrow-up-right"></i></div>
+        </a>
+        <a href="https://fluxi.agency" target="_blank" class="cl-c" data-aos="fade-up" data-aos-delay="200">
+          <div class="cl-n">Fluxi Agency</div>
+          <div class="cl-d">My own digital agency · Web development, mobile apps, GIS systems, branding &amp; SEO for Zimbabwe &amp; South Africa</div>
+          <div class="cl-l">fluxi.agency <i class="bi bi-arrow-up-right"></i></div>
+        </a>
+        <a href="https://uzuno.co.za" target="_blank" class="cl-c" data-aos="fade-up" data-aos-delay="250">
+          <div class="cl-n">Uzuno Store</div>
+          <div class="cl-d">Premium lifestyle apparel e-commerce · Django + PostgreSQL · Secure auth, product management, orders</div>
+          <div class="cl-l">uzuno.co.za <i class="bi bi-arrow-up-right"></i></div>
+        </a>
+      </div>
     </div>
 
-    <div class="container" id="cv-content">
-        <header class="header">
-            <div class="profile-image-container">
-                <!-- Using img tag directly with specific dimensions for better PDF rendering -->
-                <img src="assets/img/background.jpg" alt="Fortune Makunya Profile" class="profile-image" width="140" height="140" onerror="this.onerror=null;this.src='https://placehold.co/140x140/E0E0E0/333333?text=Profile Image';"/>
-            </div>
-            <div class="header-content">
-                <h1 class="text-white">Fortune Makunya</h1>
-                <div class="contact-info text-sm md:text-base space-y-2">
-                    <p><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</p>
-                    <p><i class="fas fa-phone-alt"></i> +263 780 297 586 / +263 718 240 059</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:Fortunemakunya33@gmail.com" class="text-white hover:text-green-200">Fortunemakunya33@gmail.com</a></p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/Tawney-hub/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">github.com/Tawney-hub/</a></p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fortune-makunya-677b86380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">linkedin.com/in/fortune-makunya-677b86380</a></p>
-                    <p><i class="fas fa-globe"></i> <a href="https://tawney-hub.github.io/fortune-dev/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200">tawney-hub.github.io/fortune-dev/</a></p>
-                </div>
-            </div>
-        </header>
-
-        <main>
-            <section class="mb-10">
-                <h2 class="section-title">Professional Summary</h2>
-                <p class="text-gray-700 leading-relaxed text-base">
-                    Highly motivated and diligent individual with a strong academic background in Science subjects at A-Level. Eager to apply acquired knowledge and develop new skills in a professional environment. A fast learner with excellent communication and problem-solving abilities, ready to contribute effectively to a team.
-                </p>
-            </section>
-
-            <section class="mb-10">
-                <h2 class="section-title">About Me</h2>
-                <p class="text-gray-700 leading-relaxed mb-4 text-base">
-                    Dedicated and enthusiastic, I am a recent A-Level graduate with a solid foundation in **Mathematics, Physics, and Chemistry**. I possess a strong work ethic and a proactive approach to learning and personal development. I am passionate about acquiring new skills and contributing meaningfully to any organization.
-                </p>
-                <ul class="text-gray-700 space-y-2">
-                    <li class="list-item text-base"><strong class="font-medium text-gray-800">Key Strengths:</strong> Problem-solving, Adaptability, Communication</li>
-                    <li class="list-item text-base"><strong class="font-medium text-gray-800">Availability:</strong> Open to Opportunities</li>
-                    <li class="list-item text-base">
-                        <strong class="font-medium text-gray-800">Growth Mindset:</strong> Continuously seeking to expand my knowledge and practical abilities.
-                        <span class="block ml-6 text-sm text-gray-600 mt-1">I am committed to continuous learning and keen to embark on a career path that allows me to grow professionally and make a positive impact.</span>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="mb-10">
-                <h2 class="section-title">Soft Skills</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3 text-gray-700">
-                    <div class="list-item text-base">Communication</div>
-                    <div class="list-item text-base">Critical Thinking</div>
-                    <div class="list-item text-base">Teamwork</div>
-                    <div class="list-item text-base">Fast Learner</div>
-                    <div class="list-item text-base">Calm Under Pressure</div>
-                </div>
-            </section>
-
-            <section class="mb-10">
-                <h2 class="section-title">Education</h2>
-
-                <div class="education-item">
-                    <h3 class="text-xl font-semibold text-gray-900">BSc in Computer Engineering - University of Zimbabwe 2.1 </h3>
-                    <p class="text-gray-600 mb-1 text-base">(Completed 2025)</p>
-                    <p class="text-gray-700 text-base"><strong class="font-medium text-gray-800">Core Subjects:</strong> Advanced Database Systems, Microprocessors & Embedded Systems, Web & Mobile Technologies, Software Project Management, Object-Oriented Programming, Data Communications and Networks.</p>
-                </div>
-                <div class="education-item">
-                    <h3 class="text-lg font-semibold text-gray-900">O-Level - St. Mary Magdalene's High School</h3>
-                    <p class="text-gray-600 mb-1 text-sm">2015 - 2018</p>
-                    <p class="text-gray-700 text-sm">10 subjects with A's in Math, Chemistry, Agriculture, and more.</p>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer text-gray-800 rounded-b-xl">
-            <p class="font-semibold text-lg mb-2">Contact Me</p>
-            <p class="text-base">Call me on <a href="tel:+263780297586" class="hover:underline">+263 780 297 586</a> / <a href="tel:+263780297735" class="hover:underline">+263 780 297 735</a></p>
-            <p class="text-base">Email me: <a href="mailto:Fortunemakunya33@gmail.com" class="hover:underline">Fortunemakunya33@gmail.com</a></p>
-            <p class="mt-3 text-base">Location: Harare, Zimbabwe</p>
-        </footer>
+    <!-- Novel -->
+    <div style="margin-top:64px;" data-aos="fade-up">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mt);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">// Published Work · Amazon KDP</p>
+      <div class="nov-c">
+        <div class="nov-inf">
+          <div class="nov-genre">Techno-Thriller · Self-Published · Amazon KDP</div>
+          <div class="badge live" style="margin-bottom:16px">📚 Available on Amazon Worldwide</div>
+          <div class="nov-title">Strangers in<br>Proximity</div>
+          <div class="nov-ser">Season One · The Viba Chronicles</div>
+          <div class="nov-desc">A university student in Harare downloads Viba — a proximity live video app — and slowly discovers the app may be watching him back. A psychological coming-of-age techno-thriller set in modern Zimbabwe, written by the same developer who built the real app. The novel that markets the app.</div>
+          <div class="nov-btns">
+            <a href="https://www.amazon.com/dp/B0FGDNRPJM" target="_blank" class="bp" style="font-size:13px;padding:10px 20px;">Buy on Amazon <i class="bi bi-arrow-up-right"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=com.viba.app" target="_blank" class="bs" style="font-size:13px;padding:10px 20px;">Download Viba <i class="bi bi-google-play"></i></a>
+          </div>
+        </div>
+        <div class="nov-vis">
+          <div class="nov-vis-lines"></div>
+          <div class="nov-art">
+            <div class="nov-art-series">THE VIBA CHRONICLES</div>
+            <div class="nov-art-title">Strangers<br>in Proximity</div>
+            <div class="nov-art-line"></div>
+            <div class="nov-art-by">Fortune Makunya · Season One</div>
+            <div class="nov-art-link">amazon.com/dp/B0FGDNRPJM</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script>
-        document.getElementById('downloadPdfBtn').addEventListener('click', function() {
-            const element = document.getElementById('cv-content');
+  </div>
+</section>
 
-            // Force load the image and then generate PDF
-            const imgElement = element.querySelector('.profile-image');
-            if (imgElement && !imgElement.complete) {
-                // If image is not loaded, wait for it
-                const tempImg = new Image();
-                tempImg.src = imgElement.src;
-                tempImg.onload = () => {
-                    console.log('Profile image loaded for PDF generation.');
-                    generatePdf(element);
-                };
-                tempImg.onerror = () => {
-                    console.error('Profile image failed to load, generating PDF without it.');
-                    generatePdf(element); // Proceed even if image fails to load
-                };
-            } else {
-                // If no image element or already loaded, proceed
-                generatePdf(element);
-            }
-        });
+<hr class="div">
 
-        function generatePdf(element) {
-            html2pdf(element, {
-                margin: 8, /* Reduced margin for one-page fit */
-                filename: 'Fortune_Makunya_CV.pdf',
-                image: { type: 'jpeg', quality: 0.85 },
-                html2canvas: {
-                    scale: 2,
-                    logging: true,
-                    dpi: 150,
-                    letterRendering: true,
-                    useCORS: true
-                },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            });
-        }
-    </script>
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div class="w">
+    <div data-aos="fade-up">
+      <div class="lbl">Get In Touch</div>
+      <h2 class="st">Let's build something<br><em>together</em></h2>
+    </div>
+    <div class="cont-g">
+      <div data-aos="fade-right" data-aos-delay="100">
+        <p class="sd" style="margin-bottom:36px">Available for freelance projects, partnerships, collaborations and opportunities. Based in Harare, working globally.</p>
+        <div class="cont-item">
+          <div class="cont-ico"><i class="bi bi-telephone"></i></div>
+          <div><div class="cont-it">PHONE / WHATSAPP</div><div class="cont-iv">+263 780 297 586</div></div>
+        </div>
+        <div class="cont-item">
+          <div class="cont-ico"><i class="bi bi-envelope"></i></div>
+          <div><div class="cont-it">EMAIL</div><div class="cont-iv">fortunemakunya88@gmail.com</div></div>
+        </div>
+        <div class="cont-item">
+          <div class="cont-ico"><i class="bi bi-geo-alt"></i></div>
+          <div><div class="cont-it">LOCATION</div><div class="cont-iv">Harare, Zimbabwe 🇿🇼</div></div>
+        </div>
+        <div class="cont-item">
+          <div class="cont-ico"><i class="bi bi-globe2"></i></div>
+          <div><div class="cont-it">AGENCY</div><div class="cont-iv"><a href="https://fluxi.agency" target="_blank" style="color:var(--lime)">fluxi.agency</a></div></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <div class="form-w">
+          <form id="cf">
+            <div class="fg-row">
+              <div class="fg"><label>YOUR NAME</label><input type="text" placeholder="John Doe" required></div>
+              <div class="fg"><label>EMAIL ADDRESS</label><input type="email" placeholder="john@example.com" required></div>
+            </div>
+            <div class="fg"><label>SUBJECT</label><input type="text" placeholder="Project inquiry..." required></div>
+            <div class="fg"><label>MESSAGE</label><textarea placeholder="Tell me about your project..." required></textarea></div>
+            <button type="submit" class="bp" style="width:100%;justify-content:center;font-size:14px">Send Message <i class="bi bi-send"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="w">
+    <div class="ft-in">
+      <div class="ft-copy">© 2026 Fortune Makunya · Harare, Zimbabwe 🇿🇼</div>
+      <div class="ft-links">
+        <a href="https://github.com/Tawney-hub/" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/fortune-makunya-677b86380" target="_blank">LinkedIn</a>
+        <a href="https://fluxi.agency" target="_blank">Fluxi Agency</a>
+        <a href="https://tryjustglow.com" target="_blank">JustGlow</a>
+        <a href="https://www.amazon.com/dp/B0FGDNRPJM" target="_blank">Novel</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll top -->
+<button id="stb" title="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({duration:700,once:true,offset:55});
+
+  /* PRELOADER */
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('pre').classList.add('off'), 1500);
+  });
+
+  /* CURSOR */
+  const cr = document.getElementById('cr');
+  const cr2 = document.getElementById('cr2');
+  let mx=0,my=0,fx=0,fy=0;
+  document.addEventListener('mousemove', e => {
+    mx=e.clientX; my=e.clientY;
+    cr.style.cssText = `left:${mx-4}px;top:${my-4}px`;
+  });
+  (function tick(){
+    fx+=(mx-fx-15)*.14; fy+=(my-fy-15)*.14;
+    cr2.style.cssText = `left:${fx}px;top:${fy}px`;
+    requestAnimationFrame(tick);
+  })();
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+  });
+
+  /* SCROLL PROGRESS */
+  const spg = document.getElementById('spg');
+  const updateScroll = () => {
+    const pct = window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+    spg.style.width = pct+'%';
+  };
+  window.addEventListener('scroll', updateScroll, {passive:true});
+
+  /* NAV SCROLL */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY>60), {passive:true});
+
+  /* SCROLL TOP */
+  const stb = document.getElementById('stb');
+  window.addEventListener('scroll', () => stb.classList.toggle('on', window.scrollY>320), {passive:true});
+  stb.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+  /* HAMBURGER / MOBILE NAV */
+  const hbg = document.getElementById('hbg');
+  const mnav = document.getElementById('mnav');
+  hbg.addEventListener('click', () => {
+    const open = hbg.classList.toggle('on');
+    mnav.classList.toggle('on', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hbg.classList.remove('on'); mnav.classList.remove('on');
+    document.body.style.overflow = '';
+  }));
+
+  /* NAV ACTIVE */
+  const secs = document.querySelectorAll('section[id]');
+  const nls = document.querySelectorAll('.nl');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if(window.scrollY >= s.offsetTop - 130) cur = s.id; });
+    nls.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#'+cur));
+  }, {passive:true});
+
+  /* THEME */
+  const thbtn = document.getElementById('thbtn');
+  const applyTheme = light => {
+    document.body.classList.toggle('light', light);
+    thbtn.innerHTML = light ? '<i class="bi bi-moon"></i>' : '<i class="bi bi-sun"></i>';
+  };
+  thbtn.addEventListener('click', () => {
+    const light = !document.body.classList.contains('light');
+    applyTheme(light);
+    localStorage.setItem('theme', light ? 'light' : 'dark');
+  });
+  applyTheme(localStorage.getItem('theme') === 'light');
+
+  /* SKILL BARS */
+  const sObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        e.target.querySelectorAll('.sk-fill').forEach(b => { b.style.width = b.dataset.w+'%'; });
+        sObs.unobserve(e.target);
+      }
+    });
+  }, {threshold:.3});
+  document.querySelectorAll('.sk-c').forEach(c => sObs.observe(c));
+
+  /* CONTACT FORM */
+  document.getElementById('cf').addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.innerHTML = 'Message Sent! <i class="bi bi-check2"></i>';
+    btn.style.background = '#00c864';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      btn.innerHTML = 'Send Message <i class="bi bi-send"></i>';
+      btn.style.background = ''; btn.style.color = '';
+      e.target.reset();
+    }, 3000);
+  });
+
+  /* HERO COUNTER ANIMATION */
+  document.querySelectorAll('.hstat-n').forEach(el => {
+    const target = parseInt(el.textContent);
+    if(isNaN(target)) return;
+    let current = 0;
+    const step = Math.ceil(target/40);
+    const timer = setInterval(() => {
+      current = Math.min(current+step, target);
+      const suffix = el.querySelector('span');
+      el.textContent = current;
+      if(suffix) el.appendChild(suffix);
+      if(current >= target) clearInterval(timer);
+    }, 35);
+  });
+});
+</script>
 </body>
 </html>
